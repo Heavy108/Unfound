@@ -48,8 +48,8 @@ justify-content: space-between;
 }
 .animation{
     /* width: 100%; */
-    margin-top: -8rem;
-    height: 18rem;
+    margin-top: -4rem;
+    height: 24rem;
 }
 @media only screen and (min-width: 425px){
     .Hero h1{
@@ -72,5 +72,10 @@ justify-content: space-between;
     }
     .animation{
         height: 35rem;
+    }
+}
+@media only screen and (min-width:1440px){
+    .animation{
+        height: 50rem;
     }
 }
