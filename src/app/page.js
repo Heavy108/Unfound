@@ -7,7 +7,7 @@ import Spline from "@splinetool/react-spline/next";
 export default function Home() {
   return (
     <>
-      <div className="relative  h-[400px] w-full overflow-hidden ">
+      <div className="relative  h-[400px] w-full overflow-hidden bg-black">
         {/* Background image */}
         <Image src={Gradient1} alt="gradient1" fill className="z-0" priority />
 
