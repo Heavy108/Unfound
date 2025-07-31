@@ -124,8 +124,8 @@
   }
  
   .grad2{
-    margin-top: -65rem;
-    height: 10rem !important;
+    margin-top: -55rem;
+    /* height: 10rem !important; */
   }
 }
 @media only screen and (min-width:1920px){
