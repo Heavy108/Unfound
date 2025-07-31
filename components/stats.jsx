@@ -22,7 +22,7 @@ export default function Stats() {
           alt="gradient background"
           fill
           className={styles.grad}
-          // priority
+          priority
         />
         <Image
           src={Gradient2_1}

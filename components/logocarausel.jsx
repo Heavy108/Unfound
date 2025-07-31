@@ -22,7 +22,7 @@ const LogoCard = ({ name, src }) => (
       src={src}
       alt={name}
       width={20}
-      height={20}
+      height={25}
       className="object-contain"
     />
     <p style={{ color: "#737675" ,fontWeight:"700" }} >{name}</p>
