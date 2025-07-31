@@ -1,9 +1,11 @@
 .Navbar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
   /* margin: 2rem; */
+
 }
 .navicon {
   width: 1.5rem;
@@ -28,15 +30,27 @@
 }
 
 .sideMenu {
-  position: relative;
-  padding: 0.5rem;
-  border-radius: 0.3rem;
-  list-style: none;
-  z-index: 5;
-  backdrop-filter: blur(1.5rem);
-  box-shadow: 0px 4px 64px rgba(0, 0, 0, 0.5);
-  padding: 1rem;
+  position: absolute;   /* ⬅️ THIS is the key line */
+  top: 100%;            /* Show just below the navbar */
+  left: 0;
+  width: 100%;
+  z-index: 999;
+ border-radius: 0 0 1rem 1rem;
+border-bottom: 0.5px solid rgba(255, 255, 255, 0.10);
+/* background-color: rgba(12, 12, 12, 0.25); */
+background: linear-gradient(
+  to bottom,
+  rgba(0, 0, 0, 0.9),
+  rgba(78, 255, 240, 0.05)
+);
+
+box-shadow:
+    0 16px 64px rgba(0, 0, 0, 0.75),
+    0 0 30px rgba(78, 255, 240, 0.15);
+backdrop-filter: blur(60px);
+padding: 1rem;
 }
+
 
 .sideMenu li {
   display: flex;
