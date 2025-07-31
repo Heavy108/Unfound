@@ -1,0 +1,92 @@
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  /* margin: 2rem; */
+}
+.navicon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+}
+.container {
+  display: none;
+}
+
+.list {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  align-items: center;
+  color: white;
+}
+
+.menuIcon {
+  display: contents;
+  cursor: pointer;
+}
+
+.sideMenu {
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  list-style: none;
+  z-index: 5;
+  backdrop-filter: blur(1.5rem);
+  box-shadow: 0px 4px 64px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+}
+
+.sideMenu li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem ;
+  margin-top: 0.5rem;
+  color: white;
+}
+
+.arrow {
+  transform: rotate(-45deg);
+  color: rgb(144, 148, 148);
+}
+.contact{
+    background: linear-gradient(
+  to right,
+  rgba(255, 255, 255, 0.1) 10%,
+  rgba(255, 255, 255, 0) 100%
+);
+padding: 1rem;
+background: rgba(255, 255, 255, 0.05); /* subtle light background */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* soft border */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px; 
+  backdrop-filter: blur(4px); 
+  cursor: pointer;
+}
+@media only screen and (min-width: 320px) {
+  .Navbar {
+    backdrop-filter: blur(1.5rem);
+    box-shadow: 0px 4px 64px rgba(0, 0, 0, 0.5);
+  }
+
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    display: block;
+  }
+  .menuIcon {
+    display: none;
+  }
+  .sideMenu {
+    display: none;
+  }
+  .Navbar{
+    padding: 1.75rem 7.5rem;
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+}
