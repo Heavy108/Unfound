@@ -37,7 +37,7 @@ export default function Home() {
         </div>
       </div>
       <div className={style.animation}>
-        <Spline scene="https://prod.spline.design/hxkNHEALrO0u9MfH/scene.splinecode" />
+        <Spline scene="https://prod.spline.design/BdBvQQ2ZpuUKIjVw/scene.splinecode" />
       </div>
       <Stats />
     </>
