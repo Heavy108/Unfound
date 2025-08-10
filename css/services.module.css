@@ -1,3 +1,8 @@
+.container{
+  width: 100% !important;
+  /* overflow: hidden; */
+  margin-top: 5rem;
+}
 .dotcontainer {
   display: flex;
   justify-content: center;
@@ -36,36 +41,104 @@
   will-change: transform, opacity;
 }
 .grad{
+    position: absolute;
+
     z-index: 0;
-    margin-top: -15rem;
+    /* margin-top: -5rem; */
     height: 5rem;  
 }
 .grad2{
   display: none;
 }
+.head{
+color: white;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 2rem;
+gap: 0.5rem;
+}
 .head h2{
-  color: white;
+  font-size: 18px;
 }
 .head h3{
-  color: white;
+  font-size: 1.5rem;
 }
+
+.servicecontainer2{
+  display: none;
+}
+
 @media only screen and (min-width:768px){
   .grad{
   display: none;
 }
+.vertical{
+  display: flex;
+  flex-direction: column;
+gap: 1.5rem;
+
+}
+.vertical2{
+   display: flex;
+  flex-direction: column;
+gap: 1.5rem;
+margin-top: 5rem;
+}
+.vertical3{
+   display: flex;
+  flex-direction: column;
+gap: 1.5rem;
+margin-top: 10rem;
+
+}
+
 }
 @media only screen and (min-width:1024px){
   .Carausel{
     display: none;
   }
+  .servicecontainer2{
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
   .grad2{
-  display: flex;
+  display: flex;       /* make sure image acts like a block element */
+  margin-left: auto; 
+  right: 0;
   position: absolute !important;
-  z-index: -1;
- 
-  background-color: black;
-  margin-top:-45rem ;
+  z-index: 0;
+  /* background-color: black; */
+  margin-top:-40rem ;
+  /* width: 100%; */
+  overflow: hidden;
 
   
 }
+.head{
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10rem;
+    padding-right: 10rem;
+}
+.head h2{
+  font-size: 1.5rem;
+}
+.head h3{
+  width: 40rem;
+  font-size: 1.75rem;
+  padding-left: 5rem;
+}
+}
+@media only screen and (min-width:1440px){
+ 
+  .grad2{
+    margin-top: -55rem;
+    /* height: 10rem !important; */
+  }
+  .head{
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
 }

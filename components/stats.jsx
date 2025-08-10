@@ -28,7 +28,7 @@ export default function Stats() {
         <Image
           src={Gradient2_1}
           alt="gradient background"
-          width={1200} // replace with your actual image width
+          width={800} // replace with your actual image width
           height={300}
           className={styles.grad2}
         />

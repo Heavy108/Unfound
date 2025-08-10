@@ -176,18 +176,20 @@ function Services() {
 
   return (
     <>
-      <section className={`${style.container} relative `}>
-        {/* <Image
+      <div className={`${style.container} relative   `}
+      >
+        <Image
           src={Gradient3}
           alt="gradient background"
-          fill
+          width={1200}
+          height={300}
           className={style.grad}
           priority
         />
         <Image
           src={Gradient3_1}
           alt="gradient background"
-          width={1200} // replace with your actual image width
+          width={800} // replace with your actual image width
           height={300}
           className={style.grad2}
         />
@@ -195,9 +197,13 @@ function Services() {
           <h2>Our Services</h2>
           <h3>
             As a tight-knit team of experts, we create memorable and emotional
-            websites, <span> digital experiences, and native apps.</span>
+            websites,{" "}
+            <span className="text-[#868A8A]">
+              {" "}
+              digital experiences, and native apps.
+            </span>
           </h3>
-        </div> */}
+        </div>
         <div className={style.Carausel}>
           <div
             className="embla"
@@ -236,10 +242,51 @@ function Services() {
           </div>
         </div>
 
-        {/* <div className="text-5xl text-white">
-        hello
-      </div> */}
-      </section>
+        <div className={style.servicecontainer2}>
+          <div className={style.vertical}>
+            <ServiceCard
+              title="Website Design"
+              logo={<LuGlobe />}
+              description="Designing beautiful, responsive websites that communicate your brand and convert users effortlessly."
+              image={WebsiteDesign}
+            />
+            <ServiceCard
+              title="Motion Design"
+              logo={<LuPlay />}
+              description="Bringing ideas to life through sleek, purposeful animations that elevate storytelling and interaction."
+              image={MotionDesign}
+            />
+          </div>
+          <div className={style.vertical2}>
+            <ServiceCard2
+              title="UX Design"
+              logo={<LuHand />}
+              description="Crafting intuitive, user-centered app experiences that drive engagement and clarity."
+              image={UXDesign}
+            />
+            <ServiceCard2
+              title="Report Design"
+              logo={<RiBarChart2Fill />}
+              description="Designing clear, compelling decks and reports that turn data into persuasive narratives."
+              image={ReportDesign}
+            />
+          </div>
+          <div className={style.vertical3}>
+            <ServiceCard
+              title="Development"
+              logo={<LuCodeXml />}
+              description="From concept to deployment, we engineer high-performance solutions that grow with your business."
+              image={Development}
+            />
+            <ServiceCard
+              title="Visual Design"
+              logo={<LuGlobe />}
+              description="Crafting striking, cohesive visuals that elevate digital products and brand experiences."
+              image={VisualDesign}
+            />
+          </div>
+        </div>
+      </div>
     </>
   );
 }

@@ -31,7 +31,7 @@ const LogoCard = ({ name, src }) => (
 
 export default function MarqueeDemo() {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden py-10 z-0">
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden py-10 z-0 bg-transparent">
       <Marquee pauseOnHover className="[--duration:30s] lg:hidden">
         {firstRow.map((logo) => (
           <LogoCard key={logo.name} {...logo} />

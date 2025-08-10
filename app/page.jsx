@@ -7,6 +7,7 @@ import style from "../css/Home.module.css";
 import { FaArrowRight } from "react-icons/fa6";
 import Spline from "@splinetool/react-spline/next";
 import Stats from "../components/stats";
+import Services from "../components/Services";
 
 export default function Home() {
   return (
@@ -41,6 +42,7 @@ export default function Home() {
         <Spline scene="https://prod.spline.design/BdBvQQ2ZpuUKIjVw/scene.splinecode" />
       </div>
       <Stats />
+      <Services/>
     </>
   );
 }
