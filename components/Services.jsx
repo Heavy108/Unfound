@@ -19,7 +19,9 @@ import ReportDesign from "../assets/ReportDesign.png";
 import Development from "../assets/Development.png";
 import MotionDesign from "../assets/MotionDesign.png";
 import style from "../css/services.module.css";
-
+import Gradient3 from "../assets/Gradient3.png";
+import Gradient3_1 from "../assets/Gradient3_1.png";
+import Image from "next/image";
 const TWEEN_FACTOR_BASE = 0.52;
 const numberWithinRange = (number, min, max) =>
   Math.min(Math.max(number, min), max);
@@ -102,7 +104,7 @@ function Services() {
   const tweenFactor = useRef(0);
   const tweenNodes = useRef([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const totalDots = 3; // Fixed number of dots
+  const totalDots = 6; // Fixed number of dots
 
   const setTweenNodes = useCallback((emblaApi) => {
     tweenNodes.current = emblaApi
@@ -173,43 +175,72 @@ function Services() {
   }, [emblaApi, tweenScale, setTweenNodes, setTweenFactor]);
 
   return (
-    <div>
-      <div
-        className="embla"
-        ref={emblaRef}
-        onMouseEnter={autoplay.current.stop} // ✅ pause autoplay on hover
-        onMouseLeave={autoplay.current.reset} // ✅ resume autoplay on leave
-      >
-        <div className="embla__container">
-          {slides.map((slide, idx) => {
-            const CardComponent = slide.component;
-            return (
-              <div className="embla__slide" key={idx}>
-                <div className="card-wrapper ">
-                  <CardComponent {...slide.props} />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+    <>
+      <section className={`${style.container} relative `}>
+        {/* <Image
+          src={Gradient3}
+          alt="gradient background"
+          fill
+          className={style.grad}
+          priority
+        />
+        <Image
+          src={Gradient3_1}
+          alt="gradient background"
+          width={1200} // replace with your actual image width
+          height={300}
+          className={style.grad2}
+        />
+        <div className={style.head}>
+          <h2>Our Services</h2>
+          <h3>
+            As a tight-knit team of experts, we create memorable and emotional
+            websites, <span> digital experiences, and native apps.</span>
+          </h3>
+        </div> */}
+        <div className={style.Carausel}>
+          <div
+            className="embla"
+            ref={emblaRef}
+            onMouseEnter={autoplay.current.stop} // ✅ pause autoplay on hover
+            onMouseLeave={autoplay.current.reset} // ✅ resume autoplay on leave
+          >
+            <div className="embla__container">
+              {slides.map((slide, idx) => {
+                const CardComponent = slide.component;
+                return (
+                  <div className="embla__slide" key={idx}>
+                    <div className="card-wrapper ">
+                      <CardComponent {...slide.props} />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
 
-      <div className={style.dotcontainer}>
-        <span className={style.dot}>
-          {Array.from({ length: totalDots }).map((_, index) => (
-            <span
-              key={index}
-              className={`${style.dotItem} ${
-                selectedIndex % totalDots === index
-                  ? style.active
-                  : style.inactive
-              }`}
-              onClick={() => emblaApi && emblaApi.scrollTo(index)} // Jump to correct slide
-            ></span>
-          ))}
-        </span>
-      </div>
-    </div>
+          <div className={style.dotcontainer}>
+            <span className={style.dot}>
+              {Array.from({ length: totalDots }).map((_, index) => (
+                <span
+                  key={index}
+                  className={`${style.dotItem} ${
+                    selectedIndex % totalDots === index
+                      ? style.active
+                      : style.inactive
+                  }`}
+                  onClick={() => emblaApi && emblaApi.scrollTo(index)} // Jump to correct slide
+                ></span>
+              ))}
+            </span>
+          </div>
+        </div>
+
+        {/* <div className="text-5xl text-white">
+        hello
+      </div> */}
+      </section>
+    </>
   );
 }
 

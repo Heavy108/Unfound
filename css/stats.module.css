@@ -1,16 +1,19 @@
 .container {
   /* padding: 60px 20px; */
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
   color: white;
   position: relative;
-  background-color: black;
+  background-color: transparent;
   max-height: fit-content;
 }
 .grad{
-    z-index: 0;
-    margin-top: -15rem;
+  position: absolute;
+    z-index: 9;
+    /* margin-top: -1rem; */
     height: 5rem;
+    /* overflow: hidden; */
+    
     
     
 }
@@ -59,6 +62,8 @@
 .Statscard{
   position: relative;
   z-index: 10;
+  padding: 2rem;
+
 }
 .grad2{
   display: none;
@@ -86,16 +91,10 @@
   display: flex;
   position: absolute !important;
   z-index: -1;
-  /* height: 20rem !important; */
-  /* top: -5rem; */
-  /* transform: rotate(-45deg); */
-  /* overflow: visible; */
-  /* left: -10rem; */
-  /* width: 120rem !important; */
+ 
   background-color: black;
   margin-top:-45rem ;
-  /* width: 100%; */
-  /* overflow: visible; */
+
   
 }
 .container{

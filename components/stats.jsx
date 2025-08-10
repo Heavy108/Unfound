@@ -1,6 +1,6 @@
 import styles from "../css/stats.module.css";
 import Gradient2 from "../assets/Gradient2.png";
-import Gradient2_1 from "../assets/Gradient2.1.png"
+import Gradient2_1 from "../assets/Gradient2_1.png"
 import Image from "next/image";
 // import { Marquee } from "./magicui/marquee";
 import MarqueeDemo from "./logocarausel";
@@ -20,7 +20,8 @@ export default function Stats() {
         <Image
           src={Gradient2}
           alt="gradient background"
-          fill
+          width={1200} // replace with your actual image width
+          height={300}
           className={styles.grad}
           priority
         />
@@ -29,8 +30,7 @@ export default function Stats() {
           alt="gradient background"
           width={1200} // replace with your actual image width
           height={300}
-          className={styles.grad2} 
-          
+          className={styles.grad2}
         />
 
         {/* Foreground content */}

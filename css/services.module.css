@@ -7,7 +7,7 @@
 
 .dot {
   display: flex;
-  gap: 4px;
+  gap: 8px;
   border-radius: 12px;
   border: 2px solid rgba(255, 255, 255, 0.05);
  background-color: rgba(32, 32, 32, 0.8);
@@ -35,4 +35,37 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
   will-change: transform, opacity;
 }
+.grad{
+    z-index: 0;
+    margin-top: -15rem;
+    height: 5rem;  
+}
+.grad2{
+  display: none;
+}
+.head h2{
+  color: white;
+}
+.head h3{
+  color: white;
+}
+@media only screen and (min-width:768px){
+  .grad{
+  display: none;
+}
+}
+@media only screen and (min-width:1024px){
+  .Carausel{
+    display: none;
+  }
+  .grad2{
+  display: flex;
+  position: absolute !important;
+  z-index: -1;
+ 
+  background-color: black;
+  margin-top:-45rem ;
 
+  
+}
+}
