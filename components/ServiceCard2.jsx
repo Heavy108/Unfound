@@ -1,7 +1,7 @@
-import style from "../css/ServiceCard.module.css";
+import style from "../css/ServiceCard2.module.css";
 import Image from "next/image";
 
-export default function ServiceCard({ title, logo, description, image }) {
+export default function ServiceCard2({ title, logo, description, image }) {
   return (
     <div className={style.container}>
       <div className={style.card}>
@@ -13,7 +13,7 @@ export default function ServiceCard({ title, logo, description, image }) {
           <p>{description}</p>
         </div>
         <div className={style.potrait}>
-          <Image src={image} height={400} width={400} alt={title} priority />
+          <Image src={image} height={400} width={400} alt={title} />
         </div>
       </div>
     </div>

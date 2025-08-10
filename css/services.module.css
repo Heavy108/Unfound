@@ -1,0 +1,38 @@
+.dotcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.dot {
+  display: flex;
+  gap: 4px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+ background-color: rgba(32, 32, 32, 0.8);
+ padding: 1rem;
+}
+
+.dotItem {
+  height: 8px;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.active {
+  background-color: #4ade80; /* green-400 */
+  width: 24px; /* w-6 */
+}
+
+.inactive {
+  background-color: #6b7280; /* gray-500 */
+  width: 8px; /* w-2 */
+  opacity: 0.5;
+}
+
+.scalingSlide {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+}
+

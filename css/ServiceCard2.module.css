@@ -64,9 +64,12 @@
     font-size: 0.875rem;
     color: rgba(255, 255, 255, 0.65);
 }
+.potrait{
+  padding: 0rem 2rem;
+}
 .potrait img {
 
-  border-radius: 2rem;
+  
   width: 100%;          /* keep image responsive */
   height: auto;
   object-fit: contain; 
