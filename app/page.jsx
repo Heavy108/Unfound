@@ -7,6 +7,7 @@ import style from "../css/Home.module.css";
 import { FaArrowRight } from "react-icons/fa6";
 import Spline from "@splinetool/react-spline/next";
 import Stats from "../components/stats";
+
 export default function Home() {
   return (
     <>
