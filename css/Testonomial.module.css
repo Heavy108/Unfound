@@ -34,6 +34,28 @@
 .arrowContainer{
     display:none;
 }
+.head{
+    margin: 2rem;
+    text-align: center;
+}
+.head h2{
+    color: white;
+    font-size: 2rem;
+}
+.head h3{
+    color: #868A8A;
+    font-size: 0.875rem;
+}
+.grad{
+    position: absolute;
+    margin-top: -2.5rem;
+    z-index: 0;
+}
+@media only screen and (min-width:768px){
+      .grad{
+  display: none;
+}
+}
 @media only screen and (min-width:1024px){
 .arrowContainer {
   /* position: absolute;
