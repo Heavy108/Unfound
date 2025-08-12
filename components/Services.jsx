@@ -94,7 +94,7 @@ function Services() {
   );
 
   // ✅ autoplay ref so it can be paused on hover
-  const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
+  const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false }));
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true },

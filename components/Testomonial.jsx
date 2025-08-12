@@ -69,7 +69,7 @@ const slides = useMemo(
 
 
   // ✅ autoplay ref so it can be paused on hover
-  const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
+  const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false }));
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true },
@@ -165,10 +165,10 @@ const tweenScale = useCallback((emblaApi, eventName) => {
         <Image
           src={Gradient2}
           alt="gradient background"
-          width={1200}
+          width={800}
           height={300}
           className={style.grad}
-          priority
+          
         />
 
         <div className={style.head}>
