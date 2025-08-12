@@ -6,6 +6,7 @@ import React, {
   useState,
   useMemo,
 } from "react";
+import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay"; // ✅ import autoplay plugin
 import { LuHand, LuGlobe, LuCodeXml, LuPlay } from "react-icons/lu";
@@ -176,8 +177,7 @@ function Services() {
 
   return (
     <>
-      <div className={`${style.container} relative   `}
-      >
+      <div className={`${style.container} relative   `}>
         <Image
           src={Gradient3}
           alt="gradient background"
@@ -214,11 +214,21 @@ function Services() {
             <div className="embla__container">
               {slides.map((slide, idx) => {
                 const CardComponent = slide.component;
+                const isActive = selectedIndex === idx;
+
                 return (
                   <div className="embla__slide" key={idx}>
-                    <div className="card-wrapper ">
+                    <motion.div
+                     
+                      className="card-wrapper"
+                      animate={{
+                        scale: isActive ? 1 : 0.9,
+                        opacity: isActive ? 1 : 0.6,
+                      }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
+                    >
                       <CardComponent {...slide.props} />
-                    </div>
+                    </motion.div>
                   </div>
                 );
               })}

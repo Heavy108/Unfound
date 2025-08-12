@@ -1,0 +1,74 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.strip {
+  position: absolute;
+  width: 200vw;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.strip1 {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(-5deg);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.strip2 {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(5deg);
+  background: linear-gradient(196deg, #1B5C5C 10.54%, #154242 89.05%);
+  color: white;
+  /* padding: 20px 0; */
+}
+
+.moving-text {
+  display: flex;
+  width: fit-content;
+}
+
+.moving-left {
+  animation: slideLeft 85s linear infinite;
+}
+
+.moving-right {
+  animation: slideRight 85s linear infinite;
+}
+
+.strip span {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.text{
+  padding:  0.38rem 1.78rem;
+}

@@ -1,14 +1,16 @@
+
 import Image from "next/image";
 import Navbar from "../components/navbar";
 import Gradient1 from "../assets/Gradient.png";
 import Gradient2 from "../assets/Gradient2.png";
-
+import HeroSpline from "@/components/Spline"
 import style from "../css/Home.module.css";
 import { FaArrowRight } from "react-icons/fa6";
 import Spline from "@splinetool/react-spline/next";
 import Stats from "../components/stats";
 import Services from "../components/Services";
 import Testonomial from "../components/Testomonial";
+import AnimatedTextRibbon from "@/components/Strip"
 export default function Home() {
   return (
     <>
@@ -38,12 +40,17 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className={style.animation}>
+      {/* <div
+        className={style.animation}
+       
+      >
         <Spline scene="https://prod.spline.design/BdBvQQ2ZpuUKIjVw/scene.splinecode" />
-      </div>
+      </div> */}
+      {/* <HeroSpline/> */}
       <Stats />
       <Services />
       <Testonomial />
+      <AnimatedTextRibbon/>
     </>
   );
 }
