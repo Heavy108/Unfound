@@ -16,6 +16,8 @@ import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import TestomonialCard from "./TestomonialCard";
 
 const TWEEN_FACTOR_BASE = 0.52;
+const AUTOPLAY_DELAY = 4000;
+
 const numberWithinRange = (number, min, max) =>
   Math.min(Math.max(number, min), max);
 
@@ -68,12 +70,21 @@ function Testonomial() {
     []
   );
 
-  // Autoplay ref (stops on hover + on arrow click)
-  const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }));
+  // State to track screen size
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    autoplay.current,
-  ]);
+  // Create autoplay instance only once
+  const autoplay = useMemo(
+    () => Autoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: true }),
+    []
+  );
+
+  // Only use autoplay on smaller screens
+  const plugins = useMemo(() => {
+    return isLargeScreen ? [] : [autoplay];
+  }, [isLargeScreen, autoplay]);
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, plugins);
   const tweenFactor = useRef(0);
   const tweenNodes = useRef([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -89,47 +100,97 @@ function Testonomial() {
     tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
   }, []);
 
-  const tweenScale = useCallback((emblaApi, eventName) => {
-    // Apply scaling only for smaller screens
-    if (window.innerWidth > 1024) {
-      tweenNodes.current.forEach((node) => {
-        if (node) node.style.transform = "scale(1)";
+  const tweenScale = useCallback(
+    (emblaApi, eventName) => {
+      // Disable scaling for larger screens
+      if (isLargeScreen) {
+        tweenNodes.current.forEach((node) => {
+          if (node) node.style.transform = "scale(1)";
+        });
+        return;
+      }
+
+      const engine = emblaApi.internalEngine();
+      const scrollProgress = emblaApi.scrollProgress();
+      const slidesInView = emblaApi.slidesInView();
+      const isScrollEvent = eventName === "scroll";
+
+      emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
+        let diffToTarget = scrollSnap - scrollProgress;
+        const slidesInSnap = engine.slideRegistry[snapIndex];
+
+        slidesInSnap.forEach((slideIndex) => {
+          if (isScrollEvent && !slidesInView.includes(slideIndex)) return;
+
+          if (engine.options.loop) {
+            engine.slideLooper.loopPoints.forEach((loopItem) => {
+              const target = loopItem.target();
+              if (slideIndex === loopItem.index && target !== 0) {
+                const sign = Math.sign(target);
+                if (sign === -1)
+                  diffToTarget = scrollSnap - (1 + scrollProgress);
+                if (sign === 1)
+                  diffToTarget = scrollSnap + (1 - scrollProgress);
+              }
+            });
+          }
+
+          const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
+          const scale = numberWithinRange(tweenValue, 0.9, 1).toString();
+          const tweenNode = tweenNodes.current[slideIndex];
+          if (tweenNode) {
+            tweenNode.style.transform = `scale(${scale})`;
+            tweenNode.style.transition = "transform 0.3s ease";
+          }
+        });
       });
-      return;
-    }
+    },
+    [isLargeScreen]
+  );
 
-    const engine = emblaApi.internalEngine();
-    const scrollProgress = emblaApi.scrollProgress();
-    const slidesInView = emblaApi.slidesInView();
-    const isScrollEvent = eventName === "scroll";
+  const handlePrevious = useCallback(() => {
+    if (!emblaApi) return;
+    if (!isLargeScreen && autoplay) autoplay.stop();
+    emblaApi.scrollPrev({ duration: 800 });
+  }, [emblaApi, autoplay, isLargeScreen]);
 
-    emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
-      let diffToTarget = scrollSnap - scrollProgress;
-      const slidesInSnap = engine.slideRegistry[snapIndex];
+  const handleNext = useCallback(() => {
+    if (!emblaApi) return;
+    if (!isLargeScreen && autoplay) autoplay.stop();
+    emblaApi.scrollNext({ duration: 800 });
+  }, [emblaApi, autoplay, isLargeScreen]);
 
-      slidesInSnap.forEach((slideIndex) => {
-        if (isScrollEvent && !slidesInView.includes(slideIndex)) return;
+  const handleDotClick = useCallback(
+    (index) => {
+      if (!emblaApi) return;
+      if (!isLargeScreen && autoplay) autoplay.stop();
+      emblaApi.scrollTo(index, { duration: 800 });
+    },
+    [emblaApi, autoplay, isLargeScreen]
+  );
 
-        if (engine.options.loop) {
-          engine.slideLooper.loopPoints.forEach((loopItem) => {
-            const target = loopItem.target();
-            if (slideIndex === loopItem.index && target !== 0) {
-              const sign = Math.sign(target);
-              if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress);
-              if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress);
-            }
-          });
-        }
+  const handleMouseEnter = useCallback(() => {
+    if (!isLargeScreen && autoplay) autoplay.stop();
+  }, [autoplay, isLargeScreen]);
 
-        const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
-        const scale = numberWithinRange(tweenValue, 0.9, 1).toString();
-        const tweenNode = tweenNodes.current[slideIndex];
-        if (tweenNode) {
-          tweenNode.style.transform = `scale(${scale})`;
-          tweenNode.style.transition = "transform 0.3s ease";
-        }
-      });
-    });
+  const handleMouseLeave = useCallback(() => {
+    if (!isLargeScreen && autoplay) autoplay.reset();
+  }, [autoplay, isLargeScreen]);
+
+  // Check screen size and update state
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024); // lg breakpoint
+    };
+
+    // Initial check
+    checkScreenSize();
+
+    // Add resize listener
+    window.addEventListener("resize", checkScreenSize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
   useEffect(() => {
@@ -147,6 +208,16 @@ function Testonomial() {
       .on("reInit", tweenScale)
       .on("scroll", tweenScale)
       .on("select", onSelect);
+
+    // Cleanup function
+    return () => {
+      emblaApi
+        .off("reInit", setTweenNodes)
+        .off("reInit", setTweenFactor)
+        .off("reInit", tweenScale)
+        .off("scroll", tweenScale)
+        .off("select", onSelect);
+    };
   }, [emblaApi, tweenScale, setTweenNodes, setTweenFactor]);
 
   return (
@@ -170,8 +241,8 @@ function Testonomial() {
         <div
           className="embla"
           ref={emblaRef}
-          onMouseEnter={autoplay.current.stop}
-          onMouseLeave={autoplay.current.reset}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           <div className="embla__container flex items-end">
             {slides.map((slide, idx) => (
@@ -191,22 +262,10 @@ function Testonomial() {
 
         <div className={style.dotcontainer}>
           <div className={style.arrowContainer}>
-            <button
-              className={style.arrowButton}
-              onClick={() => {
-                autoplay.current.stop();
-                emblaApi && emblaApi.scrollPrev({ duration: 800 });
-              }}
-            >
+            <button className={style.arrowButton} onClick={handlePrevious}>
               <BiChevronLeft size={24} />
             </button>
-            <button
-              className={style.arrowButton}
-              onClick={() => {
-                autoplay.current.stop();
-                emblaApi && emblaApi.scrollNext({ duration: 800 });
-              }}
-            >
+            <button className={style.arrowButton} onClick={handleNext}>
               <BiChevronRight size={24} />
             </button>
           </div>
@@ -219,10 +278,7 @@ function Testonomial() {
                     ? style.active
                     : style.inactive
                 }`}
-                onClick={() => {
-                  autoplay.current.stop();
-                  emblaApi && emblaApi.scrollTo(index, { duration: 800 });
-                }}
+                onClick={() => handleDotClick(index)}
               ></span>
             ))}
           </span>
