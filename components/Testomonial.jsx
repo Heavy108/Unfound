@@ -136,7 +136,7 @@ function Testonomial() {
           }
 
           const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
-          const scale = numberWithinRange(tweenValue, 0.9, 1).toString();
+          const scale = numberWithinRange(tweenValue, 0.8, 1).toString();
           const tweenNode = tweenNodes.current[slideIndex];
           if (tweenNode) {
             tweenNode.style.transform = `scale(${scale})`;
