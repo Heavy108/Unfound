@@ -4,3 +4,119 @@
     gap: 1.5rem;
     flex-direction: column;
 }
+.featuresContainer2{
+    display: none;
+}
+.head{
+   
+    color:white;
+    width: 100%;
+    
+}
+.head span{
+    color: #29F99E;
+    margin-right: 0.5rem;
+}
+.head h3{
+    font-size: 1rem;
+    text-align: center;
+
+}
+.head h1{
+    font-size: 2rem;
+    text-align: center;
+}
+.grad4{
+    position: absolute;
+    width: 100%;
+    margin-top: -2.75rem;
+    right: 0;
+}
+/* .textbox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+} */
+.viewall{
+    color: #4EFFF0;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+.viewall span{
+    align-content: center;
+}
+@media only screen and (min-width:375px){
+.grad4{
+    margin-top: -3.25rem;
+}
+}
+@media only screen and (min-width:425px){
+.grad4{
+    margin-top: -3.75rem;
+}
+}
+@media only screen and (min-width:768px){
+.featuresContainer{
+    display: none;
+}
+.featuresContainer2{
+    display: flex;
+   /* width: 100%; */
+   justify-content: center;
+    margin: 0rem 4rem;
+    gap: 1rem;
+}
+.vertical{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+.vertical2{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+.grad4_1{
+    right: 0;
+    position: absolute;
+    margin-top: -3rem;
+}
+.head2{
+    color: white;
+    margin-left: 2rem;
+    
+}
+
+.infocard{
+display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.head2 h1{
+    font-size: 2rem;
+    margin-top:1rem ;
+}
+.head2 span{
+    color: #29F99E;
+    margin-right: 0.5rem;
+}
+}
+
+@media only screen and (min-width:1024px){
+    .grad4_1{
+        display: none;
+    }
+    .featuresContainer2{
+        margin: 7.5rem 5rem;
+    }
+}
+@media only screen and (min-width:1440px){
+    
+    .featuresContainer2{
+        margin: 10rem 7.5rem;
+        gap: 2rem;
+    }
+}

@@ -17,6 +17,7 @@
    height: 20rem;       
    display: flex;        /* make sure child fills it */
   flex-direction: column;
+  z-index: 0;
 }
 .card {
   display: flex;

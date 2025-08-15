@@ -153,6 +153,7 @@
   display: flex;
   gap: 0rem;
   /* margin-left: calc(var(--slide-spacing) * -1); */
+  /* background-color: transparent; */
 }
 .embla__slide {
   /* transform: translate3d(0, 0, 0); */

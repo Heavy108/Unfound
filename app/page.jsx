@@ -52,10 +52,12 @@ export default function Home() {
       <Stats />
       <Services />
       <Testonomial />
-      <section className="relative h w-full overflow-hidden ">
+      <section className="relative  w-full min-h">
         <Image
           src={Gradient4}
           alt="gradient4"
+          width={1200}
+          height={800}
           className={style.grad4}
           priority
         />
@@ -63,6 +65,9 @@ export default function Home() {
         <AnimatedTextRibbon />
         <Feature />
       </section>
+      {/* <section className="text-7xl text-white">
+        hello
+      </section> */}
     </>
   );
 }

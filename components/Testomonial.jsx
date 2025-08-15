@@ -150,7 +150,7 @@ function Testonomial() {
   }, [emblaApi, tweenScale, setTweenNodes, setTweenFactor]);
 
   return (
-    <div className={`${style.container} relative`}>
+    <div className={`relative bg-transparent`}>
       <Image
         src={Gradient2}
         alt="gradient background"

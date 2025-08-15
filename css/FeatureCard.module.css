@@ -25,8 +25,12 @@ object-fit: cover;
 }
 
 .introduction{
+    
    margin-top:1rem ;
    margin-bottom: 0.75rem;
+}
+.introduction button:first-child{
+    margin-right: 1rem;
 }
 .introduction button{
     font-size: 0.75rem;
@@ -48,4 +52,24 @@ backdrop-filter: blur(10px);
     max-width: 21.75rem;
     height: 15rem;
 }
+}
+@media only screen and (min-width:768px){
+.potrait img{
+    max-width: 19.5rem;
+    height: 15rem;
+}
+}
+@media only screen and (min-width:1024px){
+.potrait img{
+    max-width: 25rem;
+    height: 22rem;
+}
+
+}
+@media only screen and (min-width:1440px){
+.potrait img{
+    max-width: 35rem;
+    height: 27rem;
+}
+
 }
