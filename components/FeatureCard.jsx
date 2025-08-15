@@ -5,9 +5,10 @@ function FeatureCard({ image, tech1, tech2, desc }) {
   return (
     <div className={style.container}>
       <div className={style.potrait}>
-        <Image src={image} alt={desc || "Feature image"} />
+        <div className={style.wrapper}>
+          <Image src={image} alt={desc || "Feature image"} />
+        </div>
       </div>
-
       <div className={style.introduction}>
         <button>{tech1}</button>
         <button>{tech2}</button>

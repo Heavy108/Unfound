@@ -10,18 +10,28 @@ width: fit-content;
 height: fit-content;
 display: flex;
 justify-content: center;
+cursor: pointer;
+}
+.wrapper{
+overflow: hidden;
+    border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 
 
 }
-
 .potrait img{
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  /* border: 1px solid rgba(255, 255, 255, 0.15); */
     border-radius: 1rem;
 min-width: 15rem;
 /* max-width: 21.75rem; */
 height: 12rem;
 object-fit: cover;
+transition: transform 0.3s ease; 
 
+
+}
+.potrait img:hover{
+transform: scale(1.1);
 }
 
 .introduction{
