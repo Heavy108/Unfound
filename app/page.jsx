@@ -12,6 +12,7 @@ import Services from "../components/Services";
 import Testonomial from "../components/Testomonial";
 import AnimatedTextRibbon from "@/components/Strip";
 import Gradient4 from "@/assets/Gradient4.png"
+import Feature from "@/components/Features"
 export default function Home() {
   return (
     <>
@@ -52,9 +53,15 @@ export default function Home() {
       <Services />
       <Testonomial />
       <section className="relative h w-full overflow-hidden ">
-        <Image src={Gradient4} alt="gradient4"  className="absolute h-full w-full z-7 top-0" priority />
+        <Image
+          src={Gradient4}
+          alt="gradient4"
+          className={style.grad4}
+          priority
+        />
 
         <AnimatedTextRibbon />
+        <Feature />
       </section>
     </>
   );

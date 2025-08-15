@@ -53,6 +53,9 @@ justify-content: space-between;
     margin-top: -8rem;
     height: 24rem;
 }
+.grad4{
+    display: none;
+}
 @media only screen and (min-width: 425px){
     .Hero h1{
         font-size: 2rem;
