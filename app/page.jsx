@@ -10,7 +10,8 @@ import Spline from "@splinetool/react-spline/next";
 import Stats from "../components/stats";
 import Services from "../components/Services";
 import Testonomial from "../components/Testomonial";
-import AnimatedTextRibbon from "@/components/Strip"
+import AnimatedTextRibbon from "@/components/Strip";
+import Gradient4 from "@/assets/Gradient4.png"
 export default function Home() {
   return (
     <>
@@ -50,7 +51,11 @@ export default function Home() {
       <Stats />
       <Services />
       <Testonomial />
-      <AnimatedTextRibbon/>
+      <section className="relative h w-full overflow-hidden ">
+        <Image src={Gradient4} alt="gradient4"  className="absolute h-full w-full z-7 top-0" priority />
+
+        <AnimatedTextRibbon />
+      </section>
     </>
   );
 }

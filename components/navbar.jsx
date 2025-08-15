@@ -1,6 +1,6 @@
 "use client";
 import style from "../css/navbar.module.css";
-import Logo from "../assets/Logowithname.webp";
+import Logo from "../assets/Logowithname.png";
 import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
