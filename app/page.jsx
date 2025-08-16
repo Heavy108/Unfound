@@ -13,6 +13,7 @@ import Testonomial from "../components/Testomonial";
 import AnimatedTextRibbon from "@/components/Strip";
 import Gradient4 from "@/assets/Gradient4.png"
 import Feature from "@/components/Features"
+import Reasons from "@/components/Reason"
 export default function Home() {
   return (
     <>
@@ -68,6 +69,7 @@ export default function Home() {
       {/* <section className="text-7xl text-white">
         hello
       </section> */}
+      <Reasons/>
     </>
   );
 }

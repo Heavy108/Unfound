@@ -10,13 +10,15 @@ import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import ReasonCard from "./ReasonCard";
+import ReasonCard2 from "./ReasonCard2";
+
 import inovation from "../assets/inovation.png";
 import culture from "../assets/culture.png";
 import Expe from "../assets/Experience.png";
-import style from "../css/services.module.css";
+import style from "../css/Reason.module.css";
 import Gradient3 from "../assets/Gradient2.png";
 import Image from "next/image";
-
+import Gradient5 from "@/assets/Gradient5.png";
 const TWEEN_FACTOR_BASE = 0.52;
 const numberWithinRange = (number, min, max) =>
   Math.min(Math.max(number, min), max);
@@ -54,7 +56,7 @@ function Reasons() {
     ],
     []
   );
-const slides = [...duplicatedSlides, ...duplicatedSlides];
+  const slides = [...duplicatedSlides, ...duplicatedSlides];
 
   const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false }));
 
@@ -138,7 +140,7 @@ const slides = [...duplicatedSlides, ...duplicatedSlides];
 
   return (
     <>
-      <div className={`${style.container} relative   `}>
+      <div className={`${style.container} relative  `}>
         <Image
           src={Gradient3}
           alt="gradient background"
@@ -147,17 +149,17 @@ const slides = [...duplicatedSlides, ...duplicatedSlides];
           className={style.grad}
           priority
         />
-      
-      
+        <Image
+          src={Gradient5}
+          alt="gradient background"
+          className={style.grad5}
+          priority
+        />
+
         <div className={style.head}>
           <h2>Why Unfound</h2>
           <h3>
-            As a tight-knit team of experts, we create memorable and emotional
-            websites,{" "}
-            <span className="text-[#868A8A]">
-              {" "}
-              digital experiences, and native apps.
-            </span>
+            We think, build, and scale like founders. Here's what sets us apart.
           </h3>
         </div>
         <div className={style.Carausel}>
@@ -206,51 +208,34 @@ const slides = [...duplicatedSlides, ...duplicatedSlides];
             </span>
           </div>
         </div>
-
-        {/* <div className={style.servicecontainer2}>
-          <div className={style.vertical}>
-            <ServiceCard
-              title="Website Design"
-              logo={<LuGlobe />}
-              description="Designing beautiful, responsive websites that communicate your brand and convert users effortlessly."
-              image={WebsiteDesign}
-            />
-            <ServiceCard
-              title="Motion Design"
-              logo={<LuPlay />}
-              description="Bringing ideas to life through sleek, purposeful animations that elevate storytelling and interaction."
-              image={MotionDesign}
+        <div className={style.container2}>
+          <div className={style.head2}>
+            <h2>Why Unfound</h2>
+            <h3>
+              We think, build, and scale like founders. Here's what sets us
+              apart.
+            </h3>
+          </div>
+          <div className={style.reasoncontainer}>
+            <div className={style.horiz}>
+              <ReasonCard
+                title="Innovative"
+                description="We harness cutting-edge tools to unlock speed, clarity, and smart execution.."
+                image={inovation}
+              />
+              <ReasonCard
+                title="Brands & Culture"
+                description="We craft digital experiences that feel real, global, and deeply human."
+                image={culture}
+              />
+            </div>
+            <ReasonCard2
+              title="Experience"
+              description="Design rooted in strategy — blending tech, creativity, and clarity to elevate brands."
+              image={Expe}
             />
           </div>
-          <div className={style.vertical2}>
-            <ServiceCard2
-              title="UX Design"
-              logo={<LuHand />}
-              description="Crafting intuitive, user-centered app experiences that drive engagement and clarity."
-              image={UXDesign}
-            />
-            <ServiceCard2
-              title="Report Design"
-              logo={<RiBarChart2Fill />}
-              description="Designing clear, compelling decks and reports that turn data into persuasive narratives."
-              image={ReportDesign}
-            />
-          </div>
-          <div className={style.vertical3}>
-            <ServiceCard
-              title="Development"
-              logo={<LuCodeXml />}
-              description="From concept to deployment, we engineer high-performance solutions that grow with your business."
-              image={Development}
-            />
-            <ServiceCard
-              title="Visual Design"
-              logo={<LuGlobe />}
-              description="Crafting striking, cohesive visuals that elevate digital products and brand experiences."
-              image={VisualDesign}
-            />
-          </div>
-        </div> */}
+        </div>
       </div>
     </>
   );
