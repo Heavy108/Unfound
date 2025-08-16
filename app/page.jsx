@@ -14,6 +14,7 @@ import AnimatedTextRibbon from "@/components/Strip";
 import Gradient4 from "@/assets/Gradient4.png"
 import Feature from "@/components/Features"
 import Reasons from "@/components/Reason"
+import FAQ from "@/components/FAQ"
 export default function Home() {
   return (
     <>
@@ -70,6 +71,7 @@ export default function Home() {
         hello
       </section> */}
       <Reasons/>
+      <FAQ/>
     </>
   );
 }
