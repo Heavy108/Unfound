@@ -18,33 +18,34 @@ export default function Accordion({ items }) {
         <Image
           src={Gradient6}
           alt="gradient background"
-         
           className={style.grad6}
           priority
         />
         <div className={style.head}>
           <h1>Frequently Asked Questions</h1>
         </div>
-        {items.map((item, index) => (
-          <div className={style.outside} key={index}>
-            <div className={style.internal}>
-              <div className={style.Qsec}>
-                <button
-                  onClick={() => toggleItem(index)}
-                  className={style.questions}
-                >
-                  {item.title}
-                </button>
-                <span className={style.icons}>
-                  {openIndex === index ? <FaMinus /> : <FaPlus />}
-                </span>
+        <div className={style.faq_section}>
+          {items.map((item, index) => (
+            <div className={style.outside} key={index}>
+              <div className={style.internal}>
+                <div className={style.Qsec}>
+                  <button
+                    onClick={() => toggleItem(index)}
+                    className={style.questions}
+                  >
+                    {item.title}
+                  </button>
+                  <span className={style.icons}>
+                    {openIndex === index ? <FaMinus /> : <FaPlus />}
+                  </span>
+                </div>
+                {openIndex === index && (
+                  <div className={style.content}>{item.content}</div>
+                )}
               </div>
-              {openIndex === index && (
-                <div className={style.content}>{item.content}</div>
-              )}
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );
