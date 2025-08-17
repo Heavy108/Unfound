@@ -14,7 +14,7 @@ import { RiBarChart2Fill } from "react-icons/ri";
 import ServiceCard from "./ServiceCard";
 import ServiceCard2 from "./ServiceCard2";
 import UXDesign from "../assets/UXDesign.svg";
-import WebsiteDesign from "../assets/WebsiteDesign.png";
+import WebsiteDesign from "../assets/WebsiteDesign.webp";
 import VisualDesign from "../assets/VisualDesign.png";
 import ReportDesign from "../assets/ReportDesign.png";
 import Development from "../assets/Development.png";
