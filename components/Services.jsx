@@ -18,7 +18,7 @@ import WebsiteDesign from "../assets/WebsiteDesign.svg";
 import VisualDesign from "../assets/VisualDesign.png";
 import ReportDesign from "../assets/ReportDesign.svg";
 import Development from "../assets/Development.png";
-import MotionDesign from "../assets/MotionDesign.png";
+import MotionDesign from "../assets/MotionDesign.svg";
 import style from "../css/services.module.css";
 import Gradient3 from "../assets/Gradient3.png";
 import Gradient3_1 from "../assets/Gradient3_1.png";
