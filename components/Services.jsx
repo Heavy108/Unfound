@@ -15,9 +15,9 @@ import ServiceCard from "./ServiceCard";
 import ServiceCard2 from "./ServiceCard2";
 import UXDesign from "../assets/UXDesign.svg";
 import WebsiteDesign from "../assets/WebsiteDesign.svg";
-import VisualDesign from "../assets/VisualDesign.png";
+import VisualDesign from "../assets/VisualDesign.svg";
 import ReportDesign from "../assets/ReportDesign.svg";
-import Development from "../assets/Development.png";
+import Development from "../assets/Development.svg";
 import MotionDesign from "../assets/MotionDesign.svg";
 import style from "../css/services.module.css";
 import Gradient3 from "../assets/Gradient3.png";
@@ -77,7 +77,7 @@ function Services() {
           logo: <RiBarChart2Fill />,
           description:
             "Designing clear, compelling decks and reports that turn data into persuasive narratives.",
-          image: ReportDesign,
+          image: WebsiteDesign,
         },
       },
       {
