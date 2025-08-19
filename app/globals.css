@@ -161,4 +161,10 @@
   margin-left: 5px; */
   
 }
+img[src$=".svg"] {
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
 

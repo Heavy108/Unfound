@@ -12,8 +12,8 @@ import Autoplay from "embla-carousel-autoplay";
 import ReasonCard from "./ReasonCard";
 import ReasonCard2 from "./ReasonCard2";
 
-import inovation from "../assets/inovation.png";
-import culture from "../assets/culture.png";
+import inovation from "../assets/inovation.svg";
+import culture from "../assets/culture.svg";
 import Expe from "../assets/Experience.png";
 import style from "../css/Reason.module.css";
 import Gradient3 from "../assets/Gradient2.png";
