@@ -3,6 +3,7 @@
     display: flex;
     gap: 1.5rem;
     flex-direction: column;
+    align-items: center;
 }
 .featuresContainer2{
     display: none;

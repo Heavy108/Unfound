@@ -15,6 +15,7 @@ import Gradient4 from "@/assets/Gradient4.png"
 import Feature from "@/components/Features"
 import Reasons from "@/components/Reason"
 import FAQ from "@/components/FAQ"
+import Footer from "@/components/Footer"
 export default function Home() {
   return (
     <>
@@ -72,6 +73,7 @@ export default function Home() {
       </section> */}
       <Reasons/>
       <FAQ/>
+      <Footer/>
     </>
   );
 }

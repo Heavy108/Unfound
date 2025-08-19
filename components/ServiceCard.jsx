@@ -1,7 +1,8 @@
 import style from "../css/ServiceCard.module.css";
 import Image from "next/image";
+import MotionDesign from "@/assets/MotionDesign.svg"
 
-export default function ServiceCard({ title, logo, description, image }) {
+export default function ServiceCard({ title, logo, description, image}) {
   return (
     <div className={style.container}>
       <div className={style.card}>
@@ -13,7 +14,7 @@ export default function ServiceCard({ title, logo, description, image }) {
           <p>{description}</p>
         </div>
         <div className={style.potrait}>
-          <Image src={image} height={400} width={400} alt={title} priority />
+          <img src={image.src} alt={title} className={style.svgFix} />
         </div>
       </div>
     </div>
