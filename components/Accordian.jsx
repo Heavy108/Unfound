@@ -5,6 +5,7 @@ import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa6";
 import Image from "next/image";
 import Gradient6 from "../assets/Gradient3.png"
+import { FaArrowRight } from "react-icons/fa6";
 export default function Accordion({ items }) {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -23,6 +24,15 @@ export default function Accordion({ items }) {
         />
         <div className={style.head}>
           <h1>Frequently Asked Questions</h1>
+          <div className={style.moreinfo}>
+            <h2>Still have questions?</h2>
+            <button>
+              Let's talk{" "}
+              <span className={style.icons2}>
+                <FaArrowRight />
+              </span>
+            </button>
+          </div>
         </div>
         <div className={style.faq_section}>
           {items.map((item, index) => (
