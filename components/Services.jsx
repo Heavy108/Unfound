@@ -57,7 +57,7 @@ function Services() {
           logo: <LuCodeXml />,
           description:
             "From concept to deployment, we engineer high-performance solutions that grow with your business.",
-          image: WebsiteDesign,
+          image: Development,
         },
       },
       {
@@ -67,7 +67,7 @@ function Services() {
           logo: <LuPlay />,
           description:
             "Bringing ideas to life through sleek, purposeful animations that elevate storytelling and interaction.",
-          image: WebsiteDesign,
+          image: MotionDesign,
         },
       },
       {
@@ -77,17 +77,17 @@ function Services() {
           logo: <RiBarChart2Fill />,
           description:
             "Designing clear, compelling decks and reports that turn data into persuasive narratives.",
-          image: WebsiteDesign,
+          image: ReportDesign,
         },
       },
       {
         component: ServiceCard,
         props: {
-          title: "Visual ",
+          title: "Visual Design",
           logo: <LuGlobe />,
           description:
             "Crafting striking, cohesive visuals that elevate digital products and brand experiences.",
-          image: WebsiteDesign,
+          image: VisualDesign,
         },
       },
     ],
