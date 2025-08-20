@@ -9,6 +9,7 @@ import { TfiLinkedin } from "react-icons/tfi";
 import unfound from "@/assets/Unfound.png"
 import FooterSVG from "../assets/footer_gradient.svg";
 import grad2 from "@/assets/footergrad2.svg"
+import Talk from "./Talk";
 function Footer() {
   return (
     <div className={style.footerWrapper}>
@@ -18,8 +19,8 @@ function Footer() {
         alt="footer gradient"
         className={style.footerGradient}
       />
-      <img
-        src={grad2.src}
+      <Image
+        src={grad2}
         alt="footer gradient"
         className={style.footerGradient2}
       />

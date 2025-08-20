@@ -1,9 +1,11 @@
-.footerWrapper{
+.footerWrapper {
     position: relative;
-    min-height: 100vh; /* Ensure it takes full viewport height */
+    min-height: 150vh;   /* allow footer to grow */
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Push content to bottom */
+    justify-content: flex-end;
+    overflow: hidden;    /* prevents unwanted scrollbars */
+    background: #000;
 }
 
 .footerGradient{
@@ -15,31 +17,34 @@
     object-fit: cover;
     z-index: 1;
     display: none; /* You had this set to none */
+    
 }
 
-.footerGradient2{
+.footerGradient2 {
     position: absolute;
-    top: 0;
+    top: 0;              /* anchor at top */
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100%;        /* stretch across wrapper */
     object-fit: cover;
     z-index: 2;
 }
 
+
 .container{
     position: relative;
-    margin: 0 4rem;
+    margin: 4rem 4rem 0rem 4rem;
     z-index: 10;
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
-    align-items: flex-end;
+    gap: 2rem;
     padding: 2rem 0; /* Add some padding */
 }
 
 .logoContainer h2{
     color: rgba(255, 255, 255, 0.75);
+    margin-top: 1.25rem;
     /* width: auto;
     height: auto; */
 }
@@ -66,22 +71,24 @@
     padding: 0.5rem 0;
 }
 
-.quicklinks ul{
-    padding: 0;
-    margin: 1rem 0;
+.quicklinks ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  gap: 0.5rem 1rem; /* row gap / column gap */
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .icons{
     color: white;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     margin: 1rem 0;
     font-size: 1.5rem;
 }
 
-.getintouch{
-    text-align: right;
-}
+
 
 @media only screen and (min-width:1024px){
 
