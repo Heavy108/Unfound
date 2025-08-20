@@ -12,58 +12,64 @@ import grad2 from "@/assets/footergrad2.svg"
 import Talk from "./Talk";
 function Footer() {
   return (
-    <div className={style.footerWrapper}>
-      {/* Background gradients */}
-      <img
-        src={FooterSVG.src}
-        alt="footer gradient"
-        className={style.footerGradient}
-      />
-      <Image
-        src={grad2}
-        alt="footer gradient"
-        className={style.footerGradient2}
-      />
+    <>
+      <Talk />
 
-      {/* Content */}
-      <div className={style.container}>
-        <div className={style.logoContainer}>
-          <Image src={logo} width={100} height={40} alt="logo with name" />
-          <h2>
-            Where ambition meets design to create exceptional digital
-            experiences.
-          </h2>
-        </div>
+      <div className={style.footerWrapper}>
+        {/* Background gradients */}
+        <Image
+          src={grad2}
+          alt="footer gradient"
+          className={style.footerGradient}
+        />
+        <Image
+          src={grad2}
+          alt="footer gradient"
+          className={style.footerGradient2}
+        />
 
-        <div className={style.quicklinks}>
-          <h2>QUICK LINKS</h2>
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact Us</li>
-            <li>Case Studies</li>
-          </ul>
-        </div>
+        {/* Content */}
 
-        <div className={style.getintouch}>
-          <h2>GET IN TOUCH</h2>
-          <div className={style.icons}>
-            <IoMdMail /> <CgFacebook /> <FaTwitter /> <FaInstagram />{" "}
-            <TfiLinkedin />
+        <div className={style.container}>
+          <div className={style.logoContainer}>
+            <Image src={logo} width={100} height={40} alt="logo with name" />
+            <h2>
+              Where ambition meets design to create exceptional digital
+              experiences.
+            </h2>
           </div>
-          <h2>© 2025 Unfound Studio</h2>
-        </div>
-      </div>
+          <div className={style.container2}>
+            <div className={style.quicklinks}>
+              <h2>QUICK LINKS</h2>
+              <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact Us</li>
+                <li>Case Studies</li>
+              </ul>
+            </div>
 
-      {/* Footer image at bottom */}
-      <Image
-        src={unfound}
-        width={1900}
-        height={300}
-        alt="unfound"
-        className={style.unfound}
-      />
-    </div>
+            <div className={style.getintouch}>
+              <h2>GET IN TOUCH</h2>
+              <div className={style.icons}>
+                <IoMdMail /> <CgFacebook /> <FaTwitter /> <FaInstagram />{" "}
+                <TfiLinkedin />
+              </div>
+              <h2>© 2025 Unfound Studio</h2>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer image at bottom */}
+        <Image
+          src={unfound}
+          width={1900}
+          height={300}
+          alt="unfound"
+          className={style.unfound}
+        />
+      </div>
+    </>
   );
 }
 

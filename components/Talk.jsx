@@ -1,4 +1,4 @@
-
+'use client'
 import style from "../css/Talk.module.css";
 function Talk(){
     return (
@@ -10,7 +10,7 @@ function Talk(){
               Transform bold ideas into digital experiences - with sharp design,
               clean code, and full focus.
             </h2>
-            <button>Let's Talk</button>
+            <button onClick={() => alert("me got clicked")}>Let's Talk</button>
           </div>
         </div>
       </>
