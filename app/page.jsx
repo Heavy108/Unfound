@@ -45,13 +45,11 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <div
-        className={style.animation}
-       
-      >
+      {/* <div className={style.animation}>
         <Spline scene="https://prod.spline.design/BdBvQQ2ZpuUKIjVw/scene.splinecode" />
       </div> */}
-      {/* <HeroSpline/> */}
+      <HeroSpline scene="https://prod.spline.design/BdBvQQ2ZpuUKIjVw/scene.splinecode" />
+
       <Stats />
       <Services />
       <Testonomial />
@@ -71,9 +69,9 @@ export default function Home() {
       {/* <section className="text-7xl text-white">
         hello
       </section> */}
-      <Reasons/>
-      <FAQ/>
-      <Footer/>
+      <Reasons />
+      <FAQ />
+      <Footer />
     </>
   );
 }
