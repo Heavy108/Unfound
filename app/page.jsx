@@ -45,13 +45,14 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className={style.animation}>
+      {/* <div className={style.animation}>
         <Spline
           scene="https://prod.spline.design/BdBvQQ2ZpuUKIjVw/scene.splinecode"
           style={{ pointerEvents: "none" }}
+          onError={(err) => console.error("Spline failed:", err)}
         />
-      </div>
-      {/* <HeroSpline/> */}
+      </div> */}
+      <HeroSpline/>
 
       <Stats />
       <Services />
