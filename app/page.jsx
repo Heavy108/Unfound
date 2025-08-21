@@ -45,9 +45,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <div className={style.animation}>
-        <Spline scene="https://prod.spline.design/BdBvQQ2ZpuUKIjVw/scene.splinecode" />
-      </div> */}
+      <div className={style.animation}>
+        <Spline
+          scene="https://prod.spline.design/BdBvQQ2ZpuUKIjVw/scene.splinecode"
+          style={{ pointerEvents: "none" }}
+        />
+      </div>
       {/* <HeroSpline/> */}
 
       <Stats />
