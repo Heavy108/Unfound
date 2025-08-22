@@ -5,14 +5,42 @@ import Image from "next/image";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaArrowRight } from "react-icons/fa6";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
   const [active, setActive] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+  const [lastScroll, setLastScroll] = useState(0);
 
   const handleClick = () => {
     setActive(!active);
+  };
+
+  // Detect scroll direction
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        // scrolling down → hide navbar
+        setShowNav(false);
+      } else {
+        // scrolling up → show navbar
+        setShowNav(true);
+      }
+
+      setLastScroll(currentScroll);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScroll]);
+
+  // Animation for navbar slide in/out
+  const navVariants = {
+    hidden: { y: "-100%", transition: { duration: 0.3, ease: "easeInOut" } },
+    visible: { y: "0%", transition: { duration: 0.3, ease: "easeInOut" } },
   };
 
   // Animation variants for the menu
@@ -20,11 +48,7 @@ function Navbar() {
     hidden: {
       opacity: 0,
       height: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-        when: "afterChildren",
-      },
+      transition: { duration: 0.3, ease: "easeInOut", when: "afterChildren" },
     },
     visible: {
       opacity: 1,
@@ -38,70 +62,66 @@ function Navbar() {
     },
   };
 
-  // Animation variants for menu items
   const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: -20,
-      transition: {
-        duration: 0.2,
-      },
-    },
+    hidden: { opacity: 0, y: -20, transition: { duration: 0.2 } },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.3, ease: "easeOut" },
     },
   };
 
-  // Animation variants for the hamburger icon
   const iconVariants = {
-    closed: {
-      rotate: 0,
-      transition: { duration: 0.3 },
-    },
-    open: {
-      rotate: 180,
-      transition: { duration: 0.3 },
-    },
+    closed: { rotate: 0, transition: { duration: 0.3 } },
+    open: { rotate: 180, transition: { duration: 0.3 } },
   };
 
   return (
     <>
-      <div className={style.Navbar}>
-        <Image src={Logo} alt="UnfoundLogo" />
-        <div className={style.container}>
-          <ul className={style.list}>
-            <li>About</li>
-            <li>Case Studies</li>
-            <button className={style.contact}>Contact Us</button>
-          </ul>
-        </div>
-        <motion.div
-          className={style.menuIcon}
-          onClick={handleClick}
-          variants={iconVariants}
-          animate={active ? "open" : "closed"}
-          whileTap={{ scale: 0.95 }}
-        >
-          <span>
-            {active ? (
-              <IoCloseSharp className={style.navicon} />
-            ) : (
-              <GiHamburgerMenu className={style.navicon} />
-            )}
-          </span>
-        </motion.div>
-      </div>
+      {/* AnimatePresence for navbar itself */}
+      <AnimatePresence>
+        {showNav && (
+          <motion.div
+            className={style.Navbar}
+            variants={navVariants}
+            key="navbar"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
+            <Image src={Logo} alt="UnfoundLogo" />
+            <div className={style.container}>
+              <ul className={style.list}>
+                <li>About</li>
+                <li>Case Studies</li>
+                <button className={style.contact}>Contact Us</button>
+              </ul>
+            </div>
+            <motion.div
+              className={style.menuIcon}
+              onClick={handleClick}
+              variants={iconVariants}
+              animate={active ? "open" : "closed"}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span>
+                {active ? (
+                  <IoCloseSharp className={style.navicon} />
+                ) : (
+                  <GiHamburgerMenu className={style.navicon} />
+                )}
+              </span>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {active && (
           <motion.ul
             className={style.sideMenu}
             variants={menuVariants}
+            key="sideMenu"
             initial="hidden"
             animate="visible"
             exit="hidden"

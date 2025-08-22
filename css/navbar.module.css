@@ -1,5 +1,9 @@
 .Navbar {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,10 +36,11 @@
 }
 
 .sideMenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;   /* or 80% if you want a drawer */
+  height: 100vh;
   z-index: 999;
   border-radius: 0 0 1rem 1rem;
   border-bottom: 0.5px solid rgba(255, 255, 255, 0.10);
@@ -49,6 +54,8 @@
     0 0 30px rgba(78, 255, 240, 0.15);
   backdrop-filter: blur(60px);
   padding: 1rem;
+  padding-top: 5rem;
+  -webkit-overflow-scrolling: touch; /* smooth on iOS */
 }
 
 .sideMenu li {
