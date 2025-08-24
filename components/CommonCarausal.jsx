@@ -1,22 +1,42 @@
 "use client";
-import React, { useCallback, useEffect, useState, useMemo } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
 import FeatureCard from "./FeatureCard";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-import style from "../css/commoncarasoul.module.css"
+import style from "../css/commoncarasoul.module.css";
+import CarasolCard from "./commonCarausalCard";
 
 const EmblaCarousel = ({ slides, options }) => {
+  const [isMobile, setIsMobile] = useState(false);
 
-  const totalDots = 4
-  const autoplay = useMemo(
-    () => Autoplay({ delay: 4000, stopOnInteraction: true }),
-    []
-  );
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [autoplay]);
+  // Dynamic options based on screen size
+  const dynamicOptions = {
+    ...options,
+    slidesToScroll: isMobile ? 1 : 2,
+  };
 
+  const [emblaRef, emblaApi] = useEmblaCarousel(dynamicOptions);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState([]);
+
+  // Check screen size
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  // Reinitialize carousel when screen size changes
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.reInit();
+    }
+  }, [emblaApi, isMobile]);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -31,40 +51,31 @@ const EmblaCarousel = ({ slides, options }) => {
   }, [emblaApi]);
 
   const scrollPrev = useCallback(() => {
-    if (emblaApi) {
-      autoplay.stop(); // stop autoplay on manual click
-      emblaApi.scrollPrev();
-    }
-  }, [emblaApi, autoplay]);
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
 
   const scrollNext = useCallback(() => {
-    if (emblaApi) {
-      autoplay.stop();
-      emblaApi.scrollNext();
-    }
-  }, [emblaApi, autoplay]);
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   const scrollTo = useCallback(
     (index) => {
-      if (emblaApi) {
-        autoplay.stop();
-        emblaApi.scrollTo(index);
-      }
+      if (emblaApi) emblaApi.scrollTo(index);
     },
-    [emblaApi, autoplay]
+    [emblaApi]
   );
 
   return (
     <section className="relative w-full">
       {/* Viewport */}
-      <div className="overflow-hidden w-full" ref={emblaRef}>
-        <div className="flex">
+      <div className="overflow-hidden w-full " ref={emblaRef}>
+        <div className="flex gap-2 justify-items-start">
           {slides.map((slide, index) => (
             <div
               key={index}
-              className="flex-[0_0_100%] md:flex-[0_0_50%]  box-border"
+              className="flex-[0_0_100%] md:flex-[0_0_50%] px-2 box-border flex justify-center"
             >
-              <FeatureCard
+              <CarasolCard
                 image={slide.image}
                 tech1={slide.tech1}
                 tech2={slide.tech2}
@@ -89,17 +100,17 @@ const EmblaCarousel = ({ slides, options }) => {
 
         {/* Dots */}
         <div className={style.dot}>
-          {scrollSnaps.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => scrollTo(index)}
-              className={`${style.dotItem} ${
-                selectedIndex % totalDots === index
-                  ? style.active
-                  : style.inactive
-              }`}
-            />
-          ))}
+          {(isMobile ? Array.from({ length: 4 }) : scrollSnaps).map(
+            (_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollTo(index)}
+                className={`${style.dotItem} ${
+                  selectedIndex === index ? style.active : style.inactive
+                }`}
+              />
+            )
+          )}
         </div>
       </div>
     </section>
@@ -107,3 +118,5 @@ const EmblaCarousel = ({ slides, options }) => {
 };
 
 export default EmblaCarousel;
+
+

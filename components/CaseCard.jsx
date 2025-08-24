@@ -59,7 +59,7 @@ function CaseCard({
       desc: "Education Dashboard for Skill Nest",
     },
   ];
-const OPTIONS = { align: "start", loop: true };
+const OPTIONS = { slidesToScroll: 2, };
   const GoalCard = ({ text }) => (
     <div className={style.outer2}>
       <div className={style.internal}>
@@ -210,13 +210,13 @@ const OPTIONS = { align: "start", loop: true };
             </div>
             <p className={style.content}>{outcome}</p>
             <div className={style.outer}>
-              <Image src={landing} alt="landing" className={style.hero} />
+              {/* <Image src={landing} alt="landing" className={style.hero} /> */}
             </div>
           </div>
+          <EmblaCarousel slides={SLIDES} options={OPTIONS} />
         </div>
       </div>
-      <EmblaCarousel slides={SLIDES} options={OPTIONS} />
-
+      <div className={style.section}></div>
       <Footer />
     </>
   );
