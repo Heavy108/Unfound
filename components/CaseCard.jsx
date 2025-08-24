@@ -210,7 +210,7 @@ const OPTIONS = { slidesToScroll: 2, };
             </div>
             <p className={style.content}>{outcome}</p>
             <div className={style.outer}>
-              {/* <Image src={landing} alt="landing" className={style.hero} /> */}
+              <Image src={landing} alt="landing" className={style.hero} />
             </div>
           </div>
           <EmblaCarousel slides={SLIDES} options={OPTIONS} />

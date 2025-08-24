@@ -73,7 +73,7 @@ const EmblaCarousel = ({ slides, options }) => {
           {slides.map((slide, index) => (
             <div
               key={index}
-              className="flex-[0_0_100%] md:flex-[0_0_50%] px-2 box-border flex justify-center"
+              className="flex-[0_0_100%] md:flex-[0_0_50%]  box-border flex justify-center"
             >
               <CarasolCard
                 image={slide.image}

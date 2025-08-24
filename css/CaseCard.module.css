@@ -59,7 +59,7 @@ width: fit-content;
      display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px 20px;
-  align-items: center;
+  /* align-items: center; */
 }
 .list{
     color:white;
