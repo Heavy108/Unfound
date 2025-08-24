@@ -3,6 +3,12 @@ import Navbar from "../components/navbar";
 import Image from "next/image";
 import gradient2 from "../assets/Gradient2.png"
 import Footer from "../components/Footer"
+import EmblaCarousel from "../components/CommonCarausal";
+import ivory from "../assets/ivory.png";
+import Oruva from "../assets/Oruva.png";
+import Nest from "../assets/Nest.png";
+import VPN from "../assets/VPN.png";
+
 function CaseCard({
   approach,
   challenge,
@@ -27,7 +33,33 @@ function CaseCard({
 }) {
 
   const items = JSON.parse(whatwedid);
-
+  const SLIDES = [
+    {
+      image: VPN,
+      tech1: "Website Design",
+      tech2: "Development",
+      desc: "Web Experience for Vistava VPN",
+    },
+    {
+      image: Oruva,
+      tech1: "App Design",
+      tech2: "Admin Dashboard",
+      desc: "Oruva e-Commerce App & Admin Dashboard",
+    },
+    {
+      image: ivory,
+      tech1: "Website Design",
+      tech2: "Development",
+      desc: "Patient-First Website for 'Ivory Dental'",
+    },
+    {
+      image: Nest,
+      tech1: "UX Design",
+      tech2: "Development",
+      desc: "Education Dashboard for Skill Nest",
+    },
+  ];
+const OPTIONS = { align: "start", loop: true };
   const GoalCard = ({ text }) => (
     <div className={style.outer2}>
       <div className={style.internal}>
@@ -152,12 +184,12 @@ function CaseCard({
           <div className={style.section}>
             <h1 className={style.title}>Goals</h1>
             <div className={style.one}>
-             <GoalCard text = {goal1}/>
-             <GoalCard text = {goal2}/>
+              <GoalCard text={goal1} />
+              <GoalCard text={goal2} />
             </div>
             <div className={style.two}>
-                  <GoalCard text = {goal3}/>
-                  <GoalCard text = {goal4}/>
+              <GoalCard text={goal3} />
+              <GoalCard text={goal4} />
             </div>
           </div>
 
@@ -183,8 +215,9 @@ function CaseCard({
           </div>
         </div>
       </div>
+      <EmblaCarousel slides={SLIDES} options={OPTIONS} />
 
-      <Footer/>
+      <Footer />
     </>
   );
 }

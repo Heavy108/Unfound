@@ -1,0 +1,96 @@
+.dotcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.dot {
+  display: flex;
+  gap: 8px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+ background-color: rgba(32, 32, 32, 0.8);
+ padding: 1rem;
+}
+
+.dotItem {
+  height: 8px;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.active {
+  background-color: #4ade80; /* green-400 */
+  width: 24px; /* w-6 */
+}
+
+.inactive {
+  background-color: #6b7280; /* gray-500 */
+  width: 8px; /* w-2 */
+  opacity: 0.5;
+}
+
+.arrowContainer{
+    display:none;
+}
+.head{
+    margin: 2rem;
+    text-align: center;
+}
+.head h2{
+    color: white;
+    font-size: 2rem;
+}
+.head h3{
+    color: #868A8A;
+    font-size: 0.875rem;
+}
+.grad{
+    position: absolute;
+    margin-top: -2.5rem;
+    height: 8rem !important;
+    z-index: 0;
+}
+.Carausel{
+    margin: 1.8rem;
+}
+@media only screen and (min-width:768px){
+      .grad{
+  display: none;
+}
+.Carausel{
+    margin-right: 2rem 4rem;
+}
+}
+@media only screen and (min-width:1024px){
+.arrowContainer {
+  /* position: absolute;
+  top: 50%;
+  left: 20px; */
+  display: flex;
+  gap: 8px;
+  /* transform: translateY(-50%);
+  z-index: 10; */
+}
+
+.arrowButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  transition: background 0.2s ease;
+  z-index: 10;
+}
+
+.arrowButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.dotcontainer{
+    justify-content: space-between;
+    margin: 2rem 4rem;
+}
+
+}

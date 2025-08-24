@@ -140,7 +140,6 @@
 }
 .embla {
   overflow: hidden;
-  /* max-width: 63rem; */
   
   margin: auto;
   --slide-height: 19rem;
@@ -155,12 +154,7 @@
   /* margin-left: calc(var(--slide-spacing) * -1); */
   /* background-color: transparent; */
 }
-.embla__slide {
-  /* transform: translate3d(0, 0, 0); */
-  /* margin-right: 10px;
-  margin-left: 5px; */
-  
-}
+
 img[src$=".svg"] {
   shape-rendering: geometricPrecision;
   text-rendering: geometricPrecision;

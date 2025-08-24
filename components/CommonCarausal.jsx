@@ -1,291 +1,109 @@
 "use client";
-import React, {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-  useMemo,
-} from "react";
+import React, { useCallback, useEffect, useState, useMemo } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import profile from "../assets/testomonial.png";
-import style from "../css/Testonomial.module.css";
-import Gradient2 from "../assets/Gradient2.png";
-import Image from "next/image";
+import FeatureCard from "./FeatureCard";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-import TestomonialCard from "./TestomonialCard";
+import style from "../css/commoncarasoul.module.css"
 
-const TWEEN_FACTOR_BASE = 0.52;
-const AUTOPLAY_DELAY = 4000;
+const EmblaCarousel = ({ slides, options }) => {
 
-const numberWithinRange = (number, min, max) =>
-  Math.min(Math.max(number, min), max);
-
-function CommonCarausol() {
-  const slides = useMemo(
-    () => [
-      {
-        testomonial:
-          "From the very first call, it was clear we were dealing with professionals. The way they structured the project, communicated updates, and delivered creative solutions was outstanding. What really stood out was their ability to balance a minimalist aesthetic.",
-        image: profile,
-        name: "Gaurav Kumar",
-        designation: "Product Designer",
-      },
-      {
-        testomonial:
-          "The team delivered beyond our expectations. From strategy to execution, everything was on point. Our product finally looks and feels premium.",
-        image: profile,
-        name: "Gaurav Kumar",
-        designation: "Product Designer",
-      },
-      {
-        testomonial:
-          "From the very first call, it was clear we were dealing with professionals. The way they structured the project, communicated updates, and delivered creative solutions was outstanding. What really stood out was their ability to balance a minimalist aesthetic.",
-        image: profile,
-        name: "Gaurav Kumar",
-        designation: "Product Designer",
-      },
-      {
-        testomonial:
-          "The team delivered beyond our expectations. From strategy to execution, everything was on point. Our product finally looks and feels premium.",
-        image: profile,
-        name: "Gaurav Kumar",
-        designation: "Product Designer",
-      },
-      {
-        testomonial:
-          "From the very first call, it was clear we were dealing with professionals. The way they structured the project, communicated updates, and delivered creative solutions was outstanding. What really stood out was their ability to balance a minimalist aesthetic.",
-        image: profile,
-        name: "Gaurav Kumar",
-        designation: "Product Designer",
-      },
-      {
-        testomonial:
-          "The team delivered beyond our expectations. From strategy to execution, everything was on point. Our product finally looks and feels premium.",
-        image: profile,
-        name: "Gaurav Kumar",
-        designation: "Product Designer",
-      },
-    ],
-    []
-  );
-
-  // State to track screen size
-  const [isLargeScreen, setIsLargeScreen] = useState(false);
-
-  // Create autoplay instance only once
+  const totalDots = 4
   const autoplay = useMemo(
-    () => Autoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: true }),
+    () => Autoplay({ delay: 4000, stopOnInteraction: true }),
     []
   );
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [autoplay]);
 
-  // Only use autoplay on smaller screens
-  const plugins = useMemo(() => {
-    return isLargeScreen ? [] : [autoplay];
-  }, [isLargeScreen, autoplay]);
-
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, plugins);
-  const tweenFactor = useRef(0);
-  const tweenNodes = useRef([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const totalDots = slides.length;
-
-  const setTweenNodes = useCallback((emblaApi) => {
-    tweenNodes.current = emblaApi
-      .slideNodes()
-      .map((slideNode) => slideNode.querySelector(".card-wrapper"));
-  }, []);
-
-  const setTweenFactor = useCallback((emblaApi) => {
-    tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
-  }, []);
-
-  const tweenScale = useCallback(
-    (emblaApi, eventName) => {
-      // Disable scaling for larger screens
-      if (isLargeScreen) {
-        tweenNodes.current.forEach((node) => {
-          if (node) node.style.transform = "scale(1)";
-        });
-        return;
-      }
-
-      const engine = emblaApi.internalEngine();
-      const scrollProgress = emblaApi.scrollProgress();
-      const slidesInView = emblaApi.slidesInView();
-      const isScrollEvent = eventName === "scroll";
-
-      emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
-        let diffToTarget = scrollSnap - scrollProgress;
-        const slidesInSnap = engine.slideRegistry[snapIndex];
-
-        slidesInSnap.forEach((slideIndex) => {
-          if (isScrollEvent && !slidesInView.includes(slideIndex)) return;
-
-          if (engine.options.loop) {
-            engine.slideLooper.loopPoints.forEach((loopItem) => {
-              const target = loopItem.target();
-              if (slideIndex === loopItem.index && target !== 0) {
-                const sign = Math.sign(target);
-                if (sign === -1)
-                  diffToTarget = scrollSnap - (1 + scrollProgress);
-                if (sign === 1)
-                  diffToTarget = scrollSnap + (1 - scrollProgress);
-              }
-            });
-          }
-
-          const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
-          const scale = numberWithinRange(tweenValue, 0.8, 1).toString();
-          const tweenNode = tweenNodes.current[slideIndex];
-          if (tweenNode) {
-            tweenNode.style.transform = `scale(${scale})`;
-            tweenNode.style.transition = "transform 0.3s ease";
-          }
-        });
-      });
-    },
-    [isLargeScreen]
-  );
-
-  const handlePrevious = useCallback(() => {
-    if (!emblaApi) return;
-    if (!isLargeScreen && autoplay) autoplay.stop();
-    emblaApi.scrollPrev({ duration: 800 });
-  }, [emblaApi, autoplay, isLargeScreen]);
-
-  const handleNext = useCallback(() => {
-    if (!emblaApi) return;
-    if (!isLargeScreen && autoplay) autoplay.stop();
-    emblaApi.scrollNext({ duration: 800 });
-  }, [emblaApi, autoplay, isLargeScreen]);
-
-  const handleDotClick = useCallback(
-    (index) => {
-      if (!emblaApi) return;
-      if (!isLargeScreen && autoplay) autoplay.stop();
-      emblaApi.scrollTo(index, { duration: 800 });
-    },
-    [emblaApi, autoplay, isLargeScreen]
-  );
-
-  const handleMouseEnter = useCallback(() => {
-    if (!isLargeScreen && autoplay) autoplay.stop();
-  }, [autoplay, isLargeScreen]);
-
-  const handleMouseLeave = useCallback(() => {
-    if (!isLargeScreen && autoplay) autoplay.reset();
-  }, [autoplay, isLargeScreen]);
-
-  // Check screen size and update state
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsLargeScreen(window.innerWidth >= 1024); // lg breakpoint
-    };
-
-    // Initial check
-    checkScreenSize();
-
-    // Add resize listener
-    window.addEventListener("resize", checkScreenSize);
-
-    // Cleanup
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
+  const [scrollSnaps, setScrollSnaps] = useState([]);
 
   useEffect(() => {
     if (!emblaApi) return;
-
-    setTweenNodes(emblaApi);
-    setTweenFactor(emblaApi);
-    tweenScale(emblaApi);
 
     const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    setScrollSnaps(emblaApi.scrollSnapList());
 
-    emblaApi
-      .on("reInit", setTweenNodes)
-      .on("reInit", setTweenFactor)
-      .on("reInit", tweenScale)
-      .on("scroll", tweenScale)
-      .on("select", onSelect);
-
-    // Cleanup function
+    emblaApi.on("select", onSelect).on("reInit", onSelect);
     return () => {
-      emblaApi
-        .off("reInit", setTweenNodes)
-        .off("reInit", setTweenFactor)
-        .off("reInit", tweenScale)
-        .off("scroll", tweenScale)
-        .off("select", onSelect);
+      emblaApi.off("select", onSelect).off("reInit", onSelect);
     };
-  }, [emblaApi, tweenScale, setTweenNodes, setTweenFactor]);
+  }, [emblaApi]);
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) {
+      autoplay.stop(); // stop autoplay on manual click
+      emblaApi.scrollPrev();
+    }
+  }, [emblaApi, autoplay]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) {
+      autoplay.stop();
+      emblaApi.scrollNext();
+    }
+  }, [emblaApi, autoplay]);
+
+  const scrollTo = useCallback(
+    (index) => {
+      if (emblaApi) {
+        autoplay.stop();
+        emblaApi.scrollTo(index);
+      }
+    },
+    [emblaApi, autoplay]
+  );
 
   return (
-    <div className={`relative bg-transparent`}>
-      <Image
-        src={Gradient2}
-        alt="gradient background"
-        width={800}
-        height={300}
-        className={style.grad}
-      />
-
-      <div className={style.head}>
-        <h2>Our Happy Client</h2>
-        <h3>
-          Still need convincing? Check out what people are saying about Us.
-        </h3>
-      </div>
-
-      <div className={style.Carausel}>
-        <div
-          className="embla"
-          ref={emblaRef}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="embla__container flex items-end">
-            {slides.map((slide, idx) => (
-              <div className="embla__slide" key={`${slide.name}-${idx}`}>
-                <div className="card-wrapper lg:ml-2 lg:mr-2">
-                  <TestomonialCard
-                    testomonial={slide.testomonial}
-                    image={slide.image}
-                    name={slide.name}
-                    designation={slide.designation}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className={style.dotcontainer}>
-          <div className={style.arrowContainer}>
-            <button className={style.arrowButton} onClick={handlePrevious}>
-              <BiChevronLeft size={24} />
-            </button>
-            <button className={style.arrowButton} onClick={handleNext}>
-              <BiChevronRight size={24} />
-            </button>
-          </div>
-          <span className={style.dot}>
-            {Array.from({ length: totalDots }).map((_, index) => (
-              <span
-                key={index}
-                className={`${style.dotItem} ${
-                  selectedIndex % totalDots === index
-                    ? style.active
-                    : style.inactive
-                }`}
-                onClick={() => handleDotClick(index)}
-              ></span>
-            ))}
-          </span>
+    <section className="relative w-full">
+      {/* Viewport */}
+      <div className="overflow-hidden w-full" ref={emblaRef}>
+        <div className="flex">
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className="flex-[0_0_100%] md:flex-[0_0_50%]  box-border"
+            >
+              <FeatureCard
+                image={slide.image}
+                tech1={slide.tech1}
+                tech2={slide.tech2}
+                desc={slide.desc}
+              />
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+
+      {/* Controls */}
+      <div className={style.dotcontainer}>
+        {/* Arrows */}
+        <div className={style.arrowContainer}>
+          <button onClick={scrollPrev} className={style.arrowButton}>
+            <BiChevronLeft size={24} />
+          </button>
+          <button onClick={scrollNext} className={style.arrowButton}>
+            <BiChevronRight size={24} />
+          </button>
+        </div>
+
+        {/* Dots */}
+        <div className={style.dot}>
+          {scrollSnaps.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => scrollTo(index)}
+              className={`${style.dotItem} ${
+                selectedIndex % totalDots === index
+                  ? style.active
+                  : style.inactive
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   );
-}
+};
 
-export default CommonCarausol;
+export default EmblaCarousel;
