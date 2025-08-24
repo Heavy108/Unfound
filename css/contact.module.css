@@ -1,0 +1,177 @@
+.gradientmobile{
+    position:absolute;
+    width: 100%;
+    height: 6rem;
+    margin-top: -2rem;
+}
+.gradientdesktop{
+    display: none;
+    
+}
+
+.contactform , .potrait{
+    margin: 0rem 2rem;
+}
+.contactform{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.contactcontainer{
+    position: relative;
+    width: 100%;
+    margin-top: 5rem ;
+    
+}
+.dot {
+  color: #22c55e; /* green */
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  
+}
+.potrait h1{
+    color: white;
+    font-size: 1rem;
+}
+.potrait h2{
+    color: white;
+    font-size: 2rem;
+}
+.formsection{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.formsection label{
+ color: white;
+}
+
+.formsection input{
+    color: #898989;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+border: 1px solid rgba(255, 255, 255, 0.10);
+background: #131313;
+box-shadow: 0 0 24px 0 rgba(255, 255, 255, 0.08) inset, 0 5px 10px 0 rgba(0, 0, 0, 0.05), 0 15px 30px 0 rgba(0, 0, 0, 0.05), 0 30px 60px 0 rgba(0, 0, 0, 0.10);
+backdrop-filter: blur(10px);
+}
+.formsection textarea{
+    color: #898989;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+border: 1px solid rgba(255, 255, 255, 0.10);
+background: #131313;
+box-shadow: 0 0 24px 0 rgba(255, 255, 255, 0.08) inset, 0 5px 10px 0 rgba(0, 0, 0, 0.05), 0 15px 30px 0 rgba(0, 0, 0, 0.05), 0 30px 60px 0 rgba(0, 0, 0, 0.10);
+backdrop-filter: blur(10px);
+height: 8rem;
+}
+.vutton{
+color: #0A1518;
+display: flex;
+height: 3rem;
+width: 8rem;
+padding: 0.5rem 1.5rem;
+justify-content: center;
+align-items: center;
+gap: 0.5rem;
+border-radius: 6.25rem;
+border: 1px solid #4EFFF0;
+background: linear-gradient(250deg, #29F99E -12.84%, #4EFFF0 118.51%);
+}
+@media  only screen and (min-width:768px){
+    .contactform , .potrait{
+    padding: 0rem 4rem; 
+ } 
+.contactcontainer{
+    margin-top: 8rem;
+    /* padding: 0rem 4rem; */
+    
+}
+}
+@media  only screen and (min-width:1024px){
+    .contactform{
+        width: 50%;
+        padding: 0rem;
+        padding-right: 5rem;
+    }
+    .potrait{
+        width: 50%;
+        padding: 0rem;
+        padding-left: 5rem;
+    }
+
+.contactcontainer{
+    display: flex;
+    margin-top: 10rem;
+    
+    /* padding: 0rem 5rem; */
+    /* gap: 2rem; */
+}
+.potrait img{
+    margin-top: 2rem;
+    height: 24rem;
+    align-self: stretch;
+}
+.gradientmobile{
+    display: none;
+}
+.gradientdesktop {
+    display: flex;
+  position: absolute;
+  top: -140%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+}
+@media  only screen and (min-width:1440px){
+    /* .contactform , .potrait{
+    margin: 0rem 7.5rem;
+} */
+ /* .gradientdesktop{
+  top: -150%;
+
+ } */
+ .contactform{
+    padding-right:7.5rem ;
+ }
+ .potrait{
+    padding-left: 7.5rem;
+ }
+ .contactcontainer{
+    /* padding: 0rem 7.5rem; */
+    gap: 2rem;
+
+ }
+ .potrait h1{
+    font-size: 1.25rem;
+
+ }
+ .potrait h2{
+    font-size: 3rem;
+ }
+ .formsection label{
+    font-size: 1.125rem;
+ }
+ .contactform{
+    gap: 2rem;
+ }
+}
+
+@media  only screen and (min-width:1920px){
+     .contactform{
+    padding-right:15rem ;
+ }
+ /* .gradientdesktop{
+  top: -190%;
+
+ } */
+ .potrait{
+    padding-left: 15rem;
+ }
+ /* .contactcontainer{
+        padding: 0rem 15rem;
+
+ } */
+}
