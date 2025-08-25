@@ -9,7 +9,7 @@ function Contact(){
     return (
       <>
         <Navbar />
-        <div className={style.contactcontainer}>
+        <div className={`${style.contactcontainer} min-h-screen overflow-y-hidden`}>
           <Image
             src={gradientmobile}
             className={style.gradientmobile}

@@ -20,7 +20,7 @@
 .contactcontainer{
     position: relative;
     width: 100%;
-    margin-top: 6rem ;
+    padding-top: 6rem ;
     
 }
 .dot {
@@ -79,12 +79,16 @@ border-radius: 6.25rem;
 border: 1px solid #4EFFF0;
 background: linear-gradient(250deg, #29F99E -12.84%, #4EFFF0 118.51%);
 }
+.potrait img{
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+}
 @media  only screen and (min-width:768px){
     .contactform , .potrait{
     padding: 0rem 4rem; 
  } 
 .contactcontainer{
-    margin-top: 8rem;
+    padding-top: 8rem;
     /* padding: 0rem 4rem; */
     
 }
@@ -103,14 +107,15 @@ background: linear-gradient(250deg, #29F99E -12.84%, #4EFFF0 118.51%);
 
 .contactcontainer{
     display: flex;
-    margin-top: 10rem;
+    padding-top: 10rem;
+    margin-bottom: 5rem;
     
     /* padding: 0rem 5rem; */
     /* gap: 2rem; */
 }
 .potrait img{
     margin-top: 2rem;
-    height: 24rem;
+    /* height: 24rem; */
     align-self: stretch;
 }
 .gradientmobile{
@@ -124,6 +129,7 @@ background: linear-gradient(250deg, #29F99E -12.84%, #4EFFF0 118.51%);
   width: 100%;
   height: auto;
   z-index: 0;
+  /* overflow-y: hidden; */
 }
 }
 @media  only screen and (min-width:1440px){
