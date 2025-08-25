@@ -74,6 +74,7 @@ width: fit-content;
 .dot{
     color: #29F99E;
     margin-right: 0.5rem;
+    font-family: none;
 }
 .listcontainer{
     display: flex;

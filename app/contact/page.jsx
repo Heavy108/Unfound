@@ -8,20 +8,28 @@ import Footer from "../../components/Footer"
 function Contact(){
     return (
       <>
-      <Navbar/>
+        <Navbar />
         <div className={style.contactcontainer}>
-            <Image src={gradientmobile} className={style.gradientmobile}  alt="gradientmobile" />
-            <Image src={gradientdesktop} className={style.gradientdesktop} alt="gradientdesktop"/>
+          <Image
+            src={gradientmobile}
+            className={style.gradientmobile}
+            alt="gradientmobile"
+          />
+          <Image
+            src={gradientdesktop}
+            className={style.gradientdesktop}
+            alt="gradientdesktop"
+          />
           <div className={style.potrait}>
-            <h1>
+            <h1 className="font-satoshi">
               <span className={style.dot}>●</span>
               Contact
             </h1>
-            <h2>Let's create something extraordinary together.</h2>
+            <h2 className="font-cabinet">Let's create something extraordinary together.</h2>
             <Image src={contact} alt="contact" />
           </div>
 
-          <form action="" className={style.contactform}>
+          <form action="" className={`${style.contactform} font-satoshi`}>
             <div className={style.formsection}>
               <label htmlFor="Name">Name</label>
               <input type="text" placeholder="Enter your Name" />
@@ -35,10 +43,10 @@ function Contact(){
               <textarea type="text" placeholder="Enter Message" />
             </div>
 
-            <input type="submit" className={style.vutton}/>
+            <input type="submit" className={style.vutton} />
           </form>
         </div>
-        <Footer/>
+        <Footer />
       </>
     );
 }

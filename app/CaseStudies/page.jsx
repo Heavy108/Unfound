@@ -8,7 +8,7 @@ import VPN from "../../assets/VPN.png"
 import Oruva from "../../assets/Oruva.png"
 import Nest from "../../assets/Nest.png"
 import Ivory from "../../assets/ivory.png"
-
+import Footer from "../../components/Footer"
 function CaseStudies(){
     return (
       <>
@@ -21,11 +21,11 @@ function CaseStudies(){
           />
           <Image src ={casegrad} alt="gradient desktop" className={style.gradientdesktop}/>
           <div className={style.head}>
-            <h1>
+            <h1 className="font-satoshi">
               <span className={style.dot}>●</span>
               Case Studies
             </h1>
-            <h2>Projects Crafted With Clear Purpose</h2>
+            <h2 className="font-cabinet">Projects Crafted With Clear Purpose</h2>
           </div>
           <div className={style.secondcontainer}>
             <FeatureCard
@@ -62,6 +62,7 @@ function CaseStudies(){
             />
           </div>
         </div>
+        <Footer/>
       </>
     );
 }

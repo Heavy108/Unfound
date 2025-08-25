@@ -69,7 +69,7 @@ const EmblaCarousel = ({ slides, options }) => {
     <section className="relative w-full">
       {/* Viewport */}
       <div className="overflow-hidden w-full " ref={emblaRef}>
-        <div className="flex gap-2 justify-items-start">
+        <div className="flex gap-2  justify-items-start">
           {slides.map((slide, index) => (
             <div
               key={index}

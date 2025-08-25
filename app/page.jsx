@@ -58,7 +58,7 @@ export default function Home() {
           onError={(err) => console.error("Spline failed:", err)}
         />
       </div> */}
-      <HeroSpline />
+      {/* <HeroSpline /> */}
 
       <Stats />
       <Services />

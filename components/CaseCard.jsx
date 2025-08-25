@@ -84,9 +84,9 @@ const OPTIONS = { slidesToScroll: 2, };
           <div className={style.section}>
             <Image src={logo} alt="logo" className={style.logo} />
             <div className={style.desktop}>
-              <h1 className={style.topheading}>{heading}</h1>
+              <h1 className={`${style.topheading} font-cabinet`}>{heading}</h1>
               <div className={style.section2}>
-                <ul className={style.list1}>
+                <ul className={`${style.list1} font-satoshi`}>
                   <div className={style.listcontainer}>
                     <li>
                       <span className={style.dot}>●</span>Industry
@@ -126,7 +126,7 @@ const OPTIONS = { slidesToScroll: 2, };
             </div>
           </div>
           <div className={style.section1}>
-            <ul className={style.list1}>
+            <ul className={`${style.list1} font-satoshi`}>
               <div className={style.listcontainer}>
                 <li>
                   <span className={style.dot}>●</span>Industry
@@ -162,11 +162,13 @@ const OPTIONS = { slidesToScroll: 2, };
           {/* project overview */}
           <div className={style.section}>
             <div className={style.desktop}>
-              <h1 className={style.title}>Project Overview</h1>
+              <h1 className={`${style.title} font-cabinet`}>
+                Project Overview
+              </h1>
 
-              <p className={style.content2}>{overview}</p>
+              <p className={`${style.content2} font-satoshi`}>{overview}</p>
             </div>
-            <p className={style.content}>{overview}</p>
+            <p className={`${style.content} font-satoshi`}>{overview}</p>
             <Image
               src={timelinemobile}
               alt="Timeline"
@@ -176,10 +178,12 @@ const OPTIONS = { slidesToScroll: 2, };
           </div>
           <div className={style.section}>
             <div className={style.desktop}>
-              <h1 className={style.title}>The Challenge</h1>
-              <p className={style.content2}>{challengetext}</p>
+              <h1 className={`${style.title} font-cabinet`}>The Challenge</h1>
+              <p className={`${style.content2} font-satoshi`}>
+                {challengetext}
+              </p>
             </div>
-            <p className={style.content}>{challengetext}</p>
+            <p className={`${style.content} font-satoshi`}>{challengetext}</p>
             <Image
               src={challenge}
               alt="challenge"
@@ -188,12 +192,12 @@ const OPTIONS = { slidesToScroll: 2, };
           </div>
           {/* Goals */}
           <div className={style.section}>
-            <h1 className={style.title}>Goals</h1>
-            <div className={style.one}>
+            <h1 className={`${style.title} font-cabinet`}>Goals</h1>
+            <div className={`${style.one} font-satoshi`}>
               <GoalCard text={goal1} />
               <GoalCard text={goal2} />
             </div>
-            <div className={style.two}>
+            <div className={`${style.two} font-satoshi`}>
               <GoalCard text={goal3} />
               <GoalCard text={goal4} />
             </div>
@@ -202,19 +206,19 @@ const OPTIONS = { slidesToScroll: 2, };
           {/* our approach */}
           <div className={style.section}>
             <div className={style.desktop}>
-              <h1 className={style.title}>The Approach</h1>
-              <p className={style.content2}>{approachtext}</p>
+              <h1 className={`${style.title} font-cabinet`}>The Approach</h1>
+              <p className={`${style.content2} font-satoshi`}>{approachtext}</p>
             </div>
-            <p className={style.content}>{approachtext}</p>
+            <p className={`${style.content} font-satoshi`}>{approachtext}</p>
             <Image src={approach} alt="approach" className={style.approach} />
           </div>
 
           <div className={style.section}>
             <div className={style.desktop}>
-              <h1 className={style.title}>Outcome</h1>
-              <p className={style.content2}>{outcome}</p>
+              <h1 className={`${style.title} font-cabinet`}>Outcome</h1>
+              <p className={`${style.content2} font-satoshi`}>{outcome}</p>
             </div>
-            <p className={style.content}>{outcome}</p>
+            <p className={`${style.content} font-satoshi`}>{outcome}</p>
             <div className={style.outer}>
               <Image src={landing} alt="landing" className={style.hero} />
             </div>
