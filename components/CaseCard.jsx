@@ -75,6 +75,8 @@ const OPTIONS = { slidesToScroll: 2, };
         <Image src={gradient2} className={style.grad} alt="gradient" />
 
         <div className={style.secondcontainer}>
+          {/* <Image src={gradient2} className={style.grad} alt="gradient" /> */}
+
           <div className={style.section}>
             <Image src={logo} alt="logo" className={style.logo} />
             <div className={style.desktop}>
