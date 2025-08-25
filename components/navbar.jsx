@@ -93,7 +93,7 @@ function Navbar() {
               <Image src={Logo} alt="UnfoundLogo" />
             </Link>
             <div className={style.container}>
-              <ul className={style.list}>
+              <ul className={`${style.list} font-satoshi`}>
                 <Link href={"/#"}>
                   <li>About</li>
                 </Link>
@@ -127,7 +127,7 @@ function Navbar() {
       <AnimatePresence>
         {active && (
           <motion.ul
-            className={style.sideMenu}
+            className={`${style.sideMenu} font-satoshi`}
             variants={menuVariants}
             key="sideMenu"
             initial="hidden"

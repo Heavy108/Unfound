@@ -8,10 +8,10 @@ export default function ServiceCard({ title, logo, description, image}) {
       <div className={style.card}>
         <div className={style.introduction}>
           <div className={style.heading}>
-            <h1>{title}</h1>
+            <h1 className="font-cabinet">{title}</h1>
             <span className={style.logo}>{logo}</span>
           </div>
-          <p>{description}</p>
+          <p className="font-satoshi">{description}</p>
         </div>
         <div className={style.potrait}>
           <img src={image.src} alt={title} className={style.svgFix} />

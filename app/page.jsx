@@ -22,7 +22,7 @@ export default function Home() {
     <>
       <div className="relative  h-[400px] w-full overflow-hidden ">
         {/* Background image */}
-        <Image src={Gradient1} alt="gradient1" fill className="z-0" priority />
+        <Image src={Gradient1} alt="gradient1" fill className="-z-1" priority />
 
         {/* Navbar on top */}
         <div className="relative z-10 mb-[3rem]">
@@ -30,15 +30,18 @@ export default function Home() {
         </div>
 
         <div className={style.Hero}>
-          <h1>Where Ideas Become Digital Experiences</h1>
-          <p>
+          <h1 className="font-cabinet ">Where Ideas Become </h1>
+          <h1 className="font-cabinet ">Digital Experiences</h1>
+          <p className="font-satoshi">
             We collaborate with forward-thinking brands to turn their ideas into
             digital products and stories.
           </p>
           <div className={style.buttonContainer}>
-            <button className={style.expertise}>See Expertise</button>
+            <button className={`${style.expertise} font-satoshi`}>
+              See Expertise
+            </button>
             <Link href={"/contact"}>
-              <button className={style.lets}>
+              <button className={`${style.lets} font-satoshi`}>
                 Let's Talk{" "}
                 <span className={style.arrow}>
                   <FaArrowRight />

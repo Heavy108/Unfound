@@ -1,5 +1,18 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+// import style from "../fonts"
+const cabinet = localFont({
+  src: "../fonts/CabinetGrotesk-Regular.woff2",
+  variable: "--font-cabinet",
+  style: "normal",
+});
+
+const satoshi = localFont({
+  src: "../fonts/Satoshi-Regular.woff2",
+  variable: "--font-satoshi",
+});
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +33,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+        className={`${cabinet.variable} ${satoshi.variable} antialiased `}
       >
         {children}
       </body>

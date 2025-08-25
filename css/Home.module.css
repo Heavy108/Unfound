@@ -7,7 +7,7 @@
 }
 .Hero h1{
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    /* margin-bottom: 0.5rem; */
     color: white;
 }
 .Hero p{
@@ -81,7 +81,7 @@ justify-content: space-between;
     }
     .animation{
         height: 35rem;
-        margin-top: -12rem;
+        margin-top: -8rem;
     }
 }
 @media only screen and (min-width:1024px){
@@ -96,6 +96,9 @@ justify-content: space-between;
         /* left: 0; */
         z-index: -1;
     }
+    .Hero h1{
+        font-size: 3rem;
+    }
    
 }
 @media only screen and (min-width:1440px){
@@ -108,6 +111,9 @@ justify-content: space-between;
     }
     .head2 h1{
         font-size: 3rem;
+    }
+    .Hero h1{
+        font-size: 4rem;
     }
 }
 

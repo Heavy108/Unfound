@@ -7,13 +7,13 @@ function Talk(){
       <>
         <div className={style.outer}>
           <div className={style.internal}>
-            <h1>Let's Build Something Exceptional</h1>
-            <h2>
+            <h1 className="font-cabinet">Let's Build Something Exceptional</h1>
+            <h2 className="font-satoshi">
               Transform bold ideas into digital experiences - with sharp design,
               clean code, and full focus.
             </h2>
             <Link href={'/contact'}>
-              <button>
+              <button className="font-satoshi">
                 Let's Talk{" "}
                 <span className={style.icons2}>
                   {" "}

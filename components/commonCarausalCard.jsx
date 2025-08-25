@@ -13,11 +13,11 @@ function CarasolCard({ image, tech1, tech2, desc, link }) {
         </div>
       </div>
       <div className={style.introduction}>
-        <button>{tech1}</button>
-        <button>{tech2}</button>
+        <button className="font-satoshi">{tech1}</button>
+        <button className="font-satoshi">{tech2}</button>
       </div>
 
-      <h1 className={style.desc}>{desc}</h1>
+      <h1 className={`${style.desc} font-cabinet`}>{desc}</h1>
     </div>
   );
 }

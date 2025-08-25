@@ -25,11 +25,11 @@ export default function Accordion({ items }) {
           priority
         />
         <div className={style.head}>
-          <h1>Frequently Asked Questions</h1>
+          <h1 className="font-satoshi">Frequently Asked Questions</h1>
           <div className={style.moreinfo}>
-            <h2>Still have questions?</h2>
+            <h2 className="font-satoshi">Still have questions?</h2>
             <Link href={"/contact"}>
-              <button>
+              <button className="font-satoshi">
                 Let's talk{" "}
                 <span className={style.icons2}>
                   <FaArrowRight />

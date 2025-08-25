@@ -157,8 +157,8 @@ function Reasons() {
         />
 
         <div className={style.head}>
-          <h2>Why Unfound</h2>
-          <h3>
+          <h2 className="font-cabinet">Why Unfound</h2>
+          <h3 className="font-satoshi">
             We think, build, and scale like founders. Here's what sets us apart.
           </h3>
         </div>
@@ -210,8 +210,8 @@ function Reasons() {
         </div>
         <div className={style.container2}>
           <div className={style.head2}>
-            <h2>Why Unfound</h2>
-            <h3>
+            <h2 className="font-cabinet">Why Unfound</h2>
+            <h3 className="font-satoshi">
               We think, build, and scale like founders. Here's what sets us
               apart.
             </h3>

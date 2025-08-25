@@ -8,7 +8,7 @@ export default function AnimatedTextStrips() {
     <div className={styles.container}>
       {/* First strip - moving left */}
       <div className={`${styles.strip} ${styles.strip1}`}>
-        <div className={`${styles["moving-text"]} ${styles["moving-left"]}`}>
+        <div className={`${styles["moving-text"]} ${styles["moving-left"]} font-satoshi`}>
           <span className={styles.text}>{repeatedText}</span>
           <span className={styles.text}>{repeatedText}</span>
         </div>
@@ -16,7 +16,7 @@ export default function AnimatedTextStrips() {
 
       {/* Second strip - moving right */}
       <div className={`${styles.strip} ${styles.strip2}`}>
-        <div className={`${styles["moving-text"]} ${styles["moving-right"]}`}>
+        <div className={`${styles["moving-text"]} ${styles["moving-right"]} font-satoshi`}>
           <span className={styles.text}>{repeatedText}</span>
           <span className={styles.text}>{repeatedText}</span>
         </div>

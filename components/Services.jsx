@@ -194,8 +194,8 @@ function Services() {
           className={style.grad2}
         />
         <div className={style.head}>
-          <h2>Our Services</h2>
-          <h3>
+          <h2 className="font-cabinet">Our Services</h2>
+          <h3 className="font-satoshi">
             As a tight-knit team of experts, we create memorable and emotional
             websites,{" "}
             <span className="text-[#868A8A]">

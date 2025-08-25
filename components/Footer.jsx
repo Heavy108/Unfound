@@ -16,7 +16,7 @@ function Footer() {
     <>
       <Talk />
 
-      <div className={style.footerWrapper}>
+      <div className={`${style.footerWrapper} font-satoshi`}>
         {/* Background gradients */}
         <Image
           src={grad2}

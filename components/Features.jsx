@@ -20,11 +20,11 @@ function Feature() {
             className={style.grad4}
           />
           {/* <div className={style.textbox}> */}
-          <h3>
+          <h3 className="font-satoshi">
             <span>●</span>
             Featured Works
           </h3>
-          <h1>Take a Look at Our Projects</h1>
+          <h1 className="font-cabinet">Take a Look at Our Projects</h1>
         </div>
         {/* </div> */}
         <FeatureCard
@@ -56,7 +56,7 @@ function Feature() {
           link="/Nest"
         />
         <Link href={"/CaseStudies"}>
-          <h3 className={style.viewall}>
+          <h3 className={`${style.viewall} font-satoshi`}>
             View All{" "}
             <span>
               <FaArrowRight />
@@ -89,12 +89,12 @@ function Feature() {
               className={style.grad4_1}
             />
             <div className={style.infocard}>
-              <h3>
+              <h3 className="font-satoshi">
                 <span>●</span>
                 Featured Works
               </h3>
               <Link href={"/CaseStudies"}>
-                <h3 className={style.viewall}>
+                <h3 className={`${style.viewall} font-satoshi`}>
                   View All{" "}
                   <span>
                     <FaArrowRight />
@@ -102,7 +102,7 @@ function Feature() {
                 </h3>
               </Link>
             </div>
-            <h1>Take a Look at Our Projects</h1>
+            <h1 className="font-cabinet">Take a Look at Our Projects</h1>
           </div>
           <FeatureCard
             image={Oruva}
