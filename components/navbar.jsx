@@ -7,7 +7,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { FaArrowRight } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import Link from "next/link";
 function Navbar() {
   const [active, setActive] = useState(false);
   const [showNav, setShowNav] = useState(true);
@@ -89,12 +89,20 @@ function Navbar() {
             animate="visible"
             exit="hidden"
           >
-            <Image src={Logo} alt="UnfoundLogo" />
+            <Link href={"/"}>
+              <Image src={Logo} alt="UnfoundLogo" />
+            </Link>
             <div className={style.container}>
               <ul className={style.list}>
-                <li>About</li>
-                <li>Case Studies</li>
-                <button className={style.contact}>Contact Us</button>
+                <Link href={"/#"}>
+                  <li>About</li>
+                </Link>
+                <Link href={"/CaseStudies"}>
+                  <li>Case Studies</li>
+                </Link>
+                <Link href={"/contact"}>
+                  <button className={style.contact}>Contact Us</button>
+                </Link>
               </ul>
             </div>
             <motion.div
@@ -127,33 +135,39 @@ function Navbar() {
             exit="hidden"
             style={{ overflow: "hidden" }}
           >
-            <motion.li variants={itemVariants}>
-              About
-              <motion.span
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                <FaArrowRight className={style.arrow} />
-              </motion.span>
-            </motion.li>
-            <motion.li variants={itemVariants}>
-              Case Studies
-              <motion.span
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                <FaArrowRight className={style.arrow} />
-              </motion.span>
-            </motion.li>
-            <motion.li variants={itemVariants}>
-              Contact Us
-              <motion.span
-                whileHover={{ x: 5 }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                <FaArrowRight className={style.arrow} />
-              </motion.span>
-            </motion.li>
+            <Link href={"/#"}>
+              <motion.li variants={itemVariants}>
+                About
+                <motion.span
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <FaArrowRight className={style.arrow} />
+                </motion.span>
+              </motion.li>
+            </Link>
+            <Link href={"/CaseStudies"}>
+              <motion.li variants={itemVariants}>
+                Case Studies
+                <motion.span
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <FaArrowRight className={style.arrow} />
+                </motion.span>
+              </motion.li>
+            </Link>
+            <Link href={"/contact"}>
+              <motion.li variants={itemVariants}>
+                Contact Us
+                <motion.span
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <FaArrowRight className={style.arrow} />
+                </motion.span>
+              </motion.li>
+            </Link>
           </motion.ul>
         )}
       </AnimatePresence>

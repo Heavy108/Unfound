@@ -20,16 +20,26 @@
 
   /* z-index: 6; */
 }
+
+.icons2 {
+  color: black;
+  transform: rotate(-45deg);
+}
 .internal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  /* background: radial-gradient(146.13% 118.42% at 50% -15.5%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.00) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0.00) 0%, rgba(27, 51, 41, 0.05) 100%); */
+  background-color: transparent;
+  background: radial-gradient(146.13% 118.42% at 50% -15.5%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.00) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0.00) 0%, rgba(27, 51, 41, 0.05) 100%);
   box-shadow: 0 0 100px 0 rgba(204, 255, 233, 0.02) inset,
     0 5px 10px 0 rgba(0, 0, 0, 0.05), 0 15px 30px 0 rgba(0, 0, 0, 0.05),
     0 30px 60px 0 rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   padding: 1.5rem 1rem;
-  text-align: center;
+  /* text-align: center; */
+
   gap: 1rem;
 }
 
@@ -43,34 +53,35 @@
   margin-top: 0.5rem;
 }
 .internal button {
+  display: flex;
+  gap: 0.5rem;
   margin-top: 1rem;
-
+  align-items: center;
   padding: 0.8rem 1.5rem;
   border-radius: 6.25rem;
   border: 1px solid #4efff0;
   background: linear-gradient(250deg, #29f99e -12.84%, #4efff0 118.51%);
   z-index: 0;
 }
-@media only screen and (min-width:1024px){
-    .internal{
-        padding: 4rem 5rem;
-    }
-    .outer{
-        margin: 0rem 7.5rem;
-    }
-    .internal h1{
-        font-size: 2rem;
-    }
-
+@media only screen and (min-width: 1024px) {
+  .internal {
+    padding: 4rem 5rem;
+  }
+  .outer {
+    margin: 0rem 7.5rem;
+  }
+  .internal h1 {
+    font-size: 2rem;
+  }
 }
-@media only screen and (min-width:1440px){
-    .internal h1{
-        font-size: 3rem;
-    }
-    .internal h2{
-        font-size: 1.25rem;
-    }
-    .outer{
-        margin: 0rem 15rem;
-    }
+@media only screen and (min-width: 1440px) {
+  .internal h1 {
+    font-size: 3rem;
+  }
+  .internal h2 {
+    font-size: 1.25rem;
+  }
+  .outer {
+    margin: 0rem 15rem;
+  }
 }

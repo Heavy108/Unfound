@@ -1,5 +1,7 @@
 'use client'
 import style from "../css/Talk.module.css";
+import { FaArrowRight } from "react-icons/fa6";
+import Link from "next/link";
 function Talk(){
     return (
       <>
@@ -10,7 +12,15 @@ function Talk(){
               Transform bold ideas into digital experiences - with sharp design,
               clean code, and full focus.
             </h2>
-            <button onClick={() => alert("me got clicked")}>Let's Talk</button>
+            <Link href={'/contact'}>
+              <button>
+                Let's Talk{" "}
+                <span className={style.icons2}>
+                  {" "}
+                  <FaArrowRight />{" "}
+                </span>
+              </button>
+            </Link>
           </div>
         </div>
       </>

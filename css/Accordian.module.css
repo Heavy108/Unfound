@@ -128,11 +128,12 @@
   }
   .moreinfo button {
     display: flex;
-    /* height: 3rem; */
-    padding: 1rem 0.5rem;
+    height: 3rem;
+    padding: 0.5rem 1.5rem;
     color: black;
     justify-content: center;
     gap: 0.5rem;
+    font-size: 1rem;
     align-items: center;
     border-radius: 6.25rem;
     border: 1px solid #4efff0;

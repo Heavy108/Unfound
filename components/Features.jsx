@@ -32,17 +32,20 @@ function Feature() {
           tech1="Website Design"
           tech2="Development"
           desc="Web Experience for Vistava VPN"
+          link="/VPN"
         />
         <FeatureCard
           image={Oruva}
           tech1="App Design"
           tech2="Admin Dashboard"
           desc="Oruva e-Commerce App & Admin Dashboard"
+          link="/Oruva"
         />
         <FeatureCard
           image={ivory}
           tech1="Website Design"
           tech2="Development"
+          link="/IvoryDental"
           desc="Patient-First Website for 'Ivory Dental'"
         />
         <FeatureCard
@@ -50,8 +53,9 @@ function Feature() {
           tech1="UX Design"
           tech2="Development"
           desc="Education Dashboard for Skill Nest"
+          link="/Nest"
         />
-        <Link href={"#"}>
+        <Link href={"/CaseStudies"}>
           <h3 className={style.viewall}>
             View All{" "}
             <span>
@@ -67,12 +71,14 @@ function Feature() {
             tech1="Website Design"
             tech2="Development"
             desc="Web Experience for Vistava VPN"
+            link="/VPN"
           />
           <FeatureCard
             image={ivory}
             tech1="Website Design"
             tech2="Development"
             desc="Patient-First Website for 'Ivory Dental'"
+            link="/IvoryDental"
           />
         </div>
         <div className={style.vertical2}>
@@ -87,7 +93,7 @@ function Feature() {
                 <span>●</span>
                 Featured Works
               </h3>
-              <Link href={"#"}>
+              <Link href={"/CaseStudies"}>
                 <h3 className={style.viewall}>
                   View All{" "}
                   <span>
@@ -103,12 +109,14 @@ function Feature() {
             tech1="App Design"
             tech2="Admin Dashboard"
             desc="Oruva e-Commerce App & Admin Dashboard"
+            link="/Oruva"
           />
           <FeatureCard
             image={Nest}
             tech1="UX Design"
             tech2="Development"
             desc="Education Dashboard for Skill Nest"
+            link="/Nest"
           />
         </div>
       </section>

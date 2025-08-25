@@ -38,7 +38,7 @@ function Contact(){
             <input type="submit" className={style.vutton}/>
           </form>
         </div>
-        {/* <Footer/> */}
+        <Footer/>
       </>
     );
 }

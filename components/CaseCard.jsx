@@ -39,24 +39,28 @@ function CaseCard({
       tech1: "Website Design",
       tech2: "Development",
       desc: "Web Experience for Vistava VPN",
+      link: "/VPN",
     },
     {
       image: Oruva,
       tech1: "App Design",
       tech2: "Admin Dashboard",
       desc: "Oruva e-Commerce App & Admin Dashboard",
+      link: "/Oruva",
     },
     {
       image: ivory,
       tech1: "Website Design",
       tech2: "Development",
       desc: "Patient-First Website for 'Ivory Dental'",
+      link: "/IvoryDental",
     },
     {
       image: Nest,
       tech1: "UX Design",
       tech2: "Development",
       desc: "Education Dashboard for Skill Nest",
+      link: "/Nest",
     },
   ];
 const OPTIONS = { slidesToScroll: 2, };

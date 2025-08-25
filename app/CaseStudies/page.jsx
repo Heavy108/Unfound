@@ -33,24 +33,32 @@ function CaseStudies(){
               tech1="Website Design"
               tech2="Development"
               desc="Web Experience for Vistava VPN"
+            link="/VPN"
+
             />
             <FeatureCard
               image={Oruva}
               tech1="App Design"
               tech2="Admin Dashboard"
               desc="Oruva e-Commerce App & Admin Dashboard"
+            link="/Oruva"
+
             />
             <FeatureCard
               image={Ivory}
               tech1="Website Design"
               tech2="Development"
               desc="Patient-First Website for 'Ivory Dental'"
+            link="/IvoryDental"
+
             />
             <FeatureCard
               image={Nest}
               tech1="UX Design"
               tech2="Development"
               desc="Education Dashboard for Skill Nest"
+            link="/Nest"
+
             />
           </div>
         </div>

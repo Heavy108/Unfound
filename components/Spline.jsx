@@ -1,38 +1,16 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Spline from "@splinetool/react-spline";
 import Image from "next/image";
-import fallback from "@/assets/Experience.png";
+import fallback from "@/assets/other/Fallback.png";
 import style from "@/css/Home.module.css";
+import { fail } from "assert";
 
 export default function HeroSpline() {
   const [loading, setLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const containerRef = useRef(null);
-
-  useEffect(() => {
-    // Monkey-patch for passive events
-    const originalAddEventListener = EventTarget.prototype.addEventListener;
-    EventTarget.prototype.addEventListener = function (
-      type,
-      listener,
-      options
-    ) {
-      if (type === "wheel" || type === "touchmove" || type === "touchstart") {
-        if (typeof options === "object") {
-          options.passive = true;
-        } else {
-          options = { passive: true };
-        }
-      }
-      return originalAddEventListener.call(this, type, listener, options);
-    };
-
-    return () => {
-      EventTarget.prototype.addEventListener = originalAddEventListener; // restore on unmount
-    };
-  }, []);
 
   useEffect(() => {
     const canvas = containerRef.current?.querySelector("canvas");
@@ -50,7 +28,10 @@ export default function HeroSpline() {
       canvas.removeEventListener("webglcontextlost", handleContextLost, false);
     };
   }, [loading]);
-
+// useEffect(() =>{
+//   setHasError(true)
+//   setLoading(false)
+// })
   return (
     <main ref={containerRef} className={style.animation}>
       {/* Loading Spinner */}
@@ -61,19 +42,21 @@ export default function HeroSpline() {
         </div>
       )}
 
-      {/* Fallback image */}
+      {/* Fallback image (only covers animation area) */}
       {hasError ? (
-        <Image
-          src={fallback}
-          alt="Fallback visual"
-          fill
-          className="object-cover"
-          priority
-        />
+        <center>
+          <Image
+            src={fallback}
+            alt="Fallback visual"
+            fill
+            className="-z-10 mt-[2rem]"
+            priority
+          />
+        </center>
       ) : (
         <Spline
           scene="https://prod.spline.design/BdBvQQ2ZpuUKIjVw/scene.splinecode"
-          style={{ pointerEvents: "none" }}
+          style={{ pointerEvents: "none" }} // no user interaction
           onLoad={() => setLoading(false)}
           onError={(err) => {
             console.error("Spline failed:", err);

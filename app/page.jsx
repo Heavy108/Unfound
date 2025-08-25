@@ -16,6 +16,7 @@ import Feature from "@/components/Features"
 import Reasons from "@/components/Reason"
 import FAQ from "@/components/FAQ"
 import Footer from "@/components/Footer"
+import Link from "next/link";
 export default function Home() {
   return (
     <>
@@ -36,12 +37,14 @@ export default function Home() {
           </p>
           <div className={style.buttonContainer}>
             <button className={style.expertise}>See Expertise</button>
-            <button className={style.lets}>
-              Let's Talk{" "}
-              <span className={style.arrow}>
-                <FaArrowRight />
-              </span>
-            </button>
+            <Link href={"/contact"}>
+              <button className={style.lets}>
+                Let's Talk{" "}
+                <span className={style.arrow}>
+                  <FaArrowRight />
+                </span>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -52,7 +55,7 @@ export default function Home() {
           onError={(err) => console.error("Spline failed:", err)}
         />
       </div> */}
-      <HeroSpline/>
+      <HeroSpline />
 
       <Stats />
       <Services />

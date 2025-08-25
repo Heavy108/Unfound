@@ -80,6 +80,7 @@ const EmblaCarousel = ({ slides, options }) => {
                 tech1={slide.tech1}
                 tech2={slide.tech2}
                 desc={slide.desc}
+                link={slide.link}
               />
             </div>
           ))}

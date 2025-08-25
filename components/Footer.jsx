@@ -1,15 +1,16 @@
-import style from "../css/Footer.module.css"
+import style from "../css/Footer.module.css";
 import Image from "next/image";
-import logo from "@/assets/Logowithname.png"
+import logo from "@/assets/Logowithname.png";
 import { IoMdMail } from "react-icons/io";
 import { CgFacebook } from "react-icons/cg";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { TfiLinkedin } from "react-icons/tfi";
-import unfound from "@/assets/Unfound.png"
+import unfound from "@/assets/Unfound.png";
 import FooterSVG from "../assets/footer_gradient.svg";
-import grad2 from "@/assets/footergrad2.svg"
+import grad2 from "@/assets/footergrad2.svg";
 import Talk from "./Talk";
+import Link from "next/link";
 function Footer() {
   return (
     <>
@@ -42,18 +43,41 @@ function Footer() {
             <div className={style.quicklinks}>
               <h2>QUICK LINKS</h2>
               <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact Us</li>
-                <li>Case Studies</li>
+                <Link href={"/"}>
+                  <li>Home</li>
+                </Link>
+                <Link href={"/#"}>
+                  <li>About</li>
+                </Link>
+
+                <Link href={"/contact"}>
+                  <li>Contact Us</li>
+                </Link>
+
+                <Link href={"/CaseStudies"}>
+                  <li>Case Studies</li>
+                </Link>
               </ul>
             </div>
 
             <div className={style.getintouch}>
               <h2>GET IN TOUCH</h2>
               <div className={style.icons}>
-                <IoMdMail /> <CgFacebook /> <FaTwitter /> <FaInstagram />{" "}
-                <TfiLinkedin />
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=team@unfoundstudio.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <IoMdMail />
+                </a>
+                <CgFacebook /> <FaTwitter /> <FaInstagram />{" "}
+                <Link
+                  href="https://www.linkedin.com/company/unfound-studio-social/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <TfiLinkedin />
+                </Link>
               </div>
               <h2>© 2025 Unfound Studio</h2>
             </div>

@@ -63,6 +63,9 @@
   .head {
     margin: 0rem 5rem;
   }
+  .head h2{
+    font-size: 3rem;
+  }
   .secondcontainer {
     margin: 3rem 5rem;
   }
