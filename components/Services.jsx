@@ -10,7 +10,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { LuHand, LuGlobe, LuCodeXml, LuPlay } from "react-icons/lu";
-import { RiBarChart2Fill } from "react-icons/ri";
+import { BiBarChartAlt2 } from "react-icons/bi";
 import ServiceCard from "./ServiceCard";
 import ServiceCard2 from "./ServiceCard2";
 import UXDesign from "../assets/UXDesign.svg";
@@ -115,7 +115,7 @@ function Services() {
         component: ServiceCard2,
         props: {
           title: "Report Design",
-          logo: <RiBarChart2Fill />,
+          logo: <BiBarChartAlt2 />,
           description:
             "Designing clear, compelling decks and reports that turn data into persuasive narratives.",
           image: ReportDesign,
@@ -241,7 +241,6 @@ function Services() {
               text="As a tight-knit team of experts, we create memorable and emotional websites, digital experiences, and native apps."
               scrollYProgress={scrollYProgress}
             />
-          
           </h3>
         </div>
 
@@ -316,7 +315,7 @@ function Services() {
             />
             <ServiceCard2
               title="Report Design"
-              logo={<RiBarChart2Fill />}
+              logo={<BiBarChartAlt2 />}
               description="Designing clear, compelling decks and reports that turn data into persuasive narratives."
               image={ReportDesign}
             />

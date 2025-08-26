@@ -12,9 +12,9 @@ import profile from "../assets/testomonial.png";
 import style from "../css/Testonomial.module.css";
 import Gradient2 from "../assets/Gradient2.png";
 import Image from "next/image";
-import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import testograd from "../assets/testimonialGradient.png"
 import TestomonialCard from "./TestomonialCard";
-
+import { FaArrowRight ,FaArrowLeft } from "react-icons/fa6";
 const TWEEN_FACTOR_BASE = 0.52;
 const AUTOPLAY_DELAY = 4000;
 
@@ -70,25 +70,24 @@ function Testonomial() {
     []
   );
 
-  // State to track screen size
   const [isLargeScreen, setIsLargeScreen] = useState(false);
+  const [snapCount, setSnapCount] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  // Create autoplay instance only once
+  // autoplay only for smaller screens
   const autoplay = useMemo(
     () => Autoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: true }),
     []
   );
-
-  // Only use autoplay on smaller screens
-  const plugins = useMemo(() => {
-    return isLargeScreen ? [] : [autoplay];
-  }, [isLargeScreen, autoplay]);
+  const plugins = useMemo(
+    () => (isLargeScreen ? [] : [autoplay]),
+    [isLargeScreen, autoplay]
+  );
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, plugins);
+
   const tweenFactor = useRef(0);
   const tweenNodes = useRef([]);
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const totalDots = slides.length;
 
   const setTweenNodes = useCallback((emblaApi) => {
     tweenNodes.current = emblaApi
@@ -102,7 +101,6 @@ function Testonomial() {
 
   const tweenScale = useCallback(
     (emblaApi, eventName) => {
-      // Disable scaling for larger screens
       if (isLargeScreen) {
         tweenNodes.current.forEach((node) => {
           if (node) node.style.transform = "scale(1)";
@@ -177,19 +175,10 @@ function Testonomial() {
     if (!isLargeScreen && autoplay) autoplay.reset();
   }, [autoplay, isLargeScreen]);
 
-  // Check screen size and update state
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsLargeScreen(window.innerWidth >= 1024); // lg breakpoint
-    };
-
-    // Initial check
+    const checkScreenSize = () => setIsLargeScreen(window.innerWidth >= 1024);
     checkScreenSize();
-
-    // Add resize listener
     window.addEventListener("resize", checkScreenSize);
-
-    // Cleanup
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
@@ -200,23 +189,29 @@ function Testonomial() {
     setTweenFactor(emblaApi);
     tweenScale(emblaApi);
 
-    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    const updateSnapCount = () => {
+      setSnapCount(emblaApi.scrollSnapList().length);
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    };
 
     emblaApi
       .on("reInit", setTweenNodes)
       .on("reInit", setTweenFactor)
       .on("reInit", tweenScale)
+      .on("reInit", updateSnapCount)
       .on("scroll", tweenScale)
-      .on("select", onSelect);
+      .on("select", () => setSelectedIndex(emblaApi.selectedScrollSnap()));
 
-    // Cleanup function
+    updateSnapCount();
+
     return () => {
       emblaApi
         .off("reInit", setTweenNodes)
         .off("reInit", setTweenFactor)
         .off("reInit", tweenScale)
+        .off("reInit", updateSnapCount)
         .off("scroll", tweenScale)
-        .off("select", onSelect);
+        .off("select", () => setSelectedIndex(emblaApi.selectedScrollSnap()));
     };
   }, [emblaApi, tweenScale, setTweenNodes, setTweenFactor]);
 
@@ -238,12 +233,20 @@ function Testonomial() {
       </div>
 
       <div className={style.Carausel}>
+        <Image
+          src={testograd}
+          fill
+          alt="gradient"
+          className="object-cover pointer-events-none"
+        />
         <div
           className="embla"
           ref={emblaRef}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
+          
+
           <div className="embla__container flex items-end">
             {slides.map((slide, idx) => (
               <div className="embla__slide" key={`${slide.name}-${idx}`}>
@@ -260,29 +263,32 @@ function Testonomial() {
           </div>
         </div>
 
-        <div className={style.dotcontainer}>
-          <div className={style.arrowContainer}>
-            <button className={style.arrowButton} onClick={handlePrevious}>
-              <BiChevronLeft size={24} />
-            </button>
-            <button className={style.arrowButton} onClick={handleNext}>
-              <BiChevronRight size={24} />
-            </button>
+        {/* Only render arrows + dots if multiple snaps */}
+        {snapCount > 1 && (
+          <div className={style.dotcontainer}>
+            <div className={style.arrowContainer}>
+              <button className={style.arrowButton} onClick={handlePrevious}>
+                <FaArrowLeft size={24} />
+              </button>
+              <button className={style.arrowButton} onClick={handleNext}>
+                <FaArrowRight size={24} />
+              </button>
+            </div>
+            <span className={style.dot}>
+              {Array.from({ length: snapCount }).map((_, index) => (
+                <span
+                  key={index}
+                  className={`${style.dotItem} ${
+                    selectedIndex % snapCount === index
+                      ? style.active
+                      : style.inactive
+                  }`}
+                  onClick={() => handleDotClick(index)}
+                ></span>
+              ))}
+            </span>
           </div>
-          <span className={style.dot}>
-            {Array.from({ length: totalDots }).map((_, index) => (
-              <span
-                key={index}
-                className={`${style.dotItem} ${
-                  selectedIndex % totalDots === index
-                    ? style.active
-                    : style.inactive
-                }`}
-                onClick={() => handleDotClick(index)}
-              ></span>
-            ))}
-          </span>
-        </div>
+        )}
       </div>
     </div>
   );

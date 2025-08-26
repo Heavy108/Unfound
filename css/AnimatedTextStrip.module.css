@@ -78,3 +78,14 @@
     height: 40vh;
   }
 }
+@media only screen and (min-width:1440px){
+  .strip1 {
+  transform: translateX(-50%) translateY(-50%) rotate(-3deg);
+}
+
+.strip2 {
+  
+  transform: translateX(-50%) translateY(-50%) rotate(3deg);
+  /* padding: 20px 0; */
+}
+}

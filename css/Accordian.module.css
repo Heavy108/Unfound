@@ -25,7 +25,7 @@
 }
 
 .internal {
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: radial-gradient(
@@ -120,6 +120,12 @@
   .grad6 {
     display: none;
   }
+  .head h1{
+    text-align: start;
+     margin-top: 0rem;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+  }
   .moreinfo {
     display: flex;
     flex-direction: column;
@@ -143,15 +149,15 @@
     color: black;
     transform: rotate(-45deg);
   }
-  .head h1{
-    margin-top: 0rem;
-    margin-bottom: 3rem;
-  }
+  
 }
 
 @media only screen and (min-width: 1440px) {
   .Faqcontainer {
     margin: 10rem 7.5rem;
+  }
+  .head h1{
+    font-size: 3rem;
   }
 }
 

@@ -21,7 +21,7 @@ function Feature() {
           />
           {/* <div className={style.textbox}> */}
           <h3 className="font-satoshi">
-            <span>●</span>
+            <span >●</span>
             Featured Works
           </h3>
           <h1 className="font-cabinet">Take a Look at Our Projects</h1>

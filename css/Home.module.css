@@ -28,6 +28,8 @@
   color: white;
 font-size: 0.8rem;
 margin-right: 0.5rem;
+z-index: 2;
+
 
 }
 .lets{
@@ -41,6 +43,7 @@ font-size: 0.8rem;
 display: flex;
 text-align: center;
 justify-content: space-between;
+z-index: 2;
 
 }
 .arrow{

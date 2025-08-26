@@ -40,8 +40,8 @@ export default function Stats() {
           </h2>
           <div className={styles.grid}>
             {stats.map((stat, index) => (
-              <div className={styles.experiment}>
-                <div key={index} className={styles.statItem}>
+              <div key={index}  className={styles.experiment}>
+                <div className={styles.statItem}>
                   <p className={`${styles.value} font-cabinet`}>{stat.value}</p>
                   <p className={`${styles.label} font-satoshi`}>
                     <span className={styles.dot}>●</span> {stat.label}
