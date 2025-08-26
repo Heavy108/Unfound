@@ -20,7 +20,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div className="relative  h-[400px] w-full overflow-hidden ">
+      <div className="relative  h-[500px] w-full overflow-hidden ">
         {/* Background image */}
         <Image src={Gradient1} alt="gradient1" fill className="-z-1" priority />
 
