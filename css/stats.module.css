@@ -26,37 +26,39 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px 20px;
-  /* max-width: 900px; */
-  /* margin: 0 auto; */
+  gap: 40px 16px;
+  
 }
 
 .statItem {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: self-start;
   gap: 8px;
 }
 
 .value {
   font-size: 2rem;
   font-weight: 600;
+  margin-left: 1rem;
+  /* text-align:start; */
 }
 
 .label {
   font-size: 0.9rem;
   color: #bbbbbb;
-  display: flex;
-  align-items: center;
   gap: 8px;
   
+}
+.experiment{
   display: flex;
   justify-content: center;
 }
-
 .dot {
   color: #22c55e; /* green */
   font-size: 1rem;
+  font-family: none;
+  margin-right: 0.5rem;
   
 }
 .Statscard{
@@ -96,6 +98,12 @@
   margin-top:-45rem ;
 
   
+}
+.value{
+  margin-left: 0rem;
+}
+.grid{
+  gap: 2rem 5rem;
 }
 .container{
   background-color: transparent;

@@ -35,14 +35,17 @@ export default function Stats() {
 
         {/* Foreground content */}
         <div className={styles.Statscard}>
-          <h2 className={`${styles.heading} font-cabinet`}>Proven by Results</h2>
+          <h2 className={`${styles.heading} font-cabinet`}>
+            Proven by Results
+          </h2>
           <div className={styles.grid}>
             {stats.map((stat, index) => (
-              <div key={index} className={styles.statItem}>
-                <p className={`${styles.value} font-cabinet`}>{stat.value}</p>
-                <div className={`${styles.label} font-satoshi`}>
-                  <span className={styles.dot}>●</span>
-                  <p>{stat.label}</p>
+              <div className={styles.experiment}>
+                <div key={index} className={styles.statItem}>
+                  <p className={`${styles.value} font-cabinet`}>{stat.value}</p>
+                  <p className={`${styles.label} font-satoshi`}>
+                    <span className={styles.dot}>●</span> {stat.label}
+                  </p>
                 </div>
               </div>
             ))}

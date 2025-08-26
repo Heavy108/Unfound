@@ -60,6 +60,10 @@ gap: 0.5rem;
 }
 .head h2{
   font-size: 18px;
+  /* align-items: ; */
+  top: 0;
+  /* text-align: start; */
+  white-space: nowrap;
 }
 .head h3{
   font-size: 1.5rem;
@@ -121,6 +125,7 @@ margin-top: 10rem;
   justify-content: space-between;
   padding-left: 10rem;
     padding-right: 10rem;
+    align-items: normal;
 }
 .head h2{
   font-size: 1.5rem;

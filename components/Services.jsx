@@ -1,14 +1,14 @@
 "use client";
 import React, {
-  useCallback,
-  useEffect,
+  useMemo,
   useRef,
   useState,
-  useMemo,
+  useCallback,
+  useEffect,
 } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay"; // ✅ import autoplay plugin
+import Autoplay from "embla-carousel-autoplay";
 import { LuHand, LuGlobe, LuCodeXml, LuPlay } from "react-icons/lu";
 import { RiBarChart2Fill } from "react-icons/ri";
 import ServiceCard from "./ServiceCard";
@@ -23,11 +23,52 @@ import style from "../css/services.module.css";
 import Gradient3 from "../assets/Gradient3.png";
 import Gradient3_1 from "../assets/Gradient3_1.png";
 import Image from "next/image";
+
 const TWEEN_FACTOR_BASE = 0.52;
 const numberWithinRange = (number, min, max) =>
   Math.min(Math.max(number, min), max);
 
+// 🔥 Utility component for per-word scroll animation
+const AnimatedText = ({ text, scrollYProgress }) => {
+  const words = text.split(" ");
+
+  return (
+    <span>
+      {words.map((word, i) => {
+        const start = i * 0.05; // stagger start
+        const end = start + 0.3;
+
+        const color = useTransform(
+          scrollYProgress,
+          [start, end],
+          ["#868A8A", "#FFFFFF"]
+        );
+
+        return (
+          <motion.span
+            key={i}
+            style={{
+              color,
+              marginRight: "0.25rem",
+              display: "inline-block", // keeps spacing clean
+              whiteSpace: "normal", // ✅ allow wrapping
+            }}
+          >
+            {word}
+          </motion.span>
+        );
+      })}
+    </span>
+  );
+};
+
 function Services() {
+  const textRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: textRef,
+    offset: ["start end", "end start"],
+  });
+
   const slides = useMemo(
     () => [
       {
@@ -94,18 +135,16 @@ function Services() {
     []
   );
 
-  // ✅ autoplay ref so it can be paused on hover
+  // autoplay ref so it can be paused on hover
   const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false }));
-
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true },
-    [autoplay.current] // ✅ pass plugin as second argument
-  );
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    autoplay.current,
+  ]);
 
   const tweenFactor = useRef(0);
   const tweenNodes = useRef([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const totalDots = 6; // Fixed number of dots
+  const totalDots = 6;
 
   const setTweenNodes = useCallback((emblaApi) => {
     tweenNodes.current = emblaApi
@@ -177,7 +216,7 @@ function Services() {
 
   return (
     <>
-      <div className={`${style.container} relative   `}>
+      <div className={`${style.container} relative`}>
         <Image
           src={Gradient3}
           alt="gradient background"
@@ -189,21 +228,23 @@ function Services() {
         <Image
           src={Gradient3_1}
           alt="gradient background"
-          width={800} // replace with your actual image width
+          width={800}
           height={300}
           className={style.grad2}
         />
-        <div className={style.head}>
+
+        {/* 🔥 Animated heading */}
+        <div className={style.head} ref={textRef}>
           <h2 className="font-cabinet">Our Services</h2>
-          <h3 className="font-satoshi">
-            As a tight-knit team of experts, we create memorable and emotional
-            websites,{" "}
-            <span className="text-[#868A8A]">
-              {" "}
-              digital experiences, and native apps.
-            </span>
+          <h3 className="font-satoshi text-wrap">
+            <AnimatedText
+              text="As a tight-knit team of experts, we create memorable and emotional websites, digital experiences, and native apps."
+              scrollYProgress={scrollYProgress}
+            />
+          
           </h3>
         </div>
+
         <div className={style.Carausel}>
           <div
             className="embla"
@@ -219,7 +260,6 @@ function Services() {
                 return (
                   <div className="embla__slide" key={idx}>
                     <motion.div
-                     
                       className="card-wrapper"
                       animate={{
                         scale: isActive ? 1 : 0.9,
