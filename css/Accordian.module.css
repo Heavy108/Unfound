@@ -112,10 +112,11 @@
 
 @media only screen and (min-width: 1024px) {
   .Faqcontainer {
-    margin: 5rem 5rem;
+    margin: 7rem 6rem;
     display: flex;
     justify-content: space-between;
     gap: 5rem;
+    padding: 0rem;
   }
   .grad6 {
     display: none;

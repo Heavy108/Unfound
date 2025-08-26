@@ -125,9 +125,21 @@ background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255,
     display: none;
   }
   .Navbar {
-    padding: 1.75rem 7.5rem;
+    padding: 1.75rem 6rem;
     backdrop-filter: none;
     box-shadow: none;
     background: none;
+  }
+}
+@media only screen and (min-width:1440px){
+  .Navbar{
+    padding: 1.75rem 7.5rem;
+
+  }
+}
+@media only screen and (min-width:1920px){
+  .Navbar{
+    padding: 1.75rem 15rem;
+    
   }
 }

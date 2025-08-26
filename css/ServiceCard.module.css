@@ -90,7 +90,12 @@ backdrop-filter: blur(10px);
 }
 @media only screen and (min-width:1024px){
   .container{
-
+height: 27rem;
+min-width: 19rem;
+max-width: 22rem;
+}
+.introduction p{
+  margin-top: 3rem;
 }
 }
 @media only screen and (min-width:1440px){

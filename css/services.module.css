@@ -104,7 +104,7 @@ margin-top: 10rem;
   }
   .servicecontainer2{
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     gap: 1.5rem;
   }
   .grad2{
@@ -123,8 +123,7 @@ margin-top: 10rem;
 .head{
   flex-direction: row;
   justify-content: space-between;
-  padding-left: 10rem;
-    padding-right: 10rem;
+  padding: 2rem 6rem;
     align-items: normal;
 }
 .head h2{
@@ -143,7 +142,22 @@ margin-top: 10rem;
     /* height: 10rem !important; */
   }
   .head{
-    padding-left: 15rem;
-    padding-right: 15rem;
+  padding: 2rem 7.5rem;
+    
   }
+  .servicecontainer2{
+    margin: 3rem 7.5rem 10rem 7.5rem;
+  }
+}
+
+@media only screen and (min-width:1920px){
+  .servicecontainer2{
+    margin: 3rem 15rem 10rem 15rem;
+
+  }
+  .head{
+  padding: 2rem 15rem;
+    
+  }
+  
 }
