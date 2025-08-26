@@ -8,19 +8,28 @@ import { FaArrowRight } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+
 function Navbar() {
   const [active, setActive] = useState(false);
   const [showNav, setShowNav] = useState(true);
   const [lastScroll, setLastScroll] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
 
   const handleClick = () => {
     setActive(!active);
   };
 
-  // Detect scroll direction
+  // Detect scroll direction + blur toggle
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
+
+      // toggle blur after 50px scroll
+      if (currentScroll > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
 
       if (currentScroll > lastScroll && currentScroll > 100) {
         // scrolling down → hide navbar
@@ -82,7 +91,7 @@ function Navbar() {
       <AnimatePresence>
         {showNav && (
           <motion.div
-            className={style.Navbar}
+            className={`${style.Navbar} ${scrolled ? style.scrolled : ""}`}
             variants={navVariants}
             key="navbar"
             initial="hidden"
