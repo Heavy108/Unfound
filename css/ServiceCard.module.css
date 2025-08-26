@@ -88,6 +88,33 @@ backdrop-filter: blur(10px);
   border-radius: 0rem 0rem 1.5rem 1.5rem;
     
 }
+@media only screen and (min-width:1024px){
+  .container{
 
+}
+}
+@media only screen and (min-width:1440px){
+.container{
+  height: 28.625rem;
+  width: 24rem;
+}
+.introduction p{
+  margin-top: 3rem;
+  font-size: 1rem;
+}
+.heading h1{
+  font-size: 2rem;
+}
+.potrait img{
+  height: 14rem;
+}
+
+}
+@media only screen and (min-width:1920px){
+  .container{
+  height: 28.625rem;
+  width: 29rem;
+}
+}
 
 
