@@ -104,7 +104,8 @@ margin-top: 10rem;
   }
   .servicecontainer2{
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
+    margin: 3rem 6rem 8rem 6rem;
     gap: 1.5rem;
   }
   .grad2{
@@ -136,12 +137,18 @@ margin-top: 10rem;
 }
 }
 @media only screen and (min-width:1440px){
- 
+ .container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
   .grad2{
     margin-top: -55rem;
     /* height: 10rem !important; */
   }
   .head{
+    width: 1440px;
   padding: 2rem 7.5rem;
     
   }

@@ -234,8 +234,9 @@ function Services() {
         />
 
         {/* 🔥 Animated heading */}
+        
         <div className={style.head} ref={textRef}>
-          <h2 className="font-cabinet">Our Services</h2>
+          <h2 className="font-cabinet font-medium">Our Services</h2>
           <h3 className="font-satoshi text-wrap">
             <AnimatedText
               text="As a tight-knit team of experts, we create memorable and emotional websites, digital experiences, and native apps."
@@ -292,6 +293,7 @@ function Services() {
         </div>
 
         <div className={style.servicecontainer2}>
+          
           <div className={style.vertical}>
             <ServiceCard
               title="Website Design"

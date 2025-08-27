@@ -86,19 +86,19 @@
 }
 @media only screen and (min-width:1024px){
   .container{
-    height: 27rem;
+height: 27rem;
 min-width: 19rem;
 max-width: 22rem;
 }
 .introduction p{
   margin-top: 3rem;
 }
-
 }
 @media only screen and (min-width:1440px){
 .container{
   height: 28.625rem;
-  width: 24rem;
+  min-width: 24rem;
+  max-width: 27rem;
 }
 .introduction p{
   margin-top: 3rem;
@@ -110,10 +110,12 @@ max-width: 22rem;
 .potrait img{
   height: 14rem;
 }
+
 }
 @media only screen and (min-width:1920px){
   .container{
-  height: 27.625rem;
-  width: 29rem;
+  height: 28.625rem;
+  min-width: 29rem;
 }
 }
+
