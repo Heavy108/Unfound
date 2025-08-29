@@ -12,9 +12,12 @@ import Autoplay from "embla-carousel-autoplay";
 import ReasonCard from "./ReasonCard";
 import ReasonCard2 from "./ReasonCard2";
 
-import inovation from "../assets/inovation.svg";
-import culture from "../assets/culture.svg";
-import Expe from "../assets/Experience.png";
+// import inovation from "../assets/inovation.svg";
+// import culture from "../assets/culture.svg";
+// import Expe from "../assets/Experience.png";
+import inovation from "../assets/other/Innovative.json";
+import culture from "../assets/other/Brands.json";
+import Expe from "../assets/other/Experience.json";
 import style from "../css/Reason.module.css";
 import Gradient3 from "../assets/Gradient2.png";
 import Image from "next/image";
@@ -44,15 +47,15 @@ function Reasons() {
           image: culture,
         },
       },
-      {
-        component: ReasonCard,
-        props: {
-          title: "Experience",
-          description:
-            "Design rooted in strategy — blending tech, creativity, and clarity to elevate brands.",
-          image: Expe,
-        },
-      },
+      // {
+      //   component: ReasonCard,
+      //   props: {
+      //     title: "Experience",
+      //     description:
+      //       "Design rooted in strategy — blending tech, creativity, and clarity to elevate brands.",
+      //     image: Expe,
+      //   },
+      // },
     ],
     []
   );
@@ -229,11 +232,11 @@ function Reasons() {
                 image={culture}
               />
             </div>
-            <ReasonCard2
+            {/* <ReasonCard2
               title="Experience"
               description="Design rooted in strategy — blending tech, creativity, and clarity to elevate brands."
               image={Expe}
-            />
+            /> */}
           </div>
         </div>
       </div>

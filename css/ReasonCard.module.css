@@ -60,7 +60,7 @@
   border-radius: 2rem;
   width: 100%;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -109,6 +109,10 @@
     }
     .container2{
         width: 72rem;
+    }
+    .potrait img{
+height: 25rem;
+/* width: auto; */
     }
 
 }
