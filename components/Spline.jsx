@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Spline from "@splinetool/react-spline";
 import Image from "next/image";
-import fallback from "@/assets/other/Fallback.png";
+import fallback from "@/assets/HeroImage.png";
 import style from "@/css/Home.module.css";
 import { fail } from "assert";
 
@@ -28,10 +28,10 @@ export default function HeroSpline() {
       canvas.removeEventListener("webglcontextlost", handleContextLost, false);
     };
   }, [loading]);
-// useEffect(() =>{
-//   setHasError(true)
-//   setLoading(false)
-// })
+useEffect(() =>{
+  setHasError(true)
+  setLoading(false)
+})
   return (
     <main ref={containerRef} className={style.animation}>
       {/* Loading Spinner */}
@@ -48,7 +48,8 @@ export default function HeroSpline() {
           <Image
             src={fallback}
             alt="Fallback visual"
-            fill
+            width={800}
+            height={400}
             className="-z-10 mt-[2rem]"
             priority
           />

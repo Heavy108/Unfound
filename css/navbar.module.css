@@ -106,7 +106,10 @@ background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255,
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(78, 255, 240, 0.3);
 }
-
+/* .extradiv{
+  display: flex;
+  justify-content: space-between;
+} */
 @media only screen and (min-width: 320px) {
   .Navbar {
     backdrop-filter: blur(1.5rem);
@@ -125,6 +128,7 @@ background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255,
     display: none;
   }
   .Navbar {
+    /* width: 1024px; */
     padding: 1.75rem 6rem;
     backdrop-filter: none;
     box-shadow: none;
@@ -133,12 +137,14 @@ background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255,
 }
 @media only screen and (min-width:1440px){
   .Navbar{
+    /* width: 1440px; */
     padding: 1.75rem 7.5rem;
 
   }
 }
 @media only screen and (min-width:1920px){
   .Navbar{
+    /* width: 1924px; */
     padding: 1.75rem 15rem;
     
   }

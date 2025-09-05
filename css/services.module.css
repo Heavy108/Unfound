@@ -122,13 +122,15 @@ margin-top: 10rem;
   
 }
 .head{
+  /* width: 1024px; */
   flex-direction: row;
   justify-content: space-between;
   padding: 2rem 6rem;
-    align-items: normal;
+  
 }
 .head h2{
   font-size: 1.5rem;
+  width: 340px;
 }
 .head h3{
   width: 40rem;

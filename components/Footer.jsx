@@ -14,11 +14,11 @@ import Link from "next/link";
 function Footer() {
   return (
     <>
-      <Talk />
+      {/* <Talk /> */}
 
       <div className={`${style.footerWrapper} font-satoshi`}>
         {/* Background gradients */}
-        <Image
+        {/* <Image
           src={grad2}
           alt="footer gradient"
           className={style.footerGradient}
@@ -27,7 +27,7 @@ function Footer() {
           src={grad2}
           alt="footer gradient"
           className={style.footerGradient2}
-        />
+        /> */}
 
         {/* Content */}
 

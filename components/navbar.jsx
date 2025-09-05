@@ -90,6 +90,7 @@ function Navbar() {
       {/* AnimatePresence for navbar itself */}
       <AnimatePresence>
         {showNav && (
+
           <motion.div
             className={`${style.Navbar} ${scrolled ? style.scrolled : ""}`}
             variants={navVariants}
@@ -98,6 +99,7 @@ function Navbar() {
             animate="visible"
             exit="hidden"
           >
+            {/* <div className={style.extradiv}> */}
             <Link href={"/"}>
               <Image src={Logo} alt="UnfoundLogo" />
             </Link>
@@ -128,7 +130,9 @@ function Navbar() {
                   <GiHamburgerMenu className={style.navicon} />
                 )}
               </span>
+           
             </motion.div>
+            {/* </div> */}
           </motion.div>
         )}
       </AnimatePresence>

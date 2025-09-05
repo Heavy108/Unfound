@@ -47,15 +47,15 @@ function Reasons() {
           image: culture,
         },
       },
-      // {
-      //   component: ReasonCard,
-      //   props: {
-      //     title: "Experience",
-      //     description:
-      //       "Design rooted in strategy — blending tech, creativity, and clarity to elevate brands.",
-      //     image: Expe,
-      //   },
-      // },
+      {
+        component: ReasonCard,
+        props: {
+          title: "Experience",
+          description:
+            "Design rooted in strategy — blending tech, creativity, and clarity to elevate brands.",
+          image: Expe,
+        },
+      },
     ],
     []
   );
@@ -232,11 +232,11 @@ function Reasons() {
                 image={culture}
               />
             </div>
-            {/* <ReasonCard2
+            <ReasonCard2
               title="Experience"
               description="Design rooted in strategy — blending tech, creativity, and clarity to elevate brands."
               image={Expe}
-            /> */}
+            />
           </div>
         </div>
       </div>
