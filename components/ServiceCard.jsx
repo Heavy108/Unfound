@@ -1,6 +1,5 @@
 import style from "../css/ServiceCard.module.css";
 import Image from "next/image";
-import MotionDesign from "@/assets/MotionDesign.svg"
 
 export default function ServiceCard({ title, logo, description, image}) {
   return (
@@ -14,7 +13,14 @@ export default function ServiceCard({ title, logo, description, image}) {
           <p className="font-satoshi">{description}</p>
         </div>
         <div className={style.potrait}>
-          <img src={image.src} alt={title} className={style.svgFix} />
+          <Image
+            src={image.assets[0].p} // base64 string
+            alt={title}
+            className={style.svgFix}
+            width={400} // <-- required
+            height={400} // <-- required
+            unoptimized // <-- needed for base64
+          />
         </div>
       </div>
     </div>

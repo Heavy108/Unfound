@@ -13,12 +13,18 @@ import { LuHand, LuGlobe, LuCodeXml, LuPlay } from "react-icons/lu";
 import { BiBarChartAlt2 } from "react-icons/bi";
 import ServiceCard from "./ServiceCard";
 import ServiceCard2 from "./ServiceCard2";
-import UXDesign from "../assets/UXDesign.png";
-import WebsiteDesign from "../assets/WebsiteDesign.png";
-import VisualDesign from "../assets/VisualDesign.png";
-import ReportDesign from "../assets/ReportDesign.png";
-import Development from "../assets/Development.png";
-import MotionDesign from "../assets/MotionDesign.png";
+// import UXDesign from "../assets/UXDesign.png";
+// import WebsiteDesign from "../assets/WebsiteDesign.png";
+// import VisualDesign from "../assets/VisualDesign.png";
+// import ReportDesign from "../assets/ReportDesign.png";
+// import Development from "../assets/Development.png";
+// import MotionDesign from "../assets/MotionDesign.png";
+import UXDesign from "@/assets/Services/UXDesign.json"
+import WebsiteDesign from "@/assets/Services/WebsiteDesign.json"
+import VisualDesign from "@/assets/Services/VisualDesign.json"
+import ReportDesign from "@/assets/Services/ReportDesign.json"
+import Development from "@/assets/Services/Development.json"
+import MotionDesign from "@/assets/Services/MotionDesign.json"
 import style from "../css/services.module.css";
 import Gradient3 from "../assets/Gradient3.png";
 import Gradient3_1 from "../assets/Gradient3_1.png";

@@ -13,7 +13,14 @@ export default function ServiceCard2({ title, logo, description, image }) {
           <p className="font-satoshi">{description}</p>
         </div>
         <div className={style.potrait}>
-          <Image src={image} height={400} width={400} alt={title} />
+          <Image
+            src={image.assets[0].p} 
+            alt={title}
+            className={style.svgFix}
+            width={800} // <-- required
+            height={400} // <-- required
+            unoptimized 
+          />
         </div>
       </div>
     </div>

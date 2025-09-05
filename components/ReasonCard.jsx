@@ -2,7 +2,7 @@ import style from "../css/ReasonCard.module.css";
 import Image from "next/image";
 
 export default function ReasonCard({ title,  description, image }) {
-  console.log(image)
+  // console.log(image)
   return (
     <div className={style.container}>
       <div className={style.card}>
