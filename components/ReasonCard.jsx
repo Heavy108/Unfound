@@ -1,7 +1,7 @@
 import style from "../css/ReasonCard.module.css";
 import Image from "next/image";
 
-export default function ReasonCard({ title,  description, image }) {
+export default function ReasonCard({ title, description, image }) {
   // console.log(image)
   return (
     <div className={style.container}>
@@ -17,11 +17,11 @@ export default function ReasonCard({ title,  description, image }) {
           {/* <Image src={image} height={400} width={400} alt={title} priority /> */}
           <Image
             src={image.assets[0].p} // <-- extract base64
-            height={400}
-            width={400}
+            width={image.assets[0].w}
+            height={image.assets[0].h}
             alt={title}
             priority
-            unoptimized
+            // unoptimized
           />
         </div>
       </div>

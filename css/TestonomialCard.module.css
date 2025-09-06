@@ -14,7 +14,7 @@
   backdrop-filter: blur(10px);
   padding: 0.5rem;
    width: 18rem;  
-   height: 20rem;       
+   height: 26.25rem;       
    display: flex;        /* make sure child fills it */
   flex-direction: column;
   z-index: 0;
@@ -43,7 +43,7 @@
 .card h1{
     color: #FFF;
 /* font-family: Satoshi; */
-font-size: 0.8rem;
+font-size: 1.125rem;
 margin-bottom: 2rem;
 }
  .profile{
@@ -69,4 +69,9 @@ gap: 1rem;
     .card{
         justify-content: flex-end;
     }
+}
+@media only screen and (min-width:1440px){
+  .testcontainer{
+    width: 28rem;
+  }
 }
