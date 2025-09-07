@@ -34,21 +34,25 @@ export default function Stats() {
         />
 
         {/* Foreground content */}
-        <div className={styles.Statscard}>
-          <h2 className={`${styles.heading} font-cabinet`}>
-            Proven by Results
-          </h2>
-          <div className={styles.grid}>
-            {stats.map((stat, index) => (
-              <div key={index}  className={styles.experiment}>
-                <div className={styles.statItem}>
-                  <p className={`${styles.value} font-cabinet`}>{stat.value}</p>
-                  <p className={`${styles.label} font-satoshi`}>
-                    <span className={styles.dot}>●</span> {stat.label}
-                  </p>
+        <div className={styles.extradiv}>
+          <div className={styles.Statscard}>
+            <h2 className={`${styles.heading} font-cabinet`}>
+              Proven by Results
+            </h2>
+            <div className={styles.grid}>
+              {stats.map((stat, index) => (
+                <div key={index} className={styles.experiment}>
+                  <div className={styles.statItem}>
+                    <p className={`${styles.value} font-cabinet`}>
+                      {stat.value}
+                    </p>
+                    <p className={`${styles.label} font-satoshi`}>
+                      <span className={styles.dot}>●</span> {stat.label}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
         <MarqueeDemo />

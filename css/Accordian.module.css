@@ -100,9 +100,14 @@
   width: 100%;
   max-width: 100%;
   overflow: hidden;
+  cursor: pointer;
 }
 .moreinfo {
   display: none;
+}
+.extradiv{
+  display: flex;
+  justify-content: center;
 }
 @media only screen and (min-width: 768px) {
   .grad6 {
@@ -114,7 +119,8 @@
   .Faqcontainer {
     margin: 7rem 6rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    /* align-content:center ; */
     gap: 5rem;
     padding: 0rem;
   }
@@ -156,7 +162,12 @@
 @media only screen and (min-width: 1440px) {
   .Faqcontainer {
     margin: 10rem 7.5rem;
+   width: 1200px; 
+   /* align-content: center; */
   }
+  /* .faq_section{
+    width: 1200px;
+  } */
   .head h1{
     font-size: 3rem;
   }
@@ -166,5 +177,6 @@
   .Faqcontainer {
     /* Add any specific styles for larger screens */
     margin: 10rem 15rem;
+    width: 1440px;
   }
 }

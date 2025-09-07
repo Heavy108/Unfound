@@ -6,7 +6,7 @@ import { CgFacebook } from "react-icons/cg";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { TfiLinkedin } from "react-icons/tfi";
-import unfound from "@/assets/Unfound.png";
+import unfound from "@/assets/Unfound.svg";
 import FooterSVG from "../assets/footer_gradient.svg";
 import grad2 from "@/assets/footergrad2.svg";
 import Talk from "./Talk";

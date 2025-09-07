@@ -157,7 +157,7 @@ margin-top: 0.5rem;
    
     .container{
         /* margin: 5rem; */
-        margin: 5rem 4.5rem 8rem 4.5rem;
+        margin: 5rem 6rem 8rem 6rem;
 
     }
    .content{
@@ -199,7 +199,7 @@ margin-top: 0.5rem;
 }
 @media only screen and (min-width:1440px){
     .container{
-        margin: 10rem 6rem 8rem 6rem;
+        margin: 10rem 7.5rem 8rem 7.5rem;
     }
     .title{
         font-size: 3rem;
@@ -232,7 +232,7 @@ margin-top: 0.5rem;
 }
 @media only screen and (min-width:1920px){
     .container{
-        margin: 10rem 14rem;
+        margin: 10rem 15rem;
     }
    
 }

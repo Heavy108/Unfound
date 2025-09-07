@@ -5,15 +5,20 @@
   width: 100%;
   z-index: 1000;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 1.5rem 2rem;
   
 }
 .Navbar.scrolled {
- background-color: rgba(0, 0, 0, 0.25) !important;
-backdrop-filter: blur(120px) !important; /* ✅ background blur only */
+ /* background-color: rgba(0, 0, 0, 0.25) !important;
+ background: white;
+backdrop-filter: blur(120px) !important; 
   -webkit-backdrop-filter: blur(12px);
+  border-radius: 4rem;
+border: 1px solid rgba(255, 255, 255, 0.05);
+background: rgba(0, 0, 0, 0.25);
+backdrop-filter: blur(50px); */
 }
 .navicon {
   width: 1.5rem;
@@ -106,10 +111,18 @@ background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255,
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(78, 255, 240, 0.3);
 }
-/* .extradiv{
+.extradiv{
   display: flex;
   justify-content: space-between;
-} */
+  width: 100%;
+  
+}
+.extradiv a{
+display: flex;
+/* justify-content: center; */
+align-items: center;
+}
+
 @media only screen and (min-width: 320px) {
   .Navbar {
     backdrop-filter: blur(1.5rem);
@@ -132,8 +145,19 @@ background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255,
     padding: 1.75rem 6rem;
     backdrop-filter: none;
     box-shadow: none;
-    background: none;
+    /* background: none; */
   }
+  .extradiv{
+    width: 835px;
+    
+  }
+  .extradiv.scrolled{
+  border-radius: 4rem;
+border: 1px solid rgba(255, 255, 255, 0.05);
+background: rgba(0, 0, 0, 0.25);
+backdrop-filter: blur(50px);
+padding: 1rem 1rem 1rem 1rem;
+}
 }
 @media only screen and (min-width:1440px){
   .Navbar{
@@ -141,11 +165,17 @@ background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255,
     padding: 1.75rem 7.5rem;
 
   }
+  .extradiv{
+    width: 1200px;
+  }
 }
 @media only screen and (min-width:1920px){
   .Navbar{
     /* width: 1924px; */
     padding: 1.75rem 15rem;
     
+  }
+  .extradiv{
+    width: 1440px;
   }
 }

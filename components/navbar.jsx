@@ -90,49 +90,49 @@ function Navbar() {
       {/* AnimatePresence for navbar itself */}
       <AnimatePresence>
         {showNav && (
-
           <motion.div
-            className={`${style.Navbar} ${scrolled ? style.scrolled : ""}`}
+            className={`${style.Navbar} `}
             variants={navVariants}
             key="navbar"
             initial="hidden"
             animate="visible"
             exit="hidden"
           >
-            {/* <div className={style.extradiv}> */}
-            <Link href={"/"}>
-              <Image src={Logo} alt="UnfoundLogo" />
-            </Link>
-            <div className={style.container}>
-              <ul className={`${style.list} font-satoshi`}>
-                <Link href={"/#"}>
-                  <li>About</li>
-                </Link>
-                <Link href={"/CaseStudies"}>
-                  <li>Case Studies</li>
-                </Link>
-                <Link href={"/contact"}>
-                  <button className={style.contact}>Contact Us</button>
-                </Link>
-              </ul>
-            </div>
-            <motion.div
-              className={style.menuIcon}
-              onClick={handleClick}
-              variants={iconVariants}
-              animate={active ? "open" : "closed"}
-              whileTap={{ scale: 0.95 }}
+            <div
+              className={`${style.extradiv} ${scrolled ? style.scrolled : ""}`}
             >
-              <span>
-                {active ? (
-                  <IoCloseSharp className={style.navicon} />
-                ) : (
-                  <GiHamburgerMenu className={style.navicon} />
-                )}
-              </span>
-           
-            </motion.div>
-            {/* </div> */}
+              <Link href={"/"}>
+                <Image src={Logo} alt="UnfoundLogo" />
+              </Link>
+              <div className={style.container}>
+                <ul className={`${style.list} font-satoshi`}>
+                  <Link href={"/#"}>
+                    <li>About</li>
+                  </Link>
+                  <Link href={"/CaseStudies"}>
+                    <li>Case Studies</li>
+                  </Link>
+                  <Link href={"/contact"}>
+                    <button className={style.contact}>Contact Us</button>
+                  </Link>
+                </ul>
+              </div>
+              <motion.div
+                className={style.menuIcon}
+                onClick={handleClick}
+                variants={iconVariants}
+                animate={active ? "open" : "closed"}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>
+                  {active ? (
+                    <IoCloseSharp className={style.navicon} />
+                  ) : (
+                    <GiHamburgerMenu className={style.navicon} />
+                  )}
+                </span>
+              </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
