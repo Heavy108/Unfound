@@ -34,6 +34,23 @@
   color: white;
   /* padding: 20px 0; */
 }
+.item {
+  display: inline-flex;
+  align-items: center;
+  margin: 0.75rem 0.5rem; /* spacing between each set */
+
+  
+}
+
+
+.word {
+  margin-right: 0.25rem; 
+}
+
+.separator {
+  margin-left: 2.56rem; 
+margin-right:2.56rem ;
+}
 
 .moving-text {
   display: flex;
@@ -49,7 +66,7 @@
 }
 
 .strip span {
-  font-size: 1.5rem;
+  font-size: 1rem;
   letter-spacing: 2px;
 }
 
@@ -77,10 +94,16 @@
   .container{
     height: 40vh;
   }
+  .strip span{
+    font-size: 1.5rem;
+  }
 }
 @media only screen and (min-width:1440px){
   .strip1 {
   transform: translateX(-50%) translateY(-50%) rotate(-3deg);
+}
+.strip span{
+  font-size: 2rem;
 }
 
 .strip2 {

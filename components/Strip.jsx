@@ -1,24 +1,35 @@
 import styles from "../css/AnimatedTextStrip.module.css";
 
 export default function AnimatedTextStrips() {
-  const text = " UNFOUND STUDIO  • ";
-  const repeatedText = text.repeat(20); // Adjust based on screen width
+  const words = "UNFOUND STUDIO";
+  const separator = "•"; 
+  const repeatCount = 20; 
+
+  const repeatedText = Array.from({ length: repeatCount }, (_, i) => (
+    <span key={i} className={styles.item}>
+      <span className={styles.word}>{words}</span>
+      <span className={styles.separator}>{separator}</span>
+    </span>
+  ));
 
   return (
     <div className={styles.container}>
-      {/* First strip - moving left */}
       <div className={`${styles.strip} ${styles.strip1}`}>
-        <div className={`${styles["moving-text"]} ${styles["moving-left"]} font-satoshi`}>
-          <span className={styles.text}>{repeatedText}</span>
-          <span className={styles.text}>{repeatedText}</span>
+        <div
+          className={`${styles["moving-text"]} ${styles["moving-left"]} font-satoshi`}
+        >
+          {repeatedText}
+          {repeatedText}
         </div>
       </div>
 
       {/* Second strip - moving right */}
       <div className={`${styles.strip} ${styles.strip2}`}>
-        <div className={`${styles["moving-text"]} ${styles["moving-right"]} font-satoshi`}>
-          <span className={styles.text}>{repeatedText}</span>
-          <span className={styles.text}>{repeatedText}</span>
+        <div
+          className={`${styles["moving-text"]} ${styles["moving-right"]} font-satoshi`}
+        >
+          {repeatedText}
+          {repeatedText}
         </div>
       </div>
     </div>

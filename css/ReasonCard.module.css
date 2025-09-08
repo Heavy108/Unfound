@@ -13,10 +13,28 @@
     0 30px 60px 0 rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   padding: 0.5rem;
-  width: 18rem; /* fixed width */
+  width: 20rem; /* fixed width */
   height: 22rem;
   display: flex; /* make sure child fills it */
   flex-direction: column;
+}
+.container2{
+  color: white;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: radial-gradient(
+      146.13% 118.42% at 50% -15.5%,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0) 99.59%
+    ),
+    linear-gradient(180deg, rgba(46, 51, 90, 0) 0%, rgba(27, 51, 41, 0.1) 100%);
+  box-shadow: 0 0 100px 0 rgba(204, 215, 255, 0.05) inset,
+    0 5px 10px 0 rgba(0, 0, 0, 0.05), 0 15px 30px 0 rgba(0, 0, 0, 0.05),
+    0 30px 60px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem;
+  width: 20rem; /* fixed width */
+  height: 22rem;
 }
 .card {
   display: flex;
@@ -59,23 +77,48 @@
 .potrait img {
   border-radius: 1.50rem;
   width: 100%;
-  height: auto;
+  /* height: auto; */
   object-fit: cover;
   /* object-fit: contain; */
+  height: 12rem;
+}
+/* card2 reason experience */
+.potrait2 img{
+border-radius: 1.50rem;
+  width: 100%;
+  /* height: auto; */
+  object-fit: fill;
+  height: 11rem;
+  padding: 0rem 1.5rem;
+
+}
+@media only screen and (min-width:768px){
+
 }
 
 @media only screen and (min-width: 1024px) {
   .container {
-    height: fit-content;
+    /* height: fit-content; */
     min-width: 26rem;
-    height: 29rem;
-    max-width: 36rem;
+    height: 32rem;
+    /* width: 36rem; */
+  }
+  .container2{
+    min-width: 26rem;
+    height: 30rem;
   }
   .heading h1{
     font-size: 2rem;
   }
   .heading p{
     font-size: 1.25rem;
+  }
+  .potrait img{
+    height: 20rem;
+  }
+  .potrait2 img{
+    /* height: 20rem; */
+    height: fit-content;
   }
 
   /* Reasoncard2 */
@@ -99,21 +142,26 @@
     backdrop-filter: blur(10px);
   padding: 0.5rem;
 
-    height: fit-content;
+    /* height: fit-content; */
     width: 53rem;
   }
 }
 @media only screen and (min-width:1440px){
     .container{
-        width: 36rem;
+        width: 36.125rem;
         height: 37rem;
     }
     .container2{
-        width: 72rem;
+        width: 73.5rem;
+        height: 37rem;
     }
     .potrait img{
 height: 25rem;
 /* width: auto; */
+    }
+    .potrait2 img{
+      height: 28rem;
+      padding: 0rem 2rem;
     }
 
 }

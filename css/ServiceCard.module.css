@@ -115,7 +115,8 @@ max-width: 22rem;
   font-size: 2rem;
 }
 .potrait img{
-  height: 14rem;
+  height: 12rem;
+  object-fit: contain;
 }
 .logo{
   padding: 0.8rem;

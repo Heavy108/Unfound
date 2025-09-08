@@ -48,7 +48,7 @@ function Reasons() {
         },
       },
       {
-        component: ReasonCard,
+        component: ReasonCard2,
         props: {
           title: "Experience",
           description:
@@ -61,7 +61,7 @@ function Reasons() {
   );
   const slides = [...duplicatedSlides, ...duplicatedSlides];
 
-  const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false }));
+  const autoplay = useRef(Autoplay({ delay: 400000, stopOnInteraction: false }));
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true },

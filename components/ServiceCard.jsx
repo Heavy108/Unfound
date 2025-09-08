@@ -17,9 +17,9 @@ export default function ServiceCard({ title, logo, description, image}) {
             src={image.assets[0].p} // base64 string
             alt={title}
             className={style.svgFix}
-            width={400} // <-- required
-            height={400} // <-- required
-            unoptimized // <-- needed for base64
+            width={image.assets[0].w}
+            height={image.assets[0].h}
+            // unoptimized
           />
         </div>
       </div>

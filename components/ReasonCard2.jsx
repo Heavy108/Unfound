@@ -12,7 +12,7 @@ export default function ReasonCard2({ title, description, image }) {
           </div>
           <p className="font-satoshi">{description}</p>
         </div>
-        <div className={style.potrait}>
+        <div className={style.potrait2}>
           <Image
             src={image.assets[0].p} // <-- extract base64
             width={image.assets[0].w}
@@ -20,6 +20,7 @@ export default function ReasonCard2({ title, description, image }) {
             alt={title}
             priority
             unoptimized
+            // className={style.card2img}
           />
         </div>
       </div>
