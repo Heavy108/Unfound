@@ -41,13 +41,13 @@ const AnimatedText = ({ text, scrollYProgress }) => {
   return (
     <span>
       {words.map((word, i) => {
-        const start = i * 0.05; // stagger start
+        const start = i * 0.05; 
         const end = start + 0.3;
 
         const color = useTransform(
           scrollYProgress,
           [start, end],
-          ["#868A8A", "#FFFFFF"]
+          ["#595959", "#FFFFFF"]
         );
 
         return (

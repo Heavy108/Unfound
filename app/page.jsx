@@ -38,11 +38,11 @@ export default function Home() {
             digital products and stories.
           </p>
           <div className={style.buttonContainer}>
-            <button className={`${style.expertise} font-satoshi`}>
+            <button className={`${style.expertise} font-satoshimedium`}>
               See Expertise
             </button>
             <Link href={"/contact"}>
-              <button className={`${style.lets} font-satoshi`}>
+              <button className={`${style.lets} font-satoshimedium`}>
                 Let's Talk{" "}
                 <span className={style.arrow}>
                   <FaArrowRight />
@@ -82,7 +82,7 @@ export default function Home() {
       </section> */}
       <Reasons />
       <FAQ />
-      <Talk/>
+      <Talk />
       <Footer />
     </>
   );

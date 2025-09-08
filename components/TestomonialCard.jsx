@@ -10,7 +10,9 @@ function TestomonialCard({ testomonial, image, name, designation }) {
           <Image src={image} width={40} height={40} alt={`${name} profile`} />
           <div className={style.intro}>
             <h2 className="font-cabinet">{name}</h2>
-            <h2 className="font-satoshi">{designation}</h2>
+            <h2 className={`${style.designation} font-satoshi `}>
+              {designation}
+            </h2>
           </div>
         </div>
       </div>

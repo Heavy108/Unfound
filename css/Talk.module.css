@@ -20,6 +20,12 @@
 
   /* z-index: 6; */
 }
+.extradiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
 
 .icons2 {
   color: black;
@@ -82,6 +88,14 @@
     font-size: 1.25rem;
   }
   .outer {
+    margin: 0rem 7.5rem;
+    width: 1200px;
+  }
+}
+@media only screen  and (min-width:1920px){
+  .outer{
     margin: 0rem 15rem;
+    width: 1440px;
+
   }
 }

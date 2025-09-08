@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 // import style from "../fonts"
 const cabinet = localFont({
-  src: "../fonts/CabinetGrotesk-Regular.woff2",
+  src: "../fonts/CabinetGrotesk-Medium.woff2",
   variable: "--font-cabinet",
   style: "normal",
 });
@@ -11,6 +11,10 @@ const cabinet = localFont({
 const satoshi = localFont({
   src: "../fonts/Satoshi-Regular.woff2",
   variable: "--font-satoshi",
+});
+const satoshi_medium = localFont({
+  src: "../fonts/Satoshi-Medium.woff2",
+  variable: "--font-satoshimedium",
 });
 
 

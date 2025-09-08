@@ -2,7 +2,7 @@
   color: white;
   padding: 2rem;
   position: relative;
-  /* width: 100%; Ensure container has full width */
+  width: 100%;
 }
 
 .outside {
@@ -77,7 +77,7 @@
   width: 100%;
   word-wrap: break-word;
   overflow-wrap: anywhere;
-  margin-top: 1rem; /* Add spacing between question and content */
+  margin-top: 0.5rem; 
 }
 
 .icons {
@@ -112,6 +112,9 @@
 @media only screen and (min-width: 768px) {
   .grad6 {
     top: -4%;
+  }
+  .Faqcontainer{
+    padding: 4rem;
   }
 }
 

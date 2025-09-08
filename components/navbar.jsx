@@ -107,7 +107,7 @@ function Navbar() {
               <div className={style.container}>
                 <ul className={`${style.list} font-satoshi`}>
                   <Link href={"/#"}>
-                    <li>About</li>
+                    <li>Why Us</li>
                   </Link>
                   <Link href={"/CaseStudies"}>
                     <li>Case Studies</li>
@@ -150,7 +150,7 @@ function Navbar() {
           >
             <Link href={"/#"}>
               <motion.li variants={itemVariants}>
-                About
+                Why Us
                 <motion.span
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}

@@ -1,7 +1,7 @@
 import styles from "../css/AnimatedTextStrip.module.css";
 
 export default function AnimatedTextStrips() {
-  const text = "UNFOUND STUDIO • ";
+  const text = " UNFOUND STUDIO  • ";
   const repeatedText = text.repeat(20); // Adjust based on screen width
 
   return (

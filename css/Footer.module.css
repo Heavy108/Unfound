@@ -32,11 +32,11 @@ margin-bottom: 1.5rem;
     flex-direction: column;
     padding: 3rem 4rem;
     /* border-top: 2px solid white; */
-    border-top: 4px solid transparent;
+    border-top: 2px solid transparent;
   border-image: linear-gradient(
     to right, 
     rgba(78, 255, 240, 0) 0%, 
-    rgba(78, 255, 240, 0.5) 69%, 
+    rgba(78, 255, 240, 0.5) 50%, 
     rgba(78, 255, 240, 0) 100%
   ) 1;
   gap: 2rem;
