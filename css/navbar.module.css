@@ -135,6 +135,11 @@ padding: 0.75rem 0.75rem 0.75rem 2.5rem;
     box-shadow: 0px 4px 64px rgba(0, 0, 0, 0.5);
   }
 } */
+ @media only screen and (min-width:768px){
+  .Navbar{
+    padding: 1.5rem 4rem;
+  }
+ }
 
 @media only screen and (min-width: 1024px) {
   .container {

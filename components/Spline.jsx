@@ -8,7 +8,7 @@ import style from "@/css/Home.module.css";
 import { fail } from "assert";
 
 export default function HeroSpline() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const containerRef = useRef(null);
 
@@ -20,7 +20,7 @@ export default function HeroSpline() {
       e.preventDefault();
       console.warn("WebGL context lost, switching to fallback...");
       setHasError(true);
-      setLoading(false);
+      // setLoading(false);
     };
 
     canvas.addEventListener("webglcontextlost", handleContextLost, false);
@@ -30,7 +30,7 @@ export default function HeroSpline() {
   }, [loading]);
 useEffect(() =>{
   setHasError(true)
-  setLoading(false)
+  // setLoading(false)
 })
   return (
     <main ref={containerRef} className={style.animation}>

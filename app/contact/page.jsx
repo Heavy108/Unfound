@@ -1,54 +1,108 @@
-import style from "../../css/contact.module.css"
-import Image from "next/image"
-import contact from "../../assets/other/contact.png"
-import gradientmobile from "../../assets/Gradient2.png"
-import gradientdesktop from "../../assets/Gradient5.png"
-import Navbar from "../../components/navbar"
-import Footer from "../../components/Footer"
-function Contact(){
-    return (
-      <>
-        <Navbar />
-        <div className={`${style.contactcontainer} min-h-screen overflow-y-hidden`}>
-          <Image
-            src={gradientmobile}
-            className={style.gradientmobile}
-            alt="gradientmobile"
-          />
-          <Image
-            src={gradientdesktop}
-            className={style.gradientdesktop}
-            alt="gradientdesktop"
-          />
+"use client";
+import { useState } from "react";
+import style from "../../css/contact.module.css";
+import Image from "next/image";
+import contact from "../../assets/other/contact.png";
+import gradientmobile from "../../assets/Gradient2.png";
+import gradientdesktop from "../../assets/Gradient5.png";
+import Navbar from "../../components/navbar";
+import Footer from "../../components/Footer";
+function Contact() {
+  const initialState = {
+    email: "",
+    name: "",
+    message: "",
+  };
+
+  const [user, setUser] = useState(initialState);
+  const [loading, setLoading] = useState(false);
+const handlesubmit = async (e) => {
+  e.preventDefault(); // stop form reload
+  setLoading(true);
+
+  console.log("Form submitted:", user);
+
+  setLoading(false);
+};
+
+  return (
+    <>
+      <Navbar />
+      {/* <div className={style.extradiv}> */}
+      <div
+        className={`${style.contactcontainer} min-h-screen overflow-y-hidden`}
+      >
+        <Image
+          src={gradientmobile}
+          className={style.gradientmobile}
+          alt="gradientmobile"
+        />
+        <Image
+          src={gradientdesktop}
+          className={style.gradientdesktop}
+          alt="gradientdesktop"
+        />
+        <div className={style.extradiv}>
           <div className={style.potrait}>
             <h1 className="font-satoshi">
               <span className={style.dot}>●</span>
               Contact
             </h1>
-            <h2 className="font-cabinet">Let's create something extraordinary together.</h2>
+            <h2 className="font-cabinet">
+              Let's create something extraordinary together.
+            </h2>
             <Image src={contact} alt="contact" />
           </div>
 
-          <form action="" className={`${style.contactform} font-satoshi`}>
+          <form
+            onSubmit={handlesubmit}
+            className={`${style.contactform} font-satoshi`}
+          >
             <div className={style.formsection}>
-              <label htmlFor="Name">Name</label>
-              <input type="text" placeholder="Enter your Name" />
+              <label htmlFor="name">Name</label>
+              <input
+                id="name"
+                type="text"
+                placeholder="Enter your Name"
+                required
+                onChange={(e) => setUser({ ...user, name: e.target.value })}
+                value={user.name}
+              />
             </div>
+
             <div className={style.formsection}>
               <label htmlFor="email">Email</label>
-              <input type="email" placeholder="Enter your Email" />
-            </div>
-            <div className={style.formsection}>
-              <label htmlFor="Message">Message</label>
-              <textarea type="text" placeholder="Enter Message" />
+              <input
+                id="email"
+                type="email"
+                placeholder="Enter your Email"
+                required
+                onChange={(e) => setUser({ ...user, email: e.target.value })}
+                value={user.email}
+              />
             </div>
 
-            <input type="submit" className={style.vutton} />
+            <div className={style.formsection}>
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                placeholder="Enter Message"
+                required
+                onChange={(e) => setUser({ ...user, message: e.target.value })}
+                value={user.message}
+              />
+            </div>
+
+            <button type="submit" className={style.vutton}>
+              {loading ? "Submitting..." : "Submit"}
+            </button>
           </form>
         </div>
-        <Footer />
-      </>
-    );
+      </div>
+      {/* </div> */}
+      <Footer />
+    </>
+  );
 }
 
-export default Contact
+export default Contact;
