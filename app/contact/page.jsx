@@ -20,10 +20,34 @@ const handlesubmit = async (e) => {
   e.preventDefault(); // stop form reload
   setLoading(true);
 
-  console.log("Form submitted:", user);
+  try {
+    const response = await fetch("/api/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json", // important for JSON
+      },
+      body: JSON.stringify(user),
+    });
 
-  setLoading(false);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    console.log("Form submitted successfully:", result);
+
+    setUser({
+      email: "",
+      name: "",
+      message: "",
+    });
+  } catch (error) {
+    console.error("Error submitting form:", error);
+  } finally {
+    setLoading(false);
+  }
 };
+
 
   return (
     <>
@@ -67,6 +91,7 @@ const handlesubmit = async (e) => {
                 required
                 onChange={(e) => setUser({ ...user, name: e.target.value })}
                 value={user.name}
+                autoComplete="off"
               />
             </div>
 
@@ -79,6 +104,7 @@ const handlesubmit = async (e) => {
                 required
                 onChange={(e) => setUser({ ...user, email: e.target.value })}
                 value={user.email}
+                autoComplete="off"
               />
             </div>
 
@@ -90,6 +116,7 @@ const handlesubmit = async (e) => {
                 required
                 onChange={(e) => setUser({ ...user, message: e.target.value })}
                 value={user.message}
+                autoComplete="off"
               />
             </div>
 
