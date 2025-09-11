@@ -13,10 +13,12 @@
     0 30px 60px 0 rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   padding: 0.5rem;
-   width: 18rem;         /* fixed width */
+   width: 18rem;         
   height: 25rem; 
-   display: flex;        /* make sure child fills it */
+   display: flex;        
   flex-direction: column;
+
+
 }
 
 .svgFix {
@@ -27,6 +29,7 @@
 }
 
 .card {
+  /* margin: 0.5rem; */
   display: flex;
   flex: 1; 
   flex-direction: column;

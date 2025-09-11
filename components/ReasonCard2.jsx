@@ -1,8 +1,11 @@
 import style from "../css/ReasonCard.module.css";
 import Image from "next/image";
+import { MagicCard } from "./magicui/magic-card";
 
 export default function ReasonCard2({ title, description, image }) {
   return (
+        <MagicCard className="p-0.25 rounded-[2rem]">
+    
     <div className={style.container2}>
       <div className={style.card}>
         <div className={style.introduction}>
@@ -25,5 +28,7 @@ export default function ReasonCard2({ title, description, image }) {
         </div>
       </div>
     </div>
+        </MagicCard>
+    
   );
 }

@@ -34,7 +34,7 @@ const handlesubmit = async (e) => {
     }
 
     const result = await response.json();
-    console.log("Form submitted successfully:", result);
+    alert("Form submitted successfully:");
 
     setUser({
       email: "",
@@ -43,6 +43,8 @@ const handlesubmit = async (e) => {
     });
   } catch (error) {
     console.error("Error submitting form:", error);
+    alert("Something went wrong. Try contacting us at: team@unfoundstudio.com");
+
   } finally {
     setLoading(false);
   }

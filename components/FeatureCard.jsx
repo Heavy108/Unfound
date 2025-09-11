@@ -1,16 +1,20 @@
 import Image from "next/image";
 import style from "../css/FeatureCard.module.css";
 import Link from "next/link";
+import { FollowerPointerCard } from "./ui/following-pointer";
 function FeatureCard({ image, tech1, tech2, desc,link }) {
   return (
     <div className={style.container}>
-      <div className={style.potrait}>
-        <div className={style.wrapper}>
-          <Link href={link}>
-            <Image src={image} alt={desc || "Feature image"} />
-          </Link>
+      <FollowerPointerCard title={desc}>
+        <div className={style.potrait}>
+          <div className={style.wrapper}>
+            <Link href={link}>
+              <Image src={image} alt={desc || "Feature image"} />
+            </Link>
+          </div>
         </div>
-      </div>
+      </FollowerPointerCard>
+
       <div className={style.introduction}>
         <button className="font-satoshi">{tech1}</button>
         <button className="font-satoshi">{tech2}</button>
