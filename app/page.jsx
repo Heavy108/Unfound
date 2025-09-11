@@ -1,9 +1,10 @@
-
+'use client'
+import { useRef } from "react";
 import Image from "next/image";
 import Navbar from "../components/navbar";
 import Gradient1 from "../assets/Gradient.png";
 import Gradient2 from "../assets/Gradient2.png";
-import HeroSpline from "@/components/Spline"
+import HeroSpline from "@/components/Spline";
 import style from "../css/Home.module.css";
 import { FaArrowRight } from "react-icons/fa6";
 import Spline from "@splinetool/react-spline/next";
@@ -11,14 +12,21 @@ import Stats from "../components/stats";
 import Services from "../components/Services";
 import Testonomial from "../components/Testomonial";
 import AnimatedTextRibbon from "@/components/Strip";
-import Gradient4 from "@/assets/Gradient4.png"
-import Feature from "@/components/Features"
-import Reasons from "@/components/Reason"
-import FAQ from "@/components/FAQ"
-import Footer from "@/components/Footer"
+import Gradient4 from "@/assets/Gradient4.png";
+import Feature from "@/components/Features";
+import Reasons from "@/components/Reason";
+import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
 import Link from "next/link";
 import Talk from "@/components/Talk";
+
 export default function Home() {
+  const servicesRef = useRef(null);
+
+  const handleScroll = () => {
+    servicesRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <div className="relative  h-[500px] w-full overflow-hidden ">
@@ -38,7 +46,10 @@ export default function Home() {
             digital products and stories.
           </p>
           <div className={style.buttonContainer}>
-            <button className={`${style.expertise} font-satoshimedium`}>
+            <button
+              onClick={handleScroll}
+              className={`${style.expertise} font-satoshimedium`}
+            >
               See Expertise
             </button>
             <Link href={"/contact"}>
@@ -52,17 +63,14 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <div className={style.animation}>
-        <Spline
-          scene="https://prod.spline.design/BdBvQQ2ZpuUKIjVw/scene.splinecode"
-          style={{ pointerEvents: "none" }}
-          onError={(err) => console.error("Spline failed:", err)}
-        />
-      </div> */}
+
       <HeroSpline />
 
       <Stats />
-      <Services />
+      <div ref={servicesRef}>
+        <Services />
+      </div>
+
       <Testonomial />
       <section className="relative  w-full min-h">
         <Image
@@ -75,12 +83,13 @@ export default function Home() {
         />
 
         <AnimatedTextRibbon />
+        {/* Wrap Feature with ref */}
         <Feature />
       </section>
-      {/* <section className="text-7xl text-white">
-        hello
-      </section> */}
-      <Reasons />
+
+      <div id="reasons">
+        <Reasons />
+      </div>
       <FAQ />
       <Talk />
       <Footer />

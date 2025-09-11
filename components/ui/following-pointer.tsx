@@ -91,15 +91,15 @@ export const FollowPointer = ({
   y: any;
   title?: string | React.ReactNode;
 }) => {
-  const colors = [
-    "#0ea5e9",
-    "#737373",
-    "#14b8a6",
-    "#22c55e",
-    "#3b82f6",
-    "#ef4444",
-    "#eab308",
-  ];
+  // const colors = [
+  //   "#0ea5e9",
+  //   "#737373",
+  //   "#14b8a6",
+  //   "#22c55e",
+  //   "#3b82f6",
+  //   "#ef4444",
+  //   "#eab308",
+  // ];
 
   return (
     <motion.div
@@ -152,7 +152,7 @@ export const FollowPointer = ({
           scale: 0.5,
           opacity: 0,
         }}
-        className="min-w-max flex gap-1 rounded-full bg-neutral-200 px-2 py-2 text-[1rem] font-satoshi whitespace-nowrap text-black"
+        className="min-w-max flex gap-1 rounded-full bg-neutral-200 px-2 py-2 text-[1rem] font-satoshimedium whitespace-nowrap text-black"
       >
         View Project{" "}
         <span className="flex items-center -rotate-45 ">

@@ -1,3 +1,4 @@
+// file: components/navbar.jsx (your original file with only small changes)
 "use client";
 import style from "../css/navbar.module.css";
 import Logo from "../assets/Logowithname.png";
@@ -19,25 +20,14 @@ function Navbar() {
     setActive(!active);
   };
 
-  // Detect scroll direction + blur toggle
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
+      if (currentScroll > 50) setScrolled(true);
+      else setScrolled(false);
 
-      // toggle blur after 50px scroll
-      if (currentScroll > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-
-      if (currentScroll > lastScroll && currentScroll > 100) {
-        // scrolling down → hide navbar
-        setShowNav(false);
-      } else {
-        // scrolling up → show navbar
-        setShowNav(true);
-      }
+      if (currentScroll > lastScroll && currentScroll > 100) setShowNav(false);
+      else setShowNav(true);
 
       setLastScroll(currentScroll);
     };
@@ -46,13 +36,11 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScroll]);
 
-  // Animation for navbar slide in/out
   const navVariants = {
     hidden: { y: "-100%", transition: { duration: 0.3, ease: "easeInOut" } },
     visible: { y: "0%", transition: { duration: 0.3, ease: "easeInOut" } },
   };
 
-  // Animation variants for the menu
   const menuVariants = {
     hidden: {
       opacity: 0,
@@ -87,11 +75,10 @@ function Navbar() {
 
   return (
     <>
-      {/* AnimatePresence for navbar itself */}
       <AnimatePresence>
         {showNav && (
           <motion.div
-            className={`${style.Navbar} `}
+            className={`${style.Navbar}`}
             variants={navVariants}
             key="navbar"
             initial="hidden"
@@ -106,7 +93,8 @@ function Navbar() {
               </Link>
               <div className={style.container}>
                 <ul className={`${style.list} font-satoshi`}>
-                  <Link href={"/#"}>
+                  {/* changed to the reasons anchor */}
+                  <Link href={"/#reasons"}>
                     <li>Why Us</li>
                   </Link>
                   <Link href={"/CaseStudies"}>
@@ -148,7 +136,8 @@ function Navbar() {
             exit="hidden"
             style={{ overflow: "hidden" }}
           >
-            <Link href={"/#"}>
+            {/* mobile menu: close menu on click and navigate to anchor */}
+            <Link href={"/#reasons"} onClick={() => setActive(false)}>
               <motion.li variants={itemVariants}>
                 Why Us
                 <motion.span
@@ -159,7 +148,8 @@ function Navbar() {
                 </motion.span>
               </motion.li>
             </Link>
-            <Link href={"/CaseStudies"}>
+
+            <Link href={"/CaseStudies"} onClick={() => setActive(false)}>
               <motion.li variants={itemVariants}>
                 Case Studies
                 <motion.span
@@ -170,7 +160,8 @@ function Navbar() {
                 </motion.span>
               </motion.li>
             </Link>
-            <Link href={"/contact"}>
+
+            <Link href={"/contact"} onClick={() => setActive(false)}>
               <motion.li variants={itemVariants}>
                 Contact Us
                 <motion.span
