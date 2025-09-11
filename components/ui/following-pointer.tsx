@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence, useMotionValue } from "motion/react";
 import { cn } from "@/lib/utils";
+import {  FaArrowRight } from "react-icons/fa6";
 
 export const FollowerPointerCard = ({
   children,
@@ -137,6 +138,7 @@ export const FollowPointer = ({
         style={{
           background:
             "linear-gradient(250deg, #29F99E -12.84%, #4EFFF0 118.51%)",
+          padding: "0.5rem 1.5rem",
         }}
         initial={{
           scale: 0.5,
@@ -150,9 +152,12 @@ export const FollowPointer = ({
           scale: 0.5,
           opacity: 0,
         }}
-        className="min-w-max rounded-full bg-neutral-200 px-2 py-2 text-xs whitespace-nowrap text-black"
+        className="min-w-max flex gap-1 rounded-full bg-neutral-200 px-2 py-2 text-[1rem] font-satoshi whitespace-nowrap text-black"
       >
-        {`View Project`}
+        View Project{" "}
+        <span className="flex items-center -rotate-45 ">
+          <FaArrowRight size={24} />
+        </span>
       </motion.div>
     </motion.div>
   );
