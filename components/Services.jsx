@@ -29,12 +29,12 @@ import style from "../css/services.module.css";
 import Gradient3 from "../assets/Gradient3.png";
 import Gradient3_1 from "../assets/Gradient3_1.png";
 import Image from "next/image";
-
+// import ScrollFloat from "./ScrollFloat"
 const TWEEN_FACTOR_BASE = 0.52;
 const numberWithinRange = (number, min, max) =>
   Math.min(Math.max(number, min), max);
 
-// 🔥 Utility component for per-word scroll animation
+
 const AnimatedText = ({ text, scrollYProgress }) => {
   const words = text.split(" ");
 
@@ -242,7 +242,9 @@ function Services() {
         {/* 🔥 Animated heading */}
         
         <div className={style.head} ref={textRef}>
-          <h2 className="font-cabinet font-medium">Our Services</h2>
+          <h2 className="font-cabinet font-medium">
+            Our Services
+            </h2>
           <h3 className="font-satoshi text-wrap">
             <AnimatedText
               text="As a tight-knit team of experts, we create memorable and emotional websites, digital experiences, and native apps."

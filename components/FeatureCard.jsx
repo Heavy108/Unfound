@@ -5,7 +5,7 @@ import { FollowerPointerCard } from "./ui/following-pointer";
 function FeatureCard({ image, tech1, tech2, desc,link }) {
   return (
     <div className={style.container}>
-      <FollowerPointerCard title={desc}>
+      <FollowerPointerCard >
         <div className={style.potrait}>
           <div className={style.wrapper}>
             <Link href={link}>
