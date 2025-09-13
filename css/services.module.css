@@ -55,6 +55,7 @@ color: white;
 display: flex;
 flex-direction: column;
 align-items: center;
+
 padding: 2rem;
 gap: 0.5rem;
 }
@@ -126,14 +127,17 @@ margin-top: 10rem;
   flex-direction: row;
   justify-content: space-between;
   padding: 2rem 6rem;
+  align-items: normal;
   
 }
 .head h2{
   font-size: 1.5rem;
-  width: 340px;
+  width: 360px;
+  
+ 
 }
 .head h3{
-  width: 40rem;
+  /* width: 40rem; */
   font-size: 1.75rem;
   padding-left: 5rem;
 }
@@ -153,6 +157,9 @@ margin-top: 10rem;
     width: 1440px;
   padding: 2rem 7.5rem;
     
+  }
+  .head h2{
+    width: 480px;
   }
   .servicecontainer2{
     margin: 3rem 7.5rem 10rem 7.5rem;
