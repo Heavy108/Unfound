@@ -88,7 +88,7 @@ function Footer() {
       {/* Footer image at bottom */}
       <Image
         src={unfound}
-        width={1900}
+        width={25600}
         height={300}
         alt="unfound"
         className={style.unfound}

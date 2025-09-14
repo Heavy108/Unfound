@@ -87,3 +87,9 @@ backdrop-filter: blur(10px);
 }
 
 }
+@media only screen and (min-width:1920px) {
+    .potrait img{
+        max-width: 43rem;
+        
+    }
+}
