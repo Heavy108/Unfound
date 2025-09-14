@@ -2,6 +2,7 @@
   width: 100% !important;
   /* overflow: hidden; */
   margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 .dotcontainer {
   display: flex;

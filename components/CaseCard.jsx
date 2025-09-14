@@ -223,10 +223,13 @@ const OPTIONS = { slidesToScroll: 2, };
               <Image src={landing} alt="landing" className={style.hero} />
             </div>
           </div>
-          <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+          <div className={`${style.section} font-cabinet `}>
+            <h1 className={`${style.title} font-cabinet`}>Explore More Work</h1>
+            <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+          </div>
         </div>
       </div>
-      <div className={style.section}></div>
+      {/* <div className={style.section}></div> */}
       <Footer />
     </>
   );

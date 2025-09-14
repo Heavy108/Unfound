@@ -4,6 +4,7 @@
     gap: 1.5rem;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 5rem;
 }
 .featuresContainer2{
     display: none;
@@ -17,6 +18,7 @@
 .head span{
     color: #29F99E;
     margin-right: 0.5rem;
+    font-family: none;
 }
 .head h3{
     font-size: 1rem;
@@ -50,6 +52,7 @@
     z-index: 1;
 
 }
+
 .viewall svg{
     color: #4EFFF0;
 
@@ -77,6 +80,7 @@
    justify-content: center;
     margin: 0rem 4rem;
     gap: 1rem;
+    margin-bottom: 5rem;
 }
 .vertical{
     display: flex;
@@ -98,6 +102,10 @@
     margin-left: 2rem;
     
 }
+.grad4_1{
+    z-index: -1;
+}
+
 
 .infocard{
 display: flex;
