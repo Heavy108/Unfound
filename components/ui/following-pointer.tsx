@@ -7,27 +7,28 @@ import {
   MotionValue,
 } from "motion/react";
 import { cn } from "@/lib/utils";
-import { FaArrowRight } from "react-icons/fa6";
+import { ArrowUpRight } from "lucide-react";
+
 
 export const FollowerPointerCard = ({
   children,
   className,
   title,
+  showIcon = true, // ✅ new prop with default true
 }: {
   children: React.ReactNode;
   className?: string;
   title?: string | React.ReactNode;
+  showIcon?: boolean;
 }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const ref = React.useRef<HTMLDivElement>(null);
   const [isInside, setIsInside] = useState<boolean>(false);
 
-  // Update rect on scroll and resize
   useEffect(() => {
     const updateRect = () => {
       if (ref.current) {
-        // force re-calc (but we don’t actually need to store rect in state)
         ref.current.getBoundingClientRect();
       }
     };
@@ -61,7 +62,9 @@ export const FollowerPointerCard = ({
       className={cn("relative", className)}
     >
       <AnimatePresence>
-        {isInside && <FollowPointer x={x} y={y} title={title} />}
+        {isInside && (
+          <FollowPointer x={x} y={y} title={title} showIcon={showIcon} />
+        )}
       </AnimatePresence>
       {children}
     </div>
@@ -72,10 +75,12 @@ export const FollowPointer = ({
   x,
   y,
   title,
+  showIcon = true, // ✅ optional prop
 }: {
   x: MotionValue<number>;
   y: MotionValue<number>;
   title?: string | React.ReactNode;
+  showIcon?: boolean;
 }) => {
   return (
     <motion.div
@@ -89,6 +94,20 @@ export const FollowPointer = ({
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0, opacity: 0 }}
     >
+      {showIcon && ( // ✅ conditional render
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          strokeWidth="1"
+          viewBox="0 0 16 16"
+          className="h-6 w-6 -translate-x-[12px] -translate-y-[10px] -rotate-[70deg] transform stroke-sky-600 text-sky-500"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"></path>
+        </svg>
+      )}
       <motion.div
         style={{
           background:
@@ -103,8 +122,8 @@ export const FollowPointer = ({
         {title ?? (
           <>
             View Project{" "}
-            <span className="flex items-center -rotate-45">
-              <FaArrowRight size={24} />
+            <span className="flex items-center">
+              <ArrowUpRight size={24} />
             </span>
           </>
         )}

@@ -88,7 +88,6 @@ backdrop-filter: blur(50px); */
 }
 
 .arrow {
-  transform: rotate(-45deg);
   color: rgb(144, 148, 148);
   transition: transform 0.2s ease, color 0.2s ease;
 }

@@ -25,7 +25,7 @@ export default function Stats() {
         width={1200}
         height={300}
         className={styles.grad}
-        priority
+        // priority
       />
       <Image
         src={Gradient2_1}

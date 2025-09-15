@@ -1,8 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import style from "../css/Accordian.module.css";
-import { FaPlus } from "react-icons/fa";
-import { FaMinus, FaArrowRight } from "react-icons/fa6";
+// import { FaPlus } from "react-icons/fa";
+// import { FaMinus, FaArrowRight } from "react-icons/fa6";
+import { ArrowUpRight } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import Image from "next/image";
 import Gradient6 from "../assets/Gradient3.png";
 import Link from "next/link";
@@ -33,7 +35,7 @@ export default function Accordion({ items }) {
                 <button className="font-satoshi">
                   Let's talk{" "}
                   <span className={style.icons2}>
-                    <FaArrowRight />
+                    <ArrowUpRight size={24} />
                   </span>
                 </button>
               </Link>
@@ -55,7 +57,7 @@ export default function Accordion({ items }) {
                         animate={{ rotate: openIndex === index ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        {openIndex === index ? <FaMinus /> : <FaPlus />}
+                        {openIndex === index ? <Minus /> : <Plus />}
                       </motion.div>
                     </span>
                   </div>

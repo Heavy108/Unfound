@@ -1,15 +1,14 @@
 import style from "../css/Footer.module.css";
 import Image from "next/image";
 import logo from "@/assets/Logowithname.png";
-import { IoMdMail } from "react-icons/io";
-import { CgFacebook } from "react-icons/cg";
-import { FaTwitter } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa6";
-import { TfiLinkedin } from "react-icons/tfi";
+// import { IoMdMail } from "react-icons/io";
+// import { CgFacebook } from "react-icons/cg";
+// import { FaTwitter } from "react-icons/fa";
+// import { FaInstagram } from "react-icons/fa6";
+// import { TfiLinkedin } from "react-icons/tfi";
 import unfound from "@/assets/Unfound.svg";
-import FooterSVG from "../assets/footer_gradient.svg";
-import grad2 from "@/assets/footergrad2.svg";
-import Talk from "./Talk";
+import { Mail,Facebook ,Twitter,Instagram ,Linkedin } from "lucide-react";
+
 import Link from "next/link";
 function Footer() {
   return (
@@ -68,16 +67,16 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <IoMdMail size={24} />
+                <Mail />
               </a>
-              <CgFacebook size={24} /> <FaTwitter size={24} />{" "}
-              <FaInstagram size={24} />{" "}
+              <Facebook size={24} /> <Twitter size={24} /> <Instagram size={24} />{" "}
+              {/* <Linkedin size={24} />{" "} */}
               <Link
                 href="https://www.linkedin.com/company/unfound-studio-social/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <TfiLinkedin size={24} />
+                <Linkedin size={24} />
               </Link>
             </div>
             <h2>© 2025 Unfound Studio</h2>

@@ -157,7 +157,7 @@
   }
   .icons2{
     color: black;
-    transform: rotate(-45deg);
+    /* transform: rotate(-45deg); */
   }
   
 }
@@ -179,7 +179,7 @@
 @media only screen and (min-width: 1920px) {
   .Faqcontainer {
     /* Add any specific styles for larger screens */
-    margin: 10rem 15rem;
+    margin: 5rem 15rem;
     width: 1440px;
   }
 }

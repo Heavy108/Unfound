@@ -150,13 +150,13 @@ function Reasons() {
           width={1200}
           height={300}
           className={style.grad}
-          priority
+          // priority
         />
         <Image
           src={Gradient5}
           alt="gradient background"
           className={style.grad5}
-          priority
+          // priority
         />
 
         <div className={style.head}>

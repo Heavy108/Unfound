@@ -7,10 +7,11 @@ import React, {
   useEffect,
 } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Globe, Hand, CodeXml, Play, ChartNoAxesColumn } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { LuHand, LuGlobe, LuCodeXml, LuPlay } from "react-icons/lu";
-import { BiBarChartAlt2 } from "react-icons/bi";
+// import { LuHand, LuGlobe, LuCodeXml, LuPlay } from "react-icons/lu";
+// import { BiBarChartAlt2 } from "react-icons/bi";
 import ServiceCard from "./ServiceCard";
 import ServiceCard2 from "./ServiceCard2";
 // import UXDesign from "../assets/UXDesign.png";
@@ -81,7 +82,7 @@ function Services() {
         component: ServiceCard,
         props: {
           title: "Website Design",
-          logo: <LuGlobe />,
+          logo: <Globe />,
           description:
             "Designing beautiful, responsive websites that communicate your brand and convert users effortlessly.",
           image: WebsiteDesign,
@@ -91,7 +92,7 @@ function Services() {
         component: ServiceCard2,
         props: {
           title: "UX Design",
-          logo: <LuHand />,
+          logo: <Hand />,
           description:
             "Crafting intuitive, user-centered app experiences that drive engagement and clarity.",
           image: UXDesign,
@@ -101,7 +102,7 @@ function Services() {
         component: ServiceCard,
         props: {
           title: "Development",
-          logo: <LuCodeXml />,
+          logo: <CodeXml />,
           description:
             "From concept to deployment, we engineer high-performance solutions that grow with your business.",
           image: Development,
@@ -111,7 +112,7 @@ function Services() {
         component: ServiceCard,
         props: {
           title: "Motion Design",
-          logo: <LuPlay />,
+          logo: <Play />,
           description:
             "Bringing ideas to life through sleek, purposeful animations that elevate storytelling and interaction.",
           image: MotionDesign,
@@ -121,7 +122,7 @@ function Services() {
         component: ServiceCard2,
         props: {
           title: "Report Design",
-          logo: <BiBarChartAlt2 />,
+          logo: <ChartNoAxesColumn />,
           description:
             "Designing clear, compelling decks and reports that turn data into persuasive narratives.",
           image: ReportDesign,
@@ -131,7 +132,7 @@ function Services() {
         component: ServiceCard,
         props: {
           title: "Visual Design",
-          logo: <LuGlobe />,
+          logo: <Globe />,
           description:
             "Crafting striking, cohesive visuals that elevate digital products and brand experiences.",
           image: VisualDesign,
@@ -229,7 +230,7 @@ function Services() {
           width={1200}
           height={300}
           className={style.grad}
-          priority
+          // priority
         />
         <Image
           src={Gradient3_1}
@@ -240,11 +241,9 @@ function Services() {
         />
 
         {/* 🔥 Animated heading */}
-        
+
         <div className={style.head} ref={textRef}>
-          <h2 className="font-cabinet font-medium">
-            Our Services
-            </h2>
+          <h2 className="font-cabinet font-medium">Our Services</h2>
           <h3 className="font-satoshi text-wrap">
             <AnimatedText
               text="As a tight-knit team of experts, we create memorable and emotional websites, digital experiences, and native apps."
@@ -301,17 +300,16 @@ function Services() {
         </div>
 
         <div className={style.servicecontainer2}>
-          
           <div className={style.vertical}>
             <ServiceCard
               title="Website Design"
-              logo={<LuGlobe />}
+              logo={<Globe />}
               description="Designing beautiful, responsive websites that communicate your brand and convert users effortlessly."
               image={WebsiteDesign}
             />
             <ServiceCard
               title="Motion Design"
-              logo={<LuPlay />}
+              logo={<Play />}
               description="Bringing ideas to life through sleek, purposeful animations that elevate storytelling and interaction."
               image={MotionDesign}
             />
@@ -319,13 +317,13 @@ function Services() {
           <div className={style.vertical2}>
             <ServiceCard2
               title="UX Design"
-              logo={<LuHand />}
+              logo={<Hand />}
               description="Crafting intuitive, user-centered app experiences that drive engagement and clarity."
               image={UXDesign}
             />
             <ServiceCard2
               title="Report Design"
-              logo={<BiBarChartAlt2 />}
+              logo={<ChartNoAxesColumn />}
               description="Designing clear, compelling decks and reports that turn data into persuasive narratives."
               image={ReportDesign}
             />
@@ -333,13 +331,13 @@ function Services() {
           <div className={style.vertical3}>
             <ServiceCard
               title="Development"
-              logo={<LuCodeXml />}
+              logo={<CodeXml />}
               description="From concept to deployment, we engineer high-performance solutions that grow with your business."
               image={Development}
             />
             <ServiceCard
               title="Visual Design"
-              logo={<LuGlobe />}
+              logo={<Globe />}
               description="Crafting striking, cohesive visuals that elevate digital products and brand experiences."
               image={VisualDesign}
             />

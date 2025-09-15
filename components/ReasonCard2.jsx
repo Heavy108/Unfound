@@ -21,9 +21,9 @@ export default function ReasonCard2({ title, description, image }) {
             width={image.assets[0].w}
             height={image.assets[0].h}
             alt={title}
-            priority
-            unoptimized
-            // className={style.card2img}
+            // priority
+            // unoptimized
+            className={style.card2img}
           />
         </div>
       </div>

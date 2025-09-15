@@ -14,7 +14,8 @@ import Gradient2 from "../assets/Gradient2.png";
 import Image from "next/image";
 import testograd from "../assets/testimonialGradient.png"
 import TestomonialCard from "./TestomonialCard";
-import { FaArrowRight ,FaArrowLeft } from "react-icons/fa6";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+
 const TWEEN_FACTOR_BASE = 0.52;
 const AUTOPLAY_DELAY = 4000;
 
@@ -268,10 +269,10 @@ function Testonomial() {
           <div className={style.dotcontainer}>
             <div className={style.arrowContainer}>
               <button className={style.arrowButton} onClick={handlePrevious}>
-                <FaArrowLeft size={24} />
+                <ArrowLeft size={24} />
               </button>
               <button className={style.arrowButton} onClick={handleNext}>
-                <FaArrowRight size={24} />
+                <ArrowRight size={24} />
               </button>
             </div>
             <span className={style.dot}>

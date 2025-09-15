@@ -1,6 +1,6 @@
 'use client'
 import style from "../css/Talk.module.css";
-import { FaArrowRight } from "react-icons/fa6";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 function Talk(){
     return (
@@ -20,7 +20,7 @@ function Talk(){
                   Let's Talk{" "}
                   <span className={style.icons2}>
                     {" "}
-                    <FaArrowRight />{" "}
+                    <ArrowUpRight />{" "}
                   </span>
                 </button>
               </Link>

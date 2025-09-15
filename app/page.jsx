@@ -6,8 +6,9 @@ import Gradient1 from "../assets/Gradient.png";
 import Gradient2 from "../assets/Gradient2.png";
 import HeroSpline from "@/components/Spline";
 import style from "../css/Home.module.css";
-import { FaArrowRight } from "react-icons/fa6";
-import Spline from "@splinetool/react-spline/next";
+// import { FaArrowRight } from "react-icons/fa6";
+import { ArrowUpRight } from "lucide-react";
+
 import Stats from "../components/stats";
 import Services from "../components/Services";
 import Testonomial from "../components/Testomonial";
@@ -31,7 +32,13 @@ export default function Home() {
     <>
       <div className="relative  h-[500px] w-full overflow-hidden ">
         {/* Background image */}
-        <Image src={Gradient1} alt="gradient1" fill className="-z-1" priority />
+        <Image
+          src={Gradient1}
+          alt="gradient1"
+          fill
+          loading="lazy"
+          className="-z-1"
+        />
 
         {/* Navbar on top */}
         <div className="relative z-10 mb-[3rem]">
@@ -56,7 +63,7 @@ export default function Home() {
               <button className={`${style.lets} font-satoshimedium`}>
                 Let's Talk{" "}
                 <span className={style.arrow}>
-                  <FaArrowRight />
+                  <ArrowUpRight size={16}  />
                 </span>
               </button>
             </Link>
@@ -64,7 +71,7 @@ export default function Home() {
         </div>
       </div>
 
-      <HeroSpline />
+      {/* <HeroSpline /> */}
 
       <Stats />
       <div ref={servicesRef}>
@@ -79,7 +86,7 @@ export default function Home() {
           width={1200}
           height={800}
           className={style.grad4}
-          priority
+          // priority
         />
 
         <AnimatedTextRibbon />

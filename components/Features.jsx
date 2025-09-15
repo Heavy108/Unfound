@@ -6,7 +6,9 @@ import Oruva from "../assets/Oruva.png";
 import Nest from "../assets/Nest.png"
 import Image from "next/image";
 import Gradient4 from "@/assets/Gradient3.png"
-import { FaArrowRight } from "react-icons/fa6";
+// import { FaArrowRight } from "react-icons/fa6";
+import { MoveRight } from "lucide-react";
+
 import Gradient4_1 from "@/assets/Gradient4_1.png"
 import Link from "next/link";
 function Feature() {
@@ -21,7 +23,7 @@ function Feature() {
           />
           {/* <div className={style.textbox}> */}
           <h3 className="font-satoshi">
-            <span >●</span>
+            <span>●</span>
             Featured Works
           </h3>
           <h1 className="font-cabinet">Take a Look at Our Projects</h1>
@@ -59,7 +61,7 @@ function Feature() {
           <h3 className={`${style.viewall} font-satoshi`}>
             View All{" "}
             <span>
-              <FaArrowRight />
+              <MoveRight size={24} />
             </span>
           </h3>
         </Link>
@@ -97,7 +99,7 @@ function Feature() {
                 <h3 className={`${style.viewall} font-satoshi`}>
                   View All{" "}
                   <span>
-                    <FaArrowRight />
+                    <MoveRight size={24} />
                   </span>
                 </h3>
               </Link>

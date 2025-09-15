@@ -3,9 +3,10 @@
 import style from "../css/navbar.module.css";
 import Logo from "../assets/Logowithname.png";
 import Image from "next/image";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { IoCloseSharp } from "react-icons/io5";
-import { FaArrowRight } from "react-icons/fa6";
+import { Menu, X ,ArrowUpRight } from "lucide-react";
+// import { GiHamburgerMenu } from "react-icons/gi";
+// import { IoCloseSharp } from "react-icons/io5";
+// import { FaArrowRight } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -114,9 +115,9 @@ function Navbar() {
               >
                 <span>
                   {active ? (
-                    <IoCloseSharp className={style.navicon} />
+                    <X className={style.navicon} />
                   ) : (
-                    <GiHamburgerMenu className={style.navicon} />
+                    <Menu className={style.navicon} />
                   )}
                 </span>
               </motion.div>
@@ -144,7 +145,7 @@ function Navbar() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <FaArrowRight className={style.arrow} />
+                  <ArrowUpRight className={style.arrow} />
                 </motion.span>
               </motion.li>
             </Link>

@@ -2,7 +2,8 @@
 import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import FeatureCard from "./FeatureCard";
-import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { ArrowLeft,ArrowRight } from "lucide-react";
+// import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import style from "../css/commoncarasoul.module.css";
 import CarasolCard from "./commonCarausalCard";
 
@@ -92,10 +93,10 @@ const EmblaCarousel = ({ slides, options }) => {
         {/* Arrows */}
         <div className={style.arrowContainer}>
           <button onClick={scrollPrev} className={style.arrowButton}>
-            <BiChevronLeft size={24} />
+            <ArrowLeft size={24} />
           </button>
           <button onClick={scrollNext} className={style.arrowButton}>
-            <BiChevronRight size={24} />
+            <ArrowRight size={24} />
           </button>
         </div>
 
