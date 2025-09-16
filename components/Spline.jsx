@@ -14,7 +14,7 @@ export default function Hero() {
           width={800}
           height={400}
           className="mt-[2rem]"
-          // priority
+          priority
         />
       </center>
     </main>

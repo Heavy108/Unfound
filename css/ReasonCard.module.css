@@ -13,8 +13,8 @@
     0 30px 60px 0 rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   padding: 0.5rem;
-  width: 20rem; /* fixed width */
-  height: 22rem;
+ height: fit-content;
+ width: 20rem;
   display: flex; /* make sure child fills it */
   flex-direction: column;
 }
@@ -34,7 +34,8 @@
   backdrop-filter: blur(10px);
   padding: 0.5rem;
   width: 20rem; /* fixed width */
-  height: 22rem;
+  /* height: 22rem; */
+  height: fit-content;
 }
 .card {
   display: flex;
@@ -142,7 +143,7 @@ border-radius: 1.50rem;
     backdrop-filter: blur(10px);
   padding: 0.5rem;
 
-    /* height: fit-content; */
+    height: fit-content;
     width: 53rem;
   }
 }
@@ -160,7 +161,7 @@ height: 25rem;
 /* width: auto; */
     }
     .potrait2 img{
-      height: 28rem;
+      height: 27rem;
       padding: 0rem 2rem;
     }
 

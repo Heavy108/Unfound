@@ -22,9 +22,9 @@ export default function ReasonCard({ title, description, image }) {
               height={image.assets[0].h}
               alt={title}
               loading="lazy"
-              placeholder="empty" // 👈 no blur, just loads directly
-              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              // className="rounded-xl object-cover"
+              placeholder="empty" 
+              
+             
             />
           </div>
         </div>

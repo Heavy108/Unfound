@@ -1,37 +1,57 @@
-'use client'
-import { useRef } from "react";
+"use client";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Navbar from "../components/navbar";
 import Gradient1 from "../assets/Gradient.png";
-import Gradient2 from "../assets/Gradient2.png";
+import Gradient4 from "../assets/Gradient4.png";
 import HeroSpline from "@/components/Spline";
 import style from "../css/Home.module.css";
-// import { FaArrowRight } from "react-icons/fa6";
 import { ArrowUpRight } from "lucide-react";
-
 import Stats from "../components/stats";
-import Services from "../components/Services";
-import Testonomial from "../components/Testomonial";
 import AnimatedTextRibbon from "@/components/Strip";
-import Gradient4 from "@/assets/Gradient4.png";
-import Feature from "@/components/Features";
-import Reasons from "@/components/Reason";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Talk from "@/components/Talk";
+import Testonomial from "../components/Testomonial";
+
+import dynamic from "next/dynamic";
+
+// Dynamic imports for heavy components
+const Services = dynamic(() => import("../components/Services"), {
+  ssr: false,
+  loading: () => <p>Loading services...</p>,
+});
+const Reasons = dynamic(() => import("../components/Reason"), { ssr: false });
+const Feature = dynamic(() => import("../components/Features"), { ssr: false });
 
 export default function Home() {
   const servicesRef = useRef(null);
+  const lazyRef = useRef(null);
+  const [showLazyComponents, setShowLazyComponents] = useState(false);
 
   const handleScroll = () => {
     servicesRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Lazy-load Feature and Reasons when near viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowLazyComponents(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+
+    if (lazyRef.current) observer.observe(lazyRef.current);
+  }, []);
+
   return (
     <>
-      <div className="relative  h-[500px] w-full overflow-hidden ">
-        {/* Background image */}
+      <div className="relative h-[500px] w-full overflow-hidden">
         <Image
           src={Gradient1}
           alt="gradient1"
@@ -40,7 +60,6 @@ export default function Home() {
           className="-z-1"
         />
 
-        {/* Navbar on top */}
         <div className="relative z-10 mb-[3rem]">
           <Navbar />
         </div>
@@ -63,7 +82,7 @@ export default function Home() {
               <button className={`${style.lets} font-satoshimedium`}>
                 Let's Talk{" "}
                 <span className={style.arrow}>
-                  <ArrowUpRight size={16}  />
+                  <ArrowUpRight size={16} />
                 </span>
               </button>
             </Link>
@@ -71,32 +90,39 @@ export default function Home() {
         </div>
       </div>
 
-      {/* <HeroSpline /> */}
-
+      <HeroSpline />
       <Stats />
+
+      {/* Services section */}
       <div ref={servicesRef}>
         <Services />
       </div>
 
+      {/* Testimonial */}
       <Testonomial />
-      <section className="relative  w-full min-h">
+
+      {/* Gradient background + animated ribbon */}
+      <section className="relative w-full min-h">
         <Image
           src={Gradient4}
           alt="gradient4"
           width={1200}
           height={800}
           className={style.grad4}
-          // priority
         />
-
         <AnimatedTextRibbon />
-        {/* Wrap Feature with ref */}
-        <Feature />
+
+        {/* Lazy-loaded Feature and Reasons */}
+        <div ref={lazyRef}>
+          {showLazyComponents && (
+            <>
+              <Feature />
+              <Reasons />
+            </>
+          )}
+        </div>
       </section>
 
-      <div id="reasons">
-        <Reasons />
-      </div>
       <FAQ />
       <Talk />
       <Footer />
