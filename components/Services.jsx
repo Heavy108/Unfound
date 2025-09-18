@@ -14,12 +14,7 @@ import Autoplay from "embla-carousel-autoplay";
 // import { BiBarChartAlt2 } from "react-icons/bi";
 import ServiceCard from "./ServiceCard";
 import ServiceCard2 from "./ServiceCard2";
-// import UXDesign from "../assets/UXDesign.png";
-// import WebsiteDesign from "../assets/WebsiteDesign.png";
-// import VisualDesign from "../assets/VisualDesign.png";
-// import ReportDesign from "../assets/ReportDesign.png";
-// import Development from "../assets/Development.png";
-// import MotionDesign from "../assets/MotionDesign.png";
+
 import UXDesign from "@/assets/Services/UXDesign.json"
 import WebsiteDesign from "@/assets/Services/WebsiteDesign.json"
 import VisualDesign from "@/assets/Services/VisualDesign.json"
@@ -30,7 +25,7 @@ import style from "../css/services.module.css";
 import Gradient3 from "../assets/Gradient3.png";
 import Gradient3_1 from "../assets/Gradient3_1.png";
 import Image from "next/image";
-// import ScrollFloat from "./ScrollFloat"
+import { useInView } from "@/hooks/useInView";
 const TWEEN_FACTOR_BASE = 0.52;
 const numberWithinRange = (number, min, max) =>
   Math.min(Math.max(number, min), max);
@@ -71,6 +66,7 @@ const AnimatedText = ({ text, scrollYProgress }) => {
 
 function Services() {
   const textRef = useRef(null);
+  const [containerRef ,isInView] = useInView({ threshold: 0.2 });
   const { scrollYProgress } = useScroll({
     target: textRef,
     offset: ["start end", "end start"],
@@ -299,49 +295,60 @@ function Services() {
           </div>
         </div>
 
-        <div className={style.servicecontainer2}>
-          <div className={style.vertical}>
-            <ServiceCard
-              title="Website Design"
-              logo={<Globe />}
-              description="Designing beautiful, responsive websites that communicate your brand and convert users effortlessly."
-              image={WebsiteDesign}
-            />
-            <ServiceCard
-              title="Motion Design"
-              logo={<Play />}
-              description="Bringing ideas to life through sleek, purposeful animations that elevate storytelling and interaction."
-              image={MotionDesign}
-            />
-          </div>
-          <div className={style.vertical2}>
-            <ServiceCard2
-              title="UX Design"
-              logo={<Hand />}
-              description="Crafting intuitive, user-centered app experiences that drive engagement and clarity."
-              image={UXDesign}
-            />
-            <ServiceCard2
-              title="Report Design"
-              logo={<ChartNoAxesColumn />}
-              description="Designing clear, compelling decks and reports that turn data into persuasive narratives."
-              image={ReportDesign}
-            />
-          </div>
-          <div className={style.vertical3}>
-            <ServiceCard
-              title="Development"
-              logo={<CodeXml />}
-              description="From concept to deployment, we engineer high-performance solutions that grow with your business."
-              image={Development}
-            />
-            <ServiceCard
-              title="Visual Design"
-              logo={<Globe />}
-              description="Crafting striking, cohesive visuals that elevate digital products and brand experiences."
-              image={VisualDesign}
-            />
-          </div>
+        <div className={style.servicecontainer2} ref={containerRef}>
+          {[
+            <div className={style.vertical}>
+              <ServiceCard
+                title="Website Design"
+                logo={<Globe />}
+                description="Designing beautiful, responsive websites that communicate your brand and convert users effortlessly."
+                image={WebsiteDesign}
+              />
+              <ServiceCard
+                title="Motion Design"
+                logo={<Play />}
+                description="Bringing ideas to life through sleek, purposeful animations that elevate storytelling and interaction."
+                image={MotionDesign}
+              />
+            </div>,
+            <div className={style.vertical2}>
+              <ServiceCard2
+                title="UX Design"
+                logo={<Hand />}
+                description="Crafting intuitive, user-centered app experiences that drive engagement and clarity."
+                image={UXDesign}
+              />
+              <ServiceCard2
+                title="Report Design"
+                logo={<ChartNoAxesColumn />}
+                description="Designing clear, compelling decks and reports that turn data into persuasive narratives."
+                image={ReportDesign}
+              />
+            </div>,
+            <div className={style.vertical3}>
+              <ServiceCard
+                title="Development"
+                logo={<CodeXml />}
+                description="From concept to deployment, we engineer high-performance solutions that grow with your business."
+                image={Development}
+              />
+              <ServiceCard
+                title="Visual Design"
+                logo={<Globe />}
+                description="Crafting striking, cohesive visuals that elevate digital products and brand experiences."
+                image={VisualDesign}
+              />
+            </div>,
+          ].map((column, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: i * 0.4 }}
+            >
+              {column}
+            </motion.div>
+          ))}
         </div>
       </div>
     </>

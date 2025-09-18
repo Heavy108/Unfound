@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Menu, X ,ArrowUpRight } from "lucide-react";
 // import { GiHamburgerMenu } from "react-icons/gi";
 // import { IoCloseSharp } from "react-icons/io5";
-// import { FaArrowRight } from "react-icons/fa6";
+// import { ArrowUpRight } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -157,7 +157,7 @@ function Navbar() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <FaArrowRight className={style.arrow} />
+                  <ArrowUpRight className={style.arrow} />
                 </motion.span>
               </motion.li>
             </Link>
@@ -169,7 +169,7 @@ function Navbar() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <FaArrowRight className={style.arrow} />
+                  <ArrowUpRight className={style.arrow} />
                 </motion.span>
               </motion.li>
             </Link>
