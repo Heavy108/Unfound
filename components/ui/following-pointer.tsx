@@ -100,34 +100,41 @@ export const FollowPointer = ({
           fill="currentColor"
           strokeWidth="1"
           viewBox="0 0 16 16"
-          className="h-6 w-6 -translate-x-[12px] -translate-y-[10px] -rotate-[70deg] transform stroke-sky-600 text-sky-500"
-          height="1em"
-          width="1em"
+          className="h-6 w-6 -translate-x-[8px] -translate-y-[4px] -rotate-[70deg] transform stroke-[#1FAA60] text-[#1FAA60]"
+          height="1.6rem"
+          width="1.3rem"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"></path>
         </svg>
       )}
-      <motion.div
-        style={{
-          background:
-            "linear-gradient(250deg, #29F99E -12.84%, #4EFFF0 118.51%)",
-          padding: "0.5rem 1.5rem",
-        }}
-        initial={{ scale: 0.5, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.5, opacity: 0 }}
-        className="min-w-max flex gap-1 rounded-full bg-neutral-200 px-2 py-2 text-[1rem] font-satoshimedium whitespace-nowrap text-black"
-      >
-        {title ?? (
-          <>
-            View Project{" "}
-            <span className="flex items-center">
-              <ArrowUpRight size={24} />
-            </span>
-          </>
-        )}
-      </motion.div>
+      {title ? (
+        <motion.div
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.5, opacity: 0 }}
+          className="bg-[#1FAA60] w-[2.8rem]  px-[0.62rem] py-[0.25rem] ml-3 rounded-[0.32rem]" // 🔹 keep blank, you can design this separately
+        >
+          <span className="flex justify-center items-center text-white">{title}</span>
+        </motion.div>
+      ) : (
+        <motion.div
+          style={{
+            background:
+              "linear-gradient(250deg, #29F99E -12.84%, #4EFFF0 118.51%)",
+            padding: "0.5rem 1.5rem",
+          }}
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.5, opacity: 0 }}
+          className="min-w-max flex gap-1 rounded-full bg-neutral-200 px-2 py-2 text-[1rem] font-satoshimedium whitespace-nowrap text-black"
+        >
+          View Project{" "}
+          <span className="flex items-center">
+            <ArrowUpRight size={24} />
+          </span>
+        </motion.div>
+      )}
     </motion.div>
   );
 };

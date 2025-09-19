@@ -1,21 +1,18 @@
 "use client";
 
-import Image from "next/image";
-import fallback from "@/assets/HeroImage.png";
-import style from "@/css/Home.module.css";
+import Lottie from "lottie-react";
+import { FollowerPointerCard } from "./ui/following-pointer";
 
+// import fallback from "@/assets/HeroImage.png";
+import style from "@/css/Home.module.css";
+import animation from "@/assets/other/animation.json";
 export default function Hero() {
   return (
     <main className={style.animation}>
       <center>
-        <Image
-          src={fallback}
-          alt="Hero visual"
-          width={800}
-          height={400}
-          className="mt-[2rem]"
-          priority
-        />
+        <FollowerPointerCard title="You">
+          <Lottie animationData={animation} loop={true} />
+        </FollowerPointerCard>
       </center>
     </main>
   );

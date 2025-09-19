@@ -90,8 +90,10 @@ export default function Home() {
         </div>
 
         <div className={style.Hero}>
-          <h1 className="font-cabinet">Where Ideas Become</h1>
-          <h1 className="font-cabinet">Digital Experiences</h1>
+          <h1 className="font-cabinet">
+            Where Ideas Become Digital Experiences
+          </h1>
+          {/* <h1 className="font-cabinet">Digital Experiences</h1> */}
           <p className="font-satoshi">
             We collaborate with forward-thinking brands to turn their ideas into
             digital products and stories.
