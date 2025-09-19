@@ -8,7 +8,7 @@ import logo from "@/assets/Logowithname.png";
 // import { TfiLinkedin } from "react-icons/tfi";
 import unfound from "@/assets/Unfound.svg";
 import { Mail,Facebook ,Twitter,Instagram ,Linkedin } from "lucide-react";
-
+import footer_gradient from "@/assets/Footer.svg";
 import Link from "next/link";
 function Footer() {
   return (
@@ -31,6 +31,7 @@ function Footer() {
       {/* Content */}
 
       <div className={`${style.container} relative font-satoshi`}>
+        <Image src={footer_gradient} alt="footer gradient" className={style.footerGradient} />
         <div className={style.logoContainer}>
           <Image src={logo} width={100} height={40} alt="logo with name" />
           <h2>

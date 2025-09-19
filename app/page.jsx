@@ -66,16 +66,17 @@ export default function Home() {
   return (
     <>
       <div className="relative h-[500px] w-full overflow-hidden">
-        <Image
+        {/* <Image
           src={Gradient1}
           alt="gradient1"
           fill
           loading="lazy"
           className="-z-1"
-        />
-        {/* <LightRays
+        /> */}
+        <LightRays
+          raysAngle={135}
           raysOrigin="top-right"
-          raysColor="#00ffff"
+          raysColor="#4EFFF0"
           raysSpeed={1.5}
           lightSpread={0.8}
           rayLength={1.2}
@@ -84,7 +85,7 @@ export default function Home() {
           noiseAmount={0.1}
           distortion={0.05}
           className="custom-rays"
-        /> */}
+        />
         <div className="relative z-10 mb-[3rem]">
           <Navbar />
         </div>
