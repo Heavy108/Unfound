@@ -29,9 +29,15 @@ function Footer() {
         /> */}
 
       {/* Content */}
-
-      <div className={`${style.container} relative font-satoshi`}>
-        <Image src={footer_gradient} alt="footer gradient" className={style.footerGradient} />
+      {/* <Image
+        src={footer_gradient}
+        alt="footer gradient"
+        width={1920}
+        height={300}
+        
+        className={style.footerGradient}
+      /> */}
+      <div className={`${style.container}  font-satoshi`}>
         <div className={style.logoContainer}>
           <Image src={logo} width={100} height={40} alt="logo with name" />
           <h2>
@@ -40,49 +46,49 @@ function Footer() {
           </h2>
         </div>
         {/* <div className={style.container2}> */}
-          <div className={style.quicklinks}>
-            <h2>QUICK LINKS</h2>
-            <ul>
-              <Link href={"/"}>
-                <li>Home</li>
-              </Link>
-              <Link href={"/#"}>
-                <li>About</li>
-              </Link>
+        <div className={style.quicklinks}>
+          <h2>QUICK LINKS</h2>
+          <ul>
+            <Link href={"/"}>
+              <li>Home</li>
+            </Link>
+            <Link href={"/#"}>
+              <li>About</li>
+            </Link>
 
-              <Link href={"/contact"}>
-                <li>Contact Us</li>
-              </Link>
+            <Link href={"/contact"}>
+              <li>Contact Us</li>
+            </Link>
 
-              <Link href={"/CaseStudies"}>
-                <li>Case Studies</li>
-              </Link>
-            </ul>
-          </div>
-
-          <div className={style.getintouch}>
-            <h2>GET IN TOUCH</h2>
-            <div className={style.icons}>
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=team@unfoundstudio.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Mail />
-              </a>
-              <Facebook size={24} /> <Twitter size={24} /> <Instagram size={24} />{" "}
-              {/* <Linkedin size={24} />{" "} */}
-              <Link
-                href="https://www.linkedin.com/company/unfound-studio-social/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Linkedin size={24} />
-              </Link>
-            </div>
-            <h2>© 2025 Unfound Studio</h2>
-          </div>
+            <Link href={"/CaseStudies"}>
+              <li>Case Studies</li>
+            </Link>
+          </ul>
         </div>
+
+        <div className={style.getintouch}>
+          <h2>GET IN TOUCH</h2>
+          <div className={style.icons}>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=team@unfoundstudio.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Mail />
+            </a>
+            <Facebook size={24} /> <Twitter size={24} /> <Instagram size={24} />{" "}
+            {/* <Linkedin size={24} />{" "} */}
+            <Link
+              href="https://www.linkedin.com/company/unfound-studio-social/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin size={24} />
+            </Link>
+          </div>
+          <h2>© 2025 Unfound Studio</h2>
+        </div>
+      </div>
       {/* </div> */}
 
       {/* Footer image at bottom */}

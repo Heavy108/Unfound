@@ -14,7 +14,7 @@
     0 30px 60px 0 rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   padding: 0.5rem;
-  margin: 5rem 2rem 0rem 2rem;
+  margin: 0rem 2rem -25% 2rem;
 
   /* top: -250px; */
 
@@ -25,7 +25,9 @@
   justify-content: center;
   align-items: center;
   align-content: center;
-  margin-bottom: 5rem;
+  /* padding-bottom: 5rem; */
+  /* top: 15px; */
+  
 }
 
 .icons2 {
@@ -69,19 +71,22 @@
   background: linear-gradient(250deg, #29f99e -12.84%, #4efff0 118.51%);
   z-index: 0;
 }
+@media only screen and (min-width:768px){
+  .outer{
+  margin: 0rem 4rem -25% 4rem;
+
+  }
+}
 @media only screen and (min-width: 1024px) {
   .internal {
     padding: 4rem 5rem;
   }
   .outer {
     margin: 0rem 6rem;
+    margin-bottom: -30%;
   }
   .internal h1 {
     font-size: 2rem;
-  }
-  .extradiv{
-  margin-bottom: 10rem
-
   }
 }
 @media only screen and (min-width: 1440px) {
@@ -93,12 +98,15 @@
   }
   .outer {
     margin: 0rem 7.5rem;
+    margin-bottom: -30%;
     width: 1200px;
   }
 }
 @media only screen  and (min-width:1920px){
   .outer{
     margin: 0rem 15rem;
+    margin-bottom: -30%;
+
     width: 1440px;
 
   }

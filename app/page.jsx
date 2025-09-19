@@ -16,6 +16,7 @@ import Talk from "@/components/Talk";
 import Testonomial from "../components/Testomonial";
 import dynamic from "next/dynamic";
 import LightRays from "@/components/LightRays";
+import footergradient from "@/assets/Footer.svg"
 const Services = dynamic(() => import("../components/Services"), {
   ssr: false,
   loading: () => <p>Loading services...</p>,
@@ -49,19 +50,19 @@ export default function Home() {
   }, []);
 
   // 🔹 Lazy-load Feature and Reasons when near viewport
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShowLazyComponents(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "200px" }
-    );
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         setShowLazyComponents(true);
+  //         observer.disconnect();
+  //       }
+  //     },
+  //     { rootMargin: "200px" }
+  //   );
 
-    if (lazyRef.current) observer.observe(lazyRef.current);
-  }, []);
+  //   if (lazyRef.current) observer.observe(lazyRef.current);
+  // }, []);
 
   return (
     <>
@@ -76,7 +77,7 @@ export default function Home() {
         <LightRays
           raysAngle={135}
           raysOrigin="top-right"
-          raysColor="#4EFFF0"
+          raysColor="#4EFFD0"
           raysSpeed={1.5}
           lightSpread={0.8}
           rayLength={1.2}
@@ -137,21 +138,25 @@ export default function Home() {
         />
         <AnimatedTextRibbon />
 
-        <div ref={lazyRef}>
+        {/* <div ref={lazyRef}>
           {showLazyComponents && (
-            <>
-              <Feature />
-              <div id="reasons">
-                <Reasons />
-              </div>
-            </>
-          )}
+            <> */}
+        <Feature />
+        <div id="reasons">
+          <Reasons />
         </div>
+        {/* </>
+          )}
+        </div> */}
       </section>
 
       <FAQ />
-      <Talk />
-      <Footer />
+      <section className="relative w-full h-[400px]">
+        <Talk />
+        <Image src={footergradient} alt="footer gradient"  />
+
+        <Footer />
+      </section>
     </>
   );
 }
