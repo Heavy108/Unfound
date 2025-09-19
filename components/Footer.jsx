@@ -30,7 +30,7 @@ function Footer() {
 
       {/* Content */}
 
-      <div className={`${style.container} font-satoshi`}>
+      <div className={`${style.container} relative font-satoshi`}>
         <div className={style.logoContainer}>
           <Image src={logo} width={100} height={40} alt="logo with name" />
           <h2>

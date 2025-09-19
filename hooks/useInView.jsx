@@ -11,7 +11,7 @@ export function useInView(options) {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setInView(true);
-        observer.disconnect(); // 👈 stop observing after first trigger
+        observer.disconnect(); 
       }
     }, options);
 

@@ -22,6 +22,7 @@ import style from "../css/Reason.module.css";
 import Gradient3 from "../assets/Gradient2.png";
 import Image from "next/image";
 import Gradient5 from "@/assets/Gradient5.png";
+import { useInView } from "@/hooks/useInView";
 const TWEEN_FACTOR_BASE = 0.52;
 const numberWithinRange = (number, min, max) =>
   Math.min(Math.max(number, min), max);
@@ -67,7 +68,8 @@ function Reasons() {
     { loop: true },
     [autoplay.current] // ✅ pass plugin as second argument
   );
-
+  const [rowRef, rowInView] = useInView({ threshold: 0.2 });
+  const [lastRef, lastInView] = useInView({ threshold: 0.2 });
   const tweenFactor = useRef(0);
   const tweenNodes = useRef([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -156,6 +158,8 @@ function Reasons() {
           src={Gradient5}
           alt="gradient background"
           className={style.grad5}
+          width={1200}
+          height={800}
           // priority
         />
 
@@ -220,23 +224,44 @@ function Reasons() {
             </h3>
           </div>
           <div className={style.reasoncontainer}>
-            <div className={style.horiz}>
-              <ReasonCard
-                title="Innovative"
-                description="We harness cutting-edge tools to unlock speed, clarity, and smart execution.."
-                image={inovation}
-              />
-              <ReasonCard
-                title="Brands & Culture"
-                description="We craft digital experiences that feel real, global, and deeply human."
-                image={culture}
-              />
+            <div className={style.horiz} ref={rowRef}>
+              <motion.div
+                initial={{ x: -100, opacity: 0 }}
+                animate={rowInView ? { x: 0, opacity: 1 } : {}}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                <ReasonCard
+                  title="Innovative"
+                  description="We harness cutting-edge tools to unlock speed, clarity, and smart execution.."
+                  image={inovation}
+                />
+              </motion.div>
+
+              {/* Second card from RIGHT */}
+              <motion.div
+                initial={{ x: 100, opacity: 0 }}
+                animate={rowInView ? { x: 0, opacity: 1 } : {}}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              >
+                <ReasonCard
+                  title="Brands & Culture"
+                  description="We craft digital experiences that feel real, global, and deeply human."
+                  image={culture}
+                />
+              </motion.div>
             </div>
-            <ReasonCard2
-              title="Experience"
-              description="Design rooted in strategy — blending tech, creativity, and clarity to elevate brands."
-              image={Expe}
-            />
+            <motion.div
+              ref={lastRef}
+              initial={{ y: 100, opacity: 0 }}
+              animate={lastInView ? { y: 0, opacity: 1 } : {}}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+            >
+              <ReasonCard2
+                title="Experience"
+                description="Design rooted in strategy — blending tech, creativity, and clarity to elevate brands."
+                image={Expe}
+              />
+            </motion.div>
           </div>
         </div>
       </div>

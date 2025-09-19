@@ -25,6 +25,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+  margin-bottom: 5rem;
 }
 
 .icons2 {
@@ -77,6 +78,10 @@
   }
   .internal h1 {
     font-size: 2rem;
+  }
+  .extradiv{
+  margin-bottom: 10rem
+
   }
 }
 @media only screen and (min-width: 1440px) {

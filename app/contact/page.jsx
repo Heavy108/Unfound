@@ -55,9 +55,7 @@ const handlesubmit = async (e) => {
     <>
       <Navbar />
       {/* <div className={style.extradiv}> */}
-      <div
-        className={`${style.contactcontainer} min-h-screen overflow-y-hidden`}
-      >
+      <div className={`${style.contactcontainer}  overflow-y-hidden`}>
         <Image
           src={gradientmobile}
           className={style.gradientmobile}

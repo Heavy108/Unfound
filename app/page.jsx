@@ -14,10 +14,8 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Talk from "@/components/Talk";
 import Testonomial from "../components/Testomonial";
-
 import dynamic from "next/dynamic";
 
-// Dynamic imports for heavy components
 const Services = dynamic(() => import("../components/Services"), {
   ssr: false,
   loading: () => <p>Loading services...</p>,
@@ -34,7 +32,23 @@ export default function Home() {
     servicesRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Lazy-load Feature and Reasons when near viewport
+  // 🔹 Scroll to #reasons if hash is present
+  useEffect(() => {
+    if (window.location.hash === "#reasons") {
+      setShowLazyComponents(true);
+
+      const timer = setTimeout(() => {
+        const element = document.getElementById("reasons");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 400);
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  // 🔹 Lazy-load Feature and Reasons when near viewport
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -59,14 +73,13 @@ export default function Home() {
           loading="lazy"
           className="-z-1"
         />
-
         <div className="relative z-10 mb-[3rem]">
           <Navbar />
         </div>
 
         <div className={style.Hero}>
-          <h1 className="font-cabinet ">Where Ideas Become </h1>
-          <h1 className="font-cabinet ">Digital Experiences</h1>
+          <h1 className="font-cabinet">Where Ideas Become</h1>
+          <h1 className="font-cabinet">Digital Experiences</h1>
           <p className="font-satoshi">
             We collaborate with forward-thinking brands to turn their ideas into
             digital products and stories.
@@ -93,15 +106,12 @@ export default function Home() {
       <HeroSpline />
       <Stats />
 
-      {/* Services section */}
       <div ref={servicesRef}>
         <Services />
       </div>
 
-      {/* Testimonial */}
       <Testonomial />
 
-      {/* Gradient background + animated ribbon */}
       <section className="relative w-full min-h">
         <Image
           src={Gradient4}
@@ -112,12 +122,13 @@ export default function Home() {
         />
         <AnimatedTextRibbon />
 
-        {/* Lazy-loaded Feature and Reasons */}
         <div ref={lazyRef}>
           {showLazyComponents && (
             <>
               <Feature />
-              <Reasons />
+              <div id="reasons">
+                <Reasons />
+              </div>
             </>
           )}
         </div>

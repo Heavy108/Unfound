@@ -98,7 +98,7 @@ z-index: 2;
         max-height: 150rem;
         
         /* margin-top: -40rem; */
-        top: -35%;
+        top: -15%;
         /* left: 0; */
         z-index: -1;
     }
@@ -109,7 +109,7 @@ z-index: 2;
 }
 @media only screen and (min-width:1440px){
     .grad4{
-        top: -50%;
+        top: -25%;
         max-height: 180rem;
     }
      .head2 h3{

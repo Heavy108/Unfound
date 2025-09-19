@@ -6,6 +6,7 @@
   flex-direction: column;
   background-color: transparent;
   z-index: 0;
+  margin-bottom: 5rem
 }
 .gradientmobile {
   position: absolute;
@@ -83,6 +84,7 @@
   }
   .casecontainer{
     padding-top: 8rem;
+    margin-bottom: 10rem
   }
 }
 @media only screen and (min-width: 1440px) {
