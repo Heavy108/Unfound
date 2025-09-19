@@ -100,7 +100,7 @@ export const FollowPointer = ({
           fill="currentColor"
           strokeWidth="1"
           viewBox="0 0 16 16"
-          className="h-6 w-6 -translate-x-[8px] -translate-y-[4px] -rotate-[70deg] transform stroke-[#1FAA60] text-[#1FAA60]"
+          className="h-6 w-6 -translate-x-[2px] -translate-y-[2px] -rotate-[90deg] transform stroke-[#1FAA60] text-[#1FAA60]"
           height="1.6rem"
           width="1.3rem"
           xmlns="http://www.w3.org/2000/svg"
@@ -113,9 +113,9 @@ export const FollowPointer = ({
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.5, opacity: 0 }}
-          className="bg-[#1FAA60] w-[2.8rem]  px-[0.62rem] py-[0.25rem] ml-3 rounded-[0.32rem]" // 🔹 keep blank, you can design this separately
+          className="bg-[#1FAA60] w-[2.8rem]  px-[0.62rem] py-[0.25rem] ml-5 -mt-1.25 rounded-[0.32rem]" // 🔹 keep blank, you can design this separately
         >
-          <span className="flex justify-center items-center text-white">{title}</span>
+          <span className="flex justify-center items-center text-white font-satoshimedium">{title}</span>
         </motion.div>
       ) : (
         <motion.div
