@@ -11,7 +11,7 @@ export default function Hero() {
     <main className={style.animation}>
       <center>
         <FollowerPointerCard title="You">
-          <Lottie animationData={animation} loop={true} />
+          <Lottie animationData={animation} loop={true} className="rounded-4xl"/>
         </FollowerPointerCard>
       </center>
     </main>

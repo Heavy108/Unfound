@@ -58,9 +58,11 @@ z-index: 2;
     position: relative;
     padding: 0rem 1rem;
     margin: -8rem 2rem 5rem 2rem;
+    border-radius: 1.5rem;
 }
-.animation canvas {
-  pointer-events: none;
+.animation svg{
+    border-radius: 1.7rem;
+    
 }
 .grad4{
     display: none;
