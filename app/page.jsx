@@ -15,7 +15,7 @@ import Link from "next/link";
 import Talk from "@/components/Talk";
 import Testonomial from "../components/Testomonial";
 import dynamic from "next/dynamic";
-
+import LightRays from "@/components/LightRays";
 const Services = dynamic(() => import("../components/Services"), {
   ssr: false,
   loading: () => <p>Loading services...</p>,
@@ -73,6 +73,18 @@ export default function Home() {
           loading="lazy"
           className="-z-1"
         />
+        {/* <LightRays
+          raysOrigin="top-right"
+          raysColor="#00ffff"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="custom-rays"
+        /> */}
         <div className="relative z-10 mb-[3rem]">
           <Navbar />
         </div>
