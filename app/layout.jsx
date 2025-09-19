@@ -29,7 +29,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${cabinet.variable} ${satoshi.variable} ${satoshi_medium.variable} antialiased`}
       >
-        <ClientLayout>{children}</ClientLayout>
+        <ClientLayout>
+          {children}
+          </ClientLayout>
       </body>
     </html>
   );

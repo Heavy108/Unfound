@@ -21,8 +21,8 @@ const Services = dynamic(() => import("../components/Services"), {
   ssr: false,
   loading: () => <p>Loading services...</p>,
 });
-const Reasons = dynamic(() => import("../components/Reason"), { ssr: false });
-const Feature = dynamic(() => import("../components/Features"), { ssr: false });
+const Reasons = dynamic(() => import("../components/Reason"), { ssr: true });
+const Feature = dynamic(() => import("../components/Features"), { ssr: true });
 
 export default function Home() {
   const servicesRef = useRef(null);
