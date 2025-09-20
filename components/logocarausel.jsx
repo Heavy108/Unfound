@@ -24,7 +24,7 @@ const logos = [
   { name: "Convatec", src: convatec },
   { name: "Dubdub", src: dubdub },
   { name: "Empire", src: empire },
-  { name: "FGHS", src: fghs },
+  { name: "FDHS", src: fghs },
   { name: "Fitnastic", src: fitnastic },
   { name: "Fortune", src: fortune },
   { name: "Galgotias", src: galgotias },

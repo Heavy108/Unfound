@@ -1,9 +1,10 @@
-// file: components/navbar.jsx (your original file with only small changes)
 "use client";
 import style from "../css/navbar.module.css";
 import Logo from "../assets/Logowithname.png";
 import Image from "next/image";
 import { Menu, X ,ArrowUpRight } from "lucide-react";
+import Lottie from "lottie-react";
+import animation from "@/assets/logos/logo animation.json"
 // import { GiHamburgerMenu } from "react-icons/gi";
 // import { IoCloseSharp } from "react-icons/io5";
 // import { ArrowUpRight } from "react-icons/fa6";
@@ -38,8 +39,8 @@ function Navbar() {
   }, [lastScroll]);
 
   const navVariants = {
-    hidden: { y: "-100%", transition: { duration: 0.3, ease: "easeInOut" } },
-    visible: { y: "0%", transition: { duration: 0.3, ease: "easeInOut" } },
+    hidden: { y: "-100%", transition: { duration: 0.5, ease: "easeInOut" } },
+    visible: { y: "0%", transition: { duration: 0.5, ease: "easeInOut" } },
   };
 
   const menuVariants = {
@@ -90,7 +91,11 @@ function Navbar() {
               className={`${style.extradiv} ${scrolled ? style.scrolled : ""}`}
             >
               <Link href={"/"}>
-                <Image src={Logo} alt="UnfoundLogo" />
+                {/* <Image src={Logo} alt="UnfoundLogo" /> */}
+                <Lottie
+                  animationData={animation}
+                  style={{ width: 140, height: 32 }}
+                />
               </Link>
               <div className={style.container}>
                 <ul className={`${style.list} font-satoshi`}>

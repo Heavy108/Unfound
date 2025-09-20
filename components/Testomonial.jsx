@@ -8,7 +8,11 @@ import React, {
 } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import profile from "../assets/testomonial.png";
+import rohit from "../assets/testomonial.png";
+import medhi from "@/assets/testinomial/medhi.png"
+import ishita from "@/assets/testinomial/Ishita.png"
+import sharma from "@/assets/testinomial/riyaSharma.png"
+import gaurav from "@/assets/testinomial/gaurav.png"
 import style from "../css/Testonomial.module.css";
 import Gradient2 from "../assets/Gradient2.png";
 import Image from "next/image";
@@ -27,45 +31,45 @@ function Testonomial() {
     () => [
       {
         testomonial:
-          "From the very first call, it was clear we were dealing with professionals. The way they structured the project, communicated updates, and delivered creative solutions was outstanding. What really stood out was their ability to balance a minimalist aesthetic.",
-        image: profile,
+          '"Unfound Studio exceeded our expectations in designing Ivory Dental’s website. Modern, intuitive, and responsive, it reflects our commitment to quality care. Their professional, collaborative team ensured every detail enhanced user experience and strengthened our online presence."',
+        image: sharma,
+        name: "Dr. Riya Sharma",
+        designation: "Founder, Ivory Dental",
+      },
+      {
+        testomonial:
+          '"From concept to final design, the team nailed it. Our marketing now feels vibrant, professional, and worthy of The Empire brand."',
+        image: gaurav,
         name: "Gaurav Kumar",
-        designation: "Product Designer",
+        designation: "Founder, The Empire",
+      },
+      {
+        testomonial:
+          '"Team Unfound delivered a clean, intuitive education dashboard that perfectly fits our vision. Their user-first design simplified complex features, making learning seamless. The result has elevated  platform’s usability and strengthened the overall experience for our learners."',
+        image: rohit,
+        name: "Rohit Sharma",
+        designation: "Co-founder, Skill Nest",
+      },
+      {
+        testomonial:
+          '"Working with Unfound Studio to create Oruva’s mobile app was seamless. Their design expertise brought our fashion brand to life, making shopping effortless and enjoyable!"',
+        image: ishita,
+        name: "Ishita Verma",
+        designation: "Marketing Lead, Oruva",
+      },
+      {
+        testomonial:
+          '"I’m really impressed with the AlumniPlus project by the UnFound team. They’ve managed to create something both practical and well-designed, and it clearly reflects their hard work and creativity."',
+        image: medhi,
+        name: "Nabajyoti Medhi",
+        designation: "Assistant Professor, Tezpur University",
       },
       {
         testomonial:
           "The team delivered beyond our expectations. From strategy to execution, everything was on point. Our product finally looks and feels premium.",
-        image: profile,
-        name: "Gaurav Kumar",
-        designation: "Product Designer",
-      },
-      {
-        testomonial:
-          "From the very first call, it was clear we were dealing with professionals. The way they structured the project, communicated updates, and delivered creative solutions was outstanding. What really stood out was their ability to balance a minimalist aesthetic.",
-        image: profile,
-        name: "Gaurav Kumar",
-        designation: "Product Designer",
-      },
-      {
-        testomonial:
-          "The team delivered beyond our expectations. From strategy to execution, everything was on point. Our product finally looks and feels premium.",
-        image: profile,
-        name: "Gaurav Kumar",
-        designation: "Product Designer",
-      },
-      {
-        testomonial:
-          "From the very first call, it was clear we were dealing with professionals. The way they structured the project, communicated updates, and delivered creative solutions was outstanding. What really stood out was their ability to balance a minimalist aesthetic.",
-        image: profile,
-        name: "Gaurav Kumar",
-        designation: "Product Designer",
-      },
-      {
-        testomonial:
-          "The team delivered beyond our expectations. From strategy to execution, everything was on point. Our product finally looks and feels premium.",
-        image: profile,
-        name: "Gaurav Kumar",
-        designation: "Product Designer",
+        image: ishita,
+        name: "Dr.Anjali Gera",
+        designation: "FDHS",
       },
     ],
     []

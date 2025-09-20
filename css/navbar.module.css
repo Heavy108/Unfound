@@ -41,11 +41,17 @@ backdrop-filter: blur(50px); */
   align-items: center;
   color: white;
 }
-
+/* .list li{
+  color: white;
+}
+.list li:hover{
+  color: #4EFFF0;
+} */
 .menuIcon {
   display: contents;
   cursor: pointer;
 }
+
 
 .sideMenu {
   position: fixed;
@@ -83,7 +89,7 @@ backdrop-filter: blur(50px); */
   transition: background-color 0.2s ease;
 }
 
-.sideMenu li:hover {
+.sideMenu li:hover{
   background-color: rgba(255, 255, 255, 0.05);
 }
 
