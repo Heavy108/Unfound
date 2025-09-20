@@ -34,6 +34,9 @@
 .arrowContainer{
     display:none;
 }
+.arrowButton:hover{
+  color: #4EFFF0;
+}
 .head{
     margin: 2rem;
     text-align: center;

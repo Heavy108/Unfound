@@ -176,9 +176,9 @@ useEffect(() => {
       </section>
 
       <FAQ />
-      <section className="relative w-full h-[400px]">
+      <section className="flex-col items-center justify-center relative w-full h-[400px]">
         <Talk />
-        <Image src={footergradient} alt="footer gradient" />
+        <Image src={footergradient} alt="footer gradient" width={2560} height={400}/>
 
         <Footer />
       </section>

@@ -10,6 +10,10 @@ margin-bottom: 1rem;
 
 .quicklinks li{
     color:white;
+     transition: color 0.3s ease;
+}
+.quicklinks li:hover{
+    color: #4EFFF0;
 }
 .icons{
     color: white ;

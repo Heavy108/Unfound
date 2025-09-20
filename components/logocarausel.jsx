@@ -3,13 +3,39 @@ import Image from "next/image";
 import logo from "../assets/Logo.webp";
 import logo2 from "../assets/Logomark.png"
 import style from "../css/logoCarausel.module.css"
+import Asd from "../assets/logos/Asd.svg";
+import convatec from "../assets/logos/convatec.svg";
+import dubdub from "../assets/logos/dubdub.svg";
+import empire from "../assets/logos/empire.svg";
+import fghs from "../assets/logos/fghs.svg";
+import fitnastic from "../assets/logos/fitnastic.svg";
+import fortune from "../assets/logos/fortune.svg";
+import galgotias from "../assets/logos/galgotias.svg";
+import ivory from "../assets/logos/ivory.svg";
+import kamtech from "../assets/logos/kamtech.svg";
+import man from "../assets/logos/man.svg";
+import oruva from "../assets/logos/oruva.svg";
+import sis from "../assets/logos/sis.svg";
+import skillnest from "../assets/logos/skillnest.svg";
+import tezpur from "../assets/logos/tezpur.svg";
+import vpn from "../assets/logos/vpn.svg";
 const logos = [
-  { name: "logo1", src: logo2 },
-  { name: "LightBox", src: logo2 },
-  { name: "logo3", src: logo2 },
-  { name: "LightBox", src: logo2 },
-  { name: "logo5", src: logo2 },
-  { name: "logo6", src: logo },
+  { name: "Asd", src: Asd },
+  { name: "Convatec", src: convatec },
+  { name: "Dubdub", src: dubdub },
+  { name: "Empire", src: empire },
+  { name: "FGHS", src: fghs },
+  { name: "Fitnastic", src: fitnastic },
+  { name: "Fortune", src: fortune },
+  { name: "Galgotias", src: galgotias },
+  { name: "Ivory", src: ivory },
+  { name: "Kamtech", src: kamtech },
+  { name: "Man", src: man },
+  { name: "Oruva", src: oruva },
+  { name: "SIS", src: sis },
+  { name: "Skillnest", src: skillnest },
+  { name: "Tezpur", src: tezpur },
+  { name: "VPN", src: vpn },
 ];
 
 const firstRow = logos.slice(0, logos.length / 2);
@@ -22,11 +48,11 @@ const LogoCard = ({ name, src }) => (
     <Image
       src={src}
       alt={name}
-      width={20}
-      height={25}
+      width='auto'
+      height={36}
       className="object-contain"
     />
-    <p style={{ color: "#737675" ,fontWeight:"700" }} >{name}</p>
+    {/* <p style={{ color: "#737675" ,fontWeight:"700" }} >{name}</p> */}
   </div>
 );
 
