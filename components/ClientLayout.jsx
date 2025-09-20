@@ -8,7 +8,7 @@ export default function ClientLayout({ children }) {
 
   // Loader only on first mount
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2500);
+    const timer = setTimeout(() => setLoading(false), 1500);
     return () => clearTimeout(timer);
   }, []);
 

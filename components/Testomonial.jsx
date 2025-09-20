@@ -80,10 +80,8 @@ function Testonomial() {
     () => Autoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: true }),
     []
   );
-  const plugins = useMemo(
-    () => (isLargeScreen ? [] : [autoplay]),
-    [isLargeScreen, autoplay]
-  );
+const plugins = useMemo(() => [autoplay], [autoplay]);
+
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, plugins);
 

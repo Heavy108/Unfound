@@ -29,26 +29,36 @@ export default function Home() {
   const servicesRef = useRef(null);
   const lazyRef = useRef(null);
   const [showLazyComponents, setShowLazyComponents] = useState(false);
-
+const [rayLength, setRayLength] = useState(1.2);
   const handleScroll = () => {
     servicesRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   // 🔹 Scroll to #reasons if hash is present
-  useEffect(() => {
-    if (window.location.hash === "#reasons") {
-      setShowLazyComponents(true);
+ useEffect(() => {
+   if (window.location.hash === "#reasons") {
+     setShowLazyComponents(true);
 
-      const timer = setTimeout(() => {
-        const element = document.getElementById("reasons");
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 400);
+     const timer = setTimeout(() => {
+       const element = document.getElementById("reasons");
+       if (element) {
+         element.scrollIntoView({ behavior: "smooth" });
 
-      return () => clearTimeout(timer);
-    }
-  }, []);
+         // After scroll, remove #reasons from URL
+         setTimeout(() => {
+           window.history.replaceState(
+             null,
+             "",
+             window.location.pathname + window.location.search
+           );
+         }, 600); // wait a bit for smooth scroll to finish
+       }
+     }, 400);
+
+     return () => clearTimeout(timer);
+   }
+ }, []);
+
 
   // 🔹 Lazy-load Feature and Reasons when near viewport
   // useEffect(() => {
@@ -64,7 +74,19 @@ export default function Home() {
 
   //   if (lazyRef.current) observer.observe(lazyRef.current);
   // }, []);
+useEffect(() => {
+  const handleResize = () => {
+    setRayLength(window.innerWidth < 768 ? 2.2 : 1.2);
+  };
 
+  // Initial check
+  handleResize();
+
+  // Listen for window resize
+  window.addEventListener("resize", handleResize);
+
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
   return (
     <>
       <div className="relative h-[500px] w-full overflow-hidden">
@@ -76,12 +98,12 @@ export default function Home() {
           className="-z-1"
         /> */}
         <LightRays
-          raysAngle={135}
+          raysAngle={130}
           raysOrigin="top-right"
           raysColor="#4EFFD0"
           raysSpeed={0.5}
           lightSpread={0.8}
-          rayLength={1.2}
+          rayLength={rayLength}
           followMouse={false}
           mouseInfluence={0.1}
           noiseAmount={0.1}
@@ -102,12 +124,7 @@ export default function Home() {
             digital products and stories.
           </p>
           <div className={style.buttonContainer}>
-            {/* <button
-              onClick={handleScroll}
-              className={`${style.expertise} font-satoshimedium`}
-            >
-              See Expertise
-            </button> */}
+           
             <ShimmerButton
               shimmerDuration="6s"
               onClick={handleScroll}
