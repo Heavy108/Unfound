@@ -17,6 +17,7 @@ import Testonomial from "../components/Testomonial";
 import dynamic from "next/dynamic";
 import LightRays from "@/components/LightRays";
 import footergradient from "@/assets/Footer.svg"
+import { ShimmerButton } from "@/components/ui/shimmer-button";
 const Services = dynamic(() => import("../components/Services"), {
   ssr: false,
   loading: () => <p>Loading services...</p>,
@@ -78,10 +79,10 @@ export default function Home() {
           raysAngle={135}
           raysOrigin="top-right"
           raysColor="#4EFFD0"
-          raysSpeed={1.5}
+          raysSpeed={0.5}
           lightSpread={0.8}
           rayLength={1.2}
-          followMouse={true}
+          followMouse={false}
           mouseInfluence={0.1}
           noiseAmount={0.1}
           distortion={0.05}
@@ -101,12 +102,19 @@ export default function Home() {
             digital products and stories.
           </p>
           <div className={style.buttonContainer}>
-            <button
+            {/* <button
               onClick={handleScroll}
               className={`${style.expertise} font-satoshimedium`}
             >
               See Expertise
-            </button>
+            </button> */}
+            <ShimmerButton
+              shimmerDuration="6s"
+              onClick={handleScroll}
+              className={`${style.expertise} font-satoshimedium`}
+            >
+              See Expertise
+            </ShimmerButton>
             <Link href={"/contact"}>
               <button className={`${style.lets} font-satoshimedium`}>
                 Let's Talk{" "}
@@ -153,7 +161,7 @@ export default function Home() {
       <FAQ />
       <section className="relative w-full h-[400px]">
         <Talk />
-        <Image src={footergradient} alt="footer gradient"  />
+        <Image src={footergradient} alt="footer gradient" />
 
         <Footer />
       </section>

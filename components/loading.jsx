@@ -11,7 +11,7 @@ export default function Loading({ isVisible }) {
       }`}
     >
       <div className="w-[250px] h-[250px]">
-        <Lottie animationData={animationData} loop={false} />
+        <Lottie animationData={animationData} loop={true} />
       </div>
     </div>
   );

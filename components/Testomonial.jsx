@@ -227,9 +227,9 @@ function Testonomial() {
       />
 
       <div className={style.head}>
-        <h2 className="font-cabinet">Our Happy Client</h2>
+        <h2 className="font-cabinet">Our Happy Clients</h2>
         <h3 className="font-satoshi">
-          Still need convincing? Check out what people are saying about Us.
+          Still need convincing? Check out what people are saying about us.
         </h3>
       </div>
 
