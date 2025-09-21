@@ -89,6 +89,19 @@ useEffect(() => {
 }, []);
   return (
     <>
+      <LightRays
+        raysAngle={130}
+        raysOrigin="top-right"
+        raysColor="#4EFFD0"
+        raysSpeed={0.5}
+        lightSpread={0.8}
+        rayLength={rayLength}
+        followMouse={false}
+        mouseInfluence={0.1}
+        noiseAmount={0.1}
+        distortion={0.05}
+        className="custom-rays"
+      />
       <div className="relative h-[500px] w-full overflow-hidden">
         {/* <Image
           src={Gradient1}
@@ -97,19 +110,7 @@ useEffect(() => {
           loading="lazy"
           className="-z-1"
         /> */}
-        <LightRays
-          raysAngle={130}
-          raysOrigin="top-right"
-          raysColor="#4EFFD0"
-          raysSpeed={0.5}
-          lightSpread={0.8}
-          rayLength={rayLength}
-          followMouse={false}
-          mouseInfluence={0.1}
-          noiseAmount={0.1}
-          distortion={0.05}
-          className="custom-rays"
-        />
+
         <div className="relative z-10 mb-[3rem]">
           <Navbar />
         </div>
@@ -124,7 +125,6 @@ useEffect(() => {
             digital products and stories.
           </p>
           <div className={style.buttonContainer}>
-           
             <ShimmerButton
               shimmerDuration="6s"
               onClick={handleScroll}
@@ -178,7 +178,12 @@ useEffect(() => {
       <FAQ />
       <section className="flex-col items-center justify-center relative w-full h-[400px]">
         <Talk />
-        <Image src={footergradient} alt="footer gradient" width={25600} height={400}/>
+        <Image
+          src={footergradient}
+          alt="footer gradient"
+          width={25600}
+          height={400}
+        />
 
         <Footer />
       </section>

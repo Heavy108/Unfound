@@ -31,7 +31,7 @@ function Testonomial() {
     () => [
       {
         testomonial:
-          '"Unfound Studio exceeded our expectations in designing Ivory Dental’s website. Modern, intuitive, and responsive, it reflects our commitment to quality care. Their professional, collaborative team ensured every detail enhanced user experience and strengthened our online presence."',
+          '"Unfound Studio designed a modern, intuitive, and responsive website for Ivory Dental. Their professional, collaborative team delivered a user-friendly design that reflects our quality care and strengthened our online presence"',
         image: sharma,
         name: "Dr. Riya Sharma",
         designation: "Founder, Ivory Dental",
@@ -45,7 +45,7 @@ function Testonomial() {
       },
       {
         testomonial:
-          '"Team Unfound delivered a clean, intuitive education dashboard that perfectly fits our vision. Their user-first design simplified complex features, making learning seamless. The result has elevated  platform’s usability and strengthened the overall experience for our learners."',
+          '"Team Unfound delivered a clean, intuitive education dashboard that matched our vision. Their user-first design simplified features, creating a seamless learning experience that enhanced usability and strengthened engagement"',
         image: rohit,
         name: "Rohit Sharma",
         designation: "Co-founder, Skill Nest",
