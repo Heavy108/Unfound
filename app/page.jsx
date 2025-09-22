@@ -17,6 +17,7 @@ import Testonomial from "../components/Testomonial";
 import dynamic from "next/dynamic";
 import LightRays from "@/components/LightRays";
 import footergradient from "@/assets/Footer.svg"
+import CTAButton from "@/components/ctabutton"
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 const Services = dynamic(() => import("../components/Services"), {
   ssr: false,
@@ -133,12 +134,7 @@ useEffect(() => {
               See Expertise
             </ShimmerButton>
             <Link href={"/contact"}>
-              <button className={`${style.lets} font-satoshimedium`}>
-                Let's Talk{" "}
-                <span className={style.arrow}>
-                  <ArrowUpRight size={16} />
-                </span>
-              </button>
+              <CTAButton name="Let's Talk" param={true} />
             </Link>
           </div>
         </div>

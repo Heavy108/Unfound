@@ -9,6 +9,7 @@ import Image from "next/image";
 import Gradient6 from "../assets/Gradient3.png";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
+import CTAButton from "@/components/ctabutton"
 
 export default function Accordion({ items }) {
   const [openIndex, setOpenIndex] = useState(null);
@@ -32,12 +33,8 @@ export default function Accordion({ items }) {
             <div className={style.moreinfo}>
               <h2 className="font-satoshi">Still have questions?</h2>
               <Link href={"/contact"}>
-                <button className="font-satoshi">
-                  Let's talk{" "}
-                  <span className={style.icons2}>
-                    <ArrowUpRight size={24} />
-                  </span>
-                </button>
+                              <CTAButton name="Let's Talk" param={true} />
+                
               </Link>
             </div>
           </div>

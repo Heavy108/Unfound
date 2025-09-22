@@ -50,7 +50,7 @@ const LogoCard = ({ name, src }) => (
       alt={name}
       width='auto'
       height={36}
-      className="object-contain"
+      className="object-contain "
     />
     {/* <p style={{ color: "#737675" ,fontWeight:"700" }} >{name}</p> */}
   </div>

@@ -32,6 +32,9 @@ z-index: 2;
 
 
 }
+.expertise:hover{
+    color:#4EFFF0
+}
 .lets{
 border-radius: 6.25rem;
 border: 1px solid #4EFFF0;
@@ -41,9 +44,10 @@ background: linear-gradient(250deg, #29F99E -12.84%, #4EFFF0 118.51%);
 color: black;
 font-size: 0.8rem;
 display: flex;
+flex-direction: row;
 text-align: center;
 justify-content: space-between;
-z-index: 2;
+/* z-index: 2; */
 
 }
 .arrow{
@@ -144,6 +148,9 @@ z-index: 2;
     .animation svg{
         border-radius: 1.7rem;
         /* padding: 1.5rem; */
+    }
+    .lets{
+        font-size: 1rem;
     }
 }
 

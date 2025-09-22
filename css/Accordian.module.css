@@ -148,19 +148,7 @@ border: 1px solid #307D70;
     gap: 1rem;
     font-size: 1.5rem;
   }
-  .moreinfo button {
-    display: flex;
-    height: 3rem;
-    padding: 0.5rem 1.5rem;
-    color: black;
-    justify-content: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-    align-items: center;
-    border-radius: 6.25rem;
-    border: 1px solid #4efff0;
-    background: linear-gradient(250deg, #29f99e -12.84%, #4efff0 118.51%);
-  }
+
   .icons2{
     color: black;
     /* transform: rotate(-45deg); */

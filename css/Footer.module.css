@@ -23,6 +23,9 @@ margin-bottom: 1.5rem;
 
    
 }
+.icons svg:hover{
+    color: #4EFFF0;
+}
 
 .logoContainer{
     color: rgba(255, 255, 255, 0.70);

@@ -19,11 +19,11 @@ export default function FAQ() {
       content:
         "Yes. We specialize in delivering seamless design-to-dev handoffs or full-stack builds, all under one roof.",
     },
-    {
-      title: "What industries do you work in?",
-      content:
-        "We've worked across SaaS, fintech, edtech, consumer tech, AI, and more. But our process adapts to any bold product idea.",
-    },
+    // {
+    //   title: "What industries do you work in?",
+    //   content:
+    //     "We've worked across SaaS, fintech, edtech, consumer tech, AI, and more. But our process adapts to any bold product idea.",
+    // },
     {
       title: "How do you price your services?",
       content:
