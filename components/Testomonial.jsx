@@ -220,13 +220,13 @@ const plugins = useMemo(() => [autoplay], [autoplay]);
 
   return (
     <div className={`relative bg-transparent`}>
-      {/* <Image
+      <Image
         src={Gradient2}
         alt="gradient background"
         width={800}
         height={300}
         className={style.grad}
-      /> */}
+      />
 
       <div className={style.head}>
         <h2 className="font-cabinet">Our Happy Clients</h2>

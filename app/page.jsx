@@ -2,11 +2,9 @@
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Navbar from "../components/navbar";
-import Gradient1 from "../assets/Gradient.png";
-import Gradient4 from "../assets/Gradient4.png";
+import Gradient4 from "../assets/Gradient4.webp";
 import HeroSpline from "@/components/Spline";
 import style from "../css/Home.module.css";
-import { ArrowUpRight } from "lucide-react";
 import Stats from "../components/stats";
 import AnimatedTextRibbon from "@/components/Strip";
 import FAQ from "@/components/FAQ";
@@ -23,11 +21,15 @@ const Services = dynamic(() => import("../components/Services"), {
   ssr: false,
   loading: () => <p>Loading services...</p>,
 });
-const Reasons = dynamic(() => import("../components/Reason"), { ssr: true });
-const Feature = dynamic(() => import("../components/Features"), { ssr: true });
+// const HeroSpline = dynamic(() => import("@/components/Spline"), { ssr: false });
+
+const Reasons = dynamic(() => import("../components/Reason"), { ssr: false });
+const Feature = dynamic(() => import("../components/Features"), { ssr: false });
 
 export default function Home() {
   const servicesRef = useRef(null);
+  const animation = useRef(null);
+
   const lazyRef = useRef(null);
   const [showLazyComponents, setShowLazyComponents] = useState(false);
 const [rayLength, setRayLength] = useState(1.2);
@@ -61,20 +63,20 @@ const [rayLength, setRayLength] = useState(1.2);
  }, []);
 
 
-  // 🔹 Lazy-load Feature and Reasons when near viewport
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (entry.isIntersecting) {
-  //         setShowLazyComponents(true);
-  //         observer.disconnect();
-  //       }
-  //     },
-  //     { rootMargin: "200px" }
-  //   );
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowLazyComponents(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
 
-  //   if (lazyRef.current) observer.observe(lazyRef.current);
-  // }, []);
+    if (lazyRef.current) observer.observe(lazyRef.current);
+  }, []);
 useEffect(() => {
   const handleResize = () => {
     setRayLength(window.innerWidth < 768 ? 2.2 : 1.2);
@@ -104,13 +106,7 @@ useEffect(() => {
         className="custom-rays"
       />
       <div className="relative h-[500px] w-full overflow-hidden">
-        {/* <Image
-          src={Gradient1}
-          alt="gradient1"
-          fill
-          loading="lazy"
-          className="-z-1"
-        /> */}
+        
 
         <div className="relative z-10 mb-[3rem]">
           <Navbar />
@@ -139,7 +135,7 @@ useEffect(() => {
           </div>
         </div>
       </div>
-
+    
       <HeroSpline />
       <Stats />
 
@@ -159,16 +155,16 @@ useEffect(() => {
         />
         <AnimatedTextRibbon />
 
-        {/* <div ref={lazyRef}>
-          {showLazyComponents && (
+        <div ref={lazyRef}>
+          {/* {showLazyComponents && (
             <> */}
         <Feature />
         <div id="reasons">
           <Reasons />
         </div>
         {/* </>
-          )}
-        </div> */}
+          )} */}
+        </div>
       </section>
 
       <FAQ />
@@ -177,7 +173,7 @@ useEffect(() => {
         <Image
           src={footergradient}
           alt="footer gradient"
-          width={25600}
+          width={3560}
           height={400}
         />
 
