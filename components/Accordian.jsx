@@ -25,6 +25,8 @@ export default function Accordion({ items }) {
           <Image
             src={Gradient6}
             alt="gradient background"
+            width='auto'
+            height='auto'
             className={style.grad6}
             priority
           />

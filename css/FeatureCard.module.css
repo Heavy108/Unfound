@@ -77,6 +77,10 @@ backdrop-filter: blur(10px);
     max-width: 19.5rem;
     height: 15rem;
 }
+.introduction{
+    
+   margin-top:1.5rem ;
+}
 }
 @media only screen and (min-width:1024px){
 .potrait img{

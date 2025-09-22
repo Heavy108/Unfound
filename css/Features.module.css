@@ -1,10 +1,9 @@
 .featuresContainer{
-    margin: 0rem 2rem;
+    margin: 0rem 2rem 5rem 2rem;
     display: flex;
     gap: 1.5rem;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 5rem;
 }
 .featuresContainer2{
     display: none;
@@ -121,6 +120,7 @@ display: flex;
     margin-right: 0.5rem;
     font-family: none;
 }
+
 }
 
 @media only screen and (min-width:1024px){

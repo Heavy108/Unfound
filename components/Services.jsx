@@ -225,15 +225,14 @@ function Services() {
           width={1200}
           height={300}
           className={style.grad}
-          // priority
         />
-        <Image
+        {/* <Image
           src={Gradient3_1}
           alt="gradient background"
           width={800}
           height={300}
           className={style.grad2}
-        />
+        /> */}
 
         {/* 🔥 Animated heading */}
 
