@@ -11,6 +11,7 @@ import animation from "@/assets/logos/logo animation.json"
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import CTAButton from "./ctabutton";
 
 function Navbar() {
   const [active, setActive] = useState(false);
@@ -107,7 +108,8 @@ function Navbar() {
                     <li>Case Studies</li>
                   </Link>
                   <Link href={"/contact"}>
-                    <button className={style.contact}>Contact Us</button>
+                                  <CTAButton name="Contact US" param={false} />
+                    
                   </Link>
                 </ul>
               </div>

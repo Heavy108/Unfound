@@ -7,6 +7,7 @@ import gradientmobile from "../../assets/Gradient2.png";
 import gradientdesktop from "../../assets/Gradient5.png";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/Footer";
+import footergradient from "../../assets/Footer.svg"
 function Contact() {
   const initialState = {
     email: "",
@@ -127,6 +128,7 @@ const handlesubmit = async (e) => {
         </div>
       </div>
       {/* </div> */}
+      
       <Footer />
     </>
   );

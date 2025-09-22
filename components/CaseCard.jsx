@@ -8,7 +8,8 @@ import ivory from "../assets/ivory.png";
 import Oruva from "../assets/Oruva.png";
 import Nest from "../assets/Nest.png";
 import VPN from "../assets/VPN.png";
-
+import Talk from "../components/Talk"
+import footergradient from "../assets/Footer.svg"
 function CaseCard({
   approach,
   challenge,
@@ -230,7 +231,17 @@ const OPTIONS = { slidesToScroll: 2, };
         </div>
       </div>
       {/* <div className={style.section}></div> */}
-      <Footer />
+      <section className="flex-col items-center justify-center relative w-full h-[400px]">
+        <Talk />
+        <Image
+          src={footergradient}
+          alt="footer gradient"
+          width={25600}
+          height={400}
+        />
+
+        <Footer />
+      </section>
     </>
   );
 }

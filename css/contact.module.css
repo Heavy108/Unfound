@@ -112,12 +112,25 @@ z-index: 2;
      .contactcontainer{
         padding-bottom: 10rem
      }
+     .extradiv{
+        display: flex;
+        padding: 0rem 8rem;
+        justify-content: space-between;
+       
+
+     }
+    .potrait, .contactform{
+        width: 45%;
+    }
+     .contactform ,.potrait{
+        padding: 0rem;
+     }
+
 }
 
 @media only screen and (min-width:1440px){
     .extradiv{
         /* position: relative; */
-        display: flex;
         padding: 0rem 7.5rem;
         justify-content: space-between;
         width: 1440px;
