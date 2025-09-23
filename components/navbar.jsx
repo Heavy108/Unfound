@@ -23,21 +23,31 @@ function Navbar() {
     setActive(!active);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScroll = window.scrollY;
-      if (currentScroll > 50) setScrolled(true);
-      else setScrolled(false);
+useEffect(() => {
+  const handleScroll = () => {
+    const currentScroll = window.scrollY;
 
-      if (currentScroll > lastScroll && currentScroll > 100) setShowNav(false);
-      else setShowNav(true);
+    // Detect scroll direction
+    if (currentScroll > lastScroll && currentScroll > 10) {
+      // scrolling down → hide navbar
+      setShowNav(false);
+    } else {
+      // scrolling up → show navbar and mark as "scrolled"
+      setShowNav(true);
+      if (currentScroll > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    }
 
-      setLastScroll(currentScroll);
-    };
+    setLastScroll(currentScroll);
+  };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScroll]);
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [lastScroll]);
+
 
   const navVariants = {
     hidden: { y: "-100%", transition: { duration: 0.5, ease: "easeInOut" } },
