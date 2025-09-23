@@ -119,7 +119,7 @@ max-width: 22rem;
 }
 .potrait img{
   height: 12rem;
-  /* object-fit: contain; */
+  object-fit: fill;
 }
 .logo{
   padding: 0.8rem;
@@ -130,6 +130,9 @@ max-width: 22rem;
   .container{
   height: 28.625rem;
   min-width: 29rem;
+}
+.potrait img{
+  height: 15rem;
 }
 }
 

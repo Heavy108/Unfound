@@ -108,7 +108,7 @@ function Navbar() {
                     <li>Case Studies</li>
                   </Link>
                   <Link href={"/contact"}>
-                                  <CTAButton name="Contact US" param={false} />
+                                  <CTAButton name="Contact Us" param={false} />
                     
                   </Link>
                 </ul>

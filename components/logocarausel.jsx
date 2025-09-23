@@ -49,8 +49,8 @@ const LogoCard = ({ name, src }) => (
       src={src}
       alt={name}
       width='auto'
-      height={36}
-      className="object-contain "
+      height="auto"
+      className="object-contain h-[28px] md:h-[40px]"
     />
     {/* <p style={{ color: "#737675" ,fontWeight:"700" }} >{name}</p> */}
   </div>

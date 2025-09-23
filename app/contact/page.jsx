@@ -7,7 +7,8 @@ import gradientmobile from "../../assets/Gradient2.png";
 import gradientdesktop from "../../assets/Gradient5.png";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/Footer";
-import footergradient from "../../assets/Footer.svg"
+import GlareHover from "@/components/GlareHover";
+import styl from "@/css/Home.module.css"
 function Contact() {
   const initialState = {
     email: "",
@@ -120,15 +121,27 @@ const handlesubmit = async (e) => {
                 autoComplete="off"
               />
             </div>
-
-            <button type="submit" className={style.vutton}>
-              {loading ? "Submitting..." : "Submit"}
-            </button>
+            <GlareHover
+              width="fit-content" // shrink-wrap to button
+              height="fit-content"
+              background="transparent" // no background
+              borderRadius="999px" // keep pill glare
+              glareColor="#ffffff"
+              glareOpacity={0.9}
+              glareAngle={-45}
+              glareSize={200}
+              transitionDuration={600}
+              className="inline-block"
+            >
+              <button type="submit" className={styl.lets}>
+                {loading ? "Submitting..." : "Submit"}
+              </button>
+            </GlareHover>
           </form>
         </div>
       </div>
       {/* </div> */}
-      
+
       <Footer />
     </>
   );

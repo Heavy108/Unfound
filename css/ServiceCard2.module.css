@@ -109,7 +109,7 @@ max-width: 22rem;
   font-size: 2rem;
 }
 .potrait img{
-  height: 14rem;
+  height: 12rem;
 }
 .logo{
   padding: 0.8rem;
@@ -121,6 +121,9 @@ max-width: 22rem;
   .container{
   height: 28.625rem;
   min-width: 29rem;
+}
+.potrait img{
+  height: 15rem;
 }
 }
 

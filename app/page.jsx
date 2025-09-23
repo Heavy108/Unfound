@@ -106,8 +106,6 @@ useEffect(() => {
         className="custom-rays"
       />
       <div className="relative h-[500px] w-full overflow-hidden">
-        
-
         <div className="relative z-10 mb-[3rem]">
           <Navbar />
         </div>
@@ -135,7 +133,7 @@ useEffect(() => {
           </div>
         </div>
       </div>
-    
+
       <HeroSpline />
       <Stats />
 
@@ -158,23 +156,24 @@ useEffect(() => {
         <div ref={lazyRef}>
           {/* {showLazyComponents && (
             <> */}
-        <Feature />
-        <div id="reasons">
-          <Reasons />
-        </div>
-        {/* </>
+          <Feature />
+          <div id="reasons">
+            <Reasons />
+          </div>
+          {/* </>
           )} */}
         </div>
       </section>
 
       <FAQ />
-      <section className="flex-col items-center justify-center relative w-full h-[400px]">
+      <section className="flex-col items-center justify-center relative w-full  ">
         <Talk />
         <Image
           src={footergradient}
           alt="footer gradient"
           width={3560}
           height={400}
+          className="2xl:h-[600px] bottom-0"
         />
 
         <Footer />

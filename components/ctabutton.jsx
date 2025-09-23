@@ -20,7 +20,7 @@ export default function CTAButton({ name = "Click Me", param = true }) {
         {name}
         {param && (
           <span className={style.icons2}>
-            <ArrowUpRight size={24} />
+            <ArrowUpRight size={20} />
           </span>
         )}
       </button>

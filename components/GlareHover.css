@@ -33,6 +33,9 @@
 
 .glare-hover:hover {
   cursor: pointer;
+   box-shadow: 0 8px 16px 0 rgba(78, 255, 240, 0.16);
+  transition: box-shadow var(--gh-duration) ease; /* smooth shadow transition */
+  
 }
 
 .glare-hover:hover::before {

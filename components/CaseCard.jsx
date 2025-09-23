@@ -236,8 +236,9 @@ const OPTIONS = { slidesToScroll: 2, };
         <Image
           src={footergradient}
           alt="footer gradient"
-          width={25600}
+          width={2560}
           height={400}
+          className="2xl:h-[700px]"
         />
 
         <Footer />

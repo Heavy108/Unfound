@@ -25,8 +25,8 @@ export default function Accordion({ items }) {
           <Image
             src={Gradient6}
             alt="gradient background"
-            width='auto'
-            height='auto'
+            width="auto"
+            height="auto"
             className={style.grad6}
             priority
           />
@@ -35,8 +35,7 @@ export default function Accordion({ items }) {
             <div className={style.moreinfo}>
               <h2 className="font-satoshi">Still have questions?</h2>
               <Link href={"/contact"}>
-                              <CTAButton name="Let's Talk" param={true} />
-                
+                <CTAButton name="Let's Talk" param={true} />
               </Link>
             </div>
           </div>
@@ -66,13 +65,22 @@ export default function Accordion({ items }) {
                     {openIndex === index && (
                       <motion.div
                         key="content"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
+                        initial={{ height: 0 }}
+                        animate={{ height: "auto" }}
+                        exit={{ height: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className={style.motionContent}
                       >
-                        <div className={style.content}>{item.content}</div>
+                        {/* Fade-in text inside container */}
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.3, delay: 0.1 }}
+                          className={style.content}
+                        >
+                          {item.content}
+                        </motion.div>
                       </motion.div>
                     )}
                   </AnimatePresence>

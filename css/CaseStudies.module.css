@@ -40,6 +40,7 @@
 .dot {
   color: #29f99e;
   margin-right: 0.5rem;
+  font-family: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -84,12 +85,12 @@
   }
   .casecontainer{
     padding-top: 8rem;
-    margin-bottom: 10rem
+    margin-bottom: 5rem
   }
 }
 @media only screen and (min-width: 1440px) {
   .head {
-    margin: 3rem 7.5rem;
+    margin: 3rem 7.5rem 2rem 7.5rem;
   }
   .secondcontainer {
     display: grid;
@@ -97,18 +98,19 @@
     gap: 40px 20px;
   }
   .casecontainer{
-    padding-top: 10rem;
+    padding-top: 8rem;
+    margin-bottom: 3rem;
   }
 }
 
 @media only screen and (min-width:1920px){
     .head {
-    margin: 5rem 15rem;
+    margin: 5rem 8rem;
   }
   .secondcontainer {
     gap: 80px 40px;
   }
   .casecontainer{
-    padding-top: 14rem;
+    padding-top: 8rem;
   }
 }

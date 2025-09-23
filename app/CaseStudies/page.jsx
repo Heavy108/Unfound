@@ -71,8 +71,10 @@ function CaseStudies(){
           <Image
             src={footergradient}
             alt="footer gradient"
-            width={25600}
-            height={400}
+            width={2560}
+            height={300}
+            className="2xl:h-[700px]"
+            
           />
 
           <Footer />
