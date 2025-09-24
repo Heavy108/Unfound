@@ -21,8 +21,8 @@ const AnimatedText = ({ text, scrollYProgress }) => {
   return (
     <span>
       {words.map((word, i) => {
-        const start = i * 0.05;
-        const end = start + 0.3;
+        const start = i * 0.03;
+        const end = start + 0.9;
 
         const color = useTransform(
           scrollYProgress,
@@ -61,12 +61,12 @@ const Card = ({ name, desc, link, img }) => {
 
       <div className={style.introduction}>
         <div className={style.links}>
-          <h1>{name}</h1>
+          <h1 className="font-cabinet">{name}</h1>
           <Link href={link} target="_blank">
             <Image src={linkedin} alt="linkedin" width="auto" height="auto" />
           </Link>
         </div>
-        <p>{desc}</p>
+        <p className="font-satoshi">{desc}</p>
       </div>
     </div>
 

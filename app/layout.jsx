@@ -19,7 +19,7 @@ const satoshi_medium = localFont({
 });
 
 export const metadata = {
-  title: "UnFound",
+  title: "Unfound Studio",
   description: "Where Ideas Become Digital Experiences",
 };
 

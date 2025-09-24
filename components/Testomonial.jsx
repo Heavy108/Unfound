@@ -19,7 +19,7 @@ import Image from "next/image";
 import testograd from "../assets/testimonialGradient.png"
 import TestomonialCard from "./TestomonialCard";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-
+import anjali from "../assets/testinomial/anjali.png"
 const TWEEN_FACTOR_BASE = 0.52;
 const AUTOPLAY_DELAY = 4000;
 
@@ -67,7 +67,7 @@ function Testonomial() {
       {
         testomonial:
           "The team delivered beyond our expectations. From strategy to execution, everything was on point. Our product finally looks and feels premium.",
-        image: ishita,
+        image: anjali,
         name: "Dr.Anjali Gera",
         designation: "FDHS",
       },

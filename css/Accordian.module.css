@@ -1,6 +1,6 @@
 .Faqcontainer {
   color: white;
-  padding: 2rem;
+  padding: 2rem 2rem 5rem 2rem;
   position: relative;
   width: 100%;
 }
@@ -98,7 +98,7 @@ border: 1px solid #307D70;
 .head h1 {
   font-size: 2rem;
   text-align: center;
-  margin: 3rem 0rem;
+  margin: 3rem 0rem 2rem 0rem;
 }
 
 /* Add a container for the FAQ section to control width */

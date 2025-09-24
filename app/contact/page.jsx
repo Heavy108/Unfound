@@ -8,7 +8,8 @@ import gradientdesktop from "../../assets/Gradient5.png";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/Footer";
 import GlareHover from "@/components/GlareHover";
-import styl from "@/css/Home.module.css"
+import styl from "@/css/Home.module.css";
+
 function Contact() {
   const initialState = {
     email: "",
@@ -18,46 +19,46 @@ function Contact() {
 
   const [user, setUser] = useState(initialState);
   const [loading, setLoading] = useState(false);
-const handlesubmit = async (e) => {
-  e.preventDefault(); // stop form reload
-  setLoading(true);
 
-  try {
-    const response = await fetch("/api/email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json", // important for JSON
-      },
-      body: JSON.stringify(user),
-    });
+  const handlesubmit = async (e) => {
+    e.preventDefault(); // stop form reload
+    setLoading(true);
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    try {
+      const response = await fetch("/api/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json", // important for JSON
+        },
+        body: JSON.stringify(user),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      alert("Form submitted successfully:");
+
+      setUser({
+        email: "",
+        name: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert(
+        "Something went wrong. Try contacting us at: team@unfoundstudio.com"
+      );
+    } finally {
+      setLoading(false);
     }
-
-    const result = await response.json();
-    alert("Form submitted successfully:");
-
-    setUser({
-      email: "",
-      name: "",
-      message: "",
-    });
-  } catch (error) {
-    console.error("Error submitting form:", error);
-    alert("Something went wrong. Try contacting us at: team@unfoundstudio.com");
-
-  } finally {
-    setLoading(false);
-  }
-};
-
+  };
 
   return (
     <>
       <Navbar />
-      {/* <div className={style.extradiv}> */}
-      <div className={`${style.contactcontainer}  overflow-y-hidden`}>
+      <div className={`${style.contactcontainer} overflow-y-hidden`}>
         <Image
           src={gradientmobile}
           className={style.gradientmobile}
@@ -121,27 +122,32 @@ const handlesubmit = async (e) => {
                 autoComplete="off"
               />
             </div>
+
+            {/* Solution 1: Add style to make GlareHover not interfere */}
             <GlareHover
-              width="fit-content" // shrink-wrap to button
+              width="fit-content"
               height="fit-content"
-              background="transparent" // no background
-              borderRadius="999px" // keep pill glare
+              background="transparent"
+              borderRadius="999px"
               glareColor="#ffffff"
               glareOpacity={0.9}
               glareAngle={-45}
               glareSize={200}
               transitionDuration={600}
               className="inline-block"
+              style={{ pointerEvents: "none" }} // This prevents interference
             >
-              <button type="submit" className={styl.lets}>
+              <button
+                type="submit"
+                className={styl.lets}
+                style={{ pointerEvents: "auto" }} // Re-enable clicks on button
+              >
                 {loading ? "Submitting..." : "Submit"}
               </button>
             </GlareHover>
           </form>
         </div>
       </div>
-      {/* </div> */}
-
       <Footer />
     </>
   );

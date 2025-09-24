@@ -1,7 +1,7 @@
 .Hero{
     /* position: relative; */
     z-index: 10;
-    margin: 8rem 2rem 2rem 2rem;
+    margin: 6rem 2rem 2rem 2rem;
     text-align: center;
     top: 150px;
 }
@@ -61,7 +61,7 @@ justify-content: space-between;
     /* width: 100%; */
     position: relative;
     padding: 0rem 1rem;
-    margin: -8rem 2rem 1rem 2rem;
+    margin: -10rem 2rem 3rem 2rem;
     border-radius: 1.5rem;
     z-index: 5;
 }
