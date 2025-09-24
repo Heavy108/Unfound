@@ -13,33 +13,10 @@ import Link from "next/link";
 function Footer() {
   return (
     <>
-      {/* <Talk /> */}
-
-      {/* <div className={`${style.footerWrapper} font-satoshi`}> */}
-      {/* Background gradients */}
-      {/* <Image
-          src={grad2}
-          alt="footer gradient"
-          className={style.footerGradient}
-        />
-        <Image
-          src={grad2}
-          alt="footer gradient"
-          className={style.footerGradient2}
-        /> */}
-
-      {/* Content */}
-      {/* <Image
-        src={footer_gradient}
-        alt="footer gradient"
-        width={1920}
-        height={300}
-        
-        className={style.footerGradient}
-      /> */}
+     
       <div className={`${style.container}  font-satoshi`}>
         <div className={style.logoContainer}>
-          <Image src={logo} width={100} height={40} alt="logo with name" />
+          <Image src={logo} width='auto' height='auto' alt="logo with name" />
           <h2>
             Where ambition meets design to create exceptional digital
             experiences.

@@ -25,7 +25,6 @@ import style from "../css/services.module.css";
 import Gradient3 from "../assets/Gradient3.png";
 import Gradient3_1 from "../assets/Gradient3_1.png";
 import Image from "next/image";
-import { useInView } from "@/hooks/useInView";
 const TWEEN_FACTOR_BASE = 0.52;
 const numberWithinRange = (number, min, max) =>
   Math.min(Math.max(number, min), max);
@@ -226,13 +225,13 @@ function Services() {
           height={300}
           className={style.grad}
         />
-        {/* <Image
+        <Image
           src={Gradient3_1}
           alt="gradient background"
           width={800}
           height={300}
           className={style.grad2}
-        /> */}
+        />
 
         {/* 🔥 Animated heading */}
 

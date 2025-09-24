@@ -1,0 +1,263 @@
+.outer{
+    color: white;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: radial-gradient(
+      146.13% 118.42% at 50% -15.5%,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0) 99.59%
+    ),
+    linear-gradient(180deg, rgba(46, 51, 90, 0) 0%, rgba(27, 51, 41, 0.1) 100%);
+  box-shadow: 0 0 100px 0 rgba(204, 215, 255, 0.05) inset,
+    0 5px 10px 0 rgba(0, 0, 0, 0.05), 0 15px 30px 0 rgba(0, 0, 0, 0.05),
+    0 30px 60px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem;
+
+   display: flex;        
+  flex-direction: column;
+  height: 15rem;
+  width: 18rem;
+}
+.Card{
+     display: flex;
+  flex: 1; 
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+background: radial-gradient(146.13% 118.42% at 50% -15.5%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.00) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0.00) 0%, rgba(27, 51, 41, 0.10) 100%);
+
+box-shadow: 0 0 100px 0 rgba(204, 255, 233, 0.05) inset, 0 5px 10px 0 rgba(0, 0, 0, 0.05), 0 15px 30px 0 rgba(0, 0, 0, 0.05), 0 30px 60px 0 rgba(0, 0, 0, 0.10);
+backdrop-filter: blur(10px);
+
+}
+.Card img{
+    /* position: absolute; */
+    padding: 2rem 2rem 0rem 2rem;
+    height: 13rem;
+    /* object-fit: contain; */
+    bottom: 0;
+    top: 0;
+}
+
+.aboutContainer{
+    margin: 5rem 2rem 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+  
+
+}
+.extradiv{
+    display: flex;
+    justify-content: center;
+
+}
+
+.head h1{
+    color:white;
+    font-size: 2rem;
+}
+.head p{
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 0.875rem;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    gap: 1rem;
+}
+.head2 h2{
+    color: white;
+    font-size: 1rem;
+}
+.head2 span{
+    color:#29F99E;
+    /* padding: 0.25rem; */
+    margin-right: 0.5rem;
+    /* font-family: none; */
+}
+.head2 h3{
+    font-size: 1.5rem;
+}
+.head2{
+    display: flex;
+    flex-direction: column;
+align-items: center;
+gap: 1rem;
+}
+.introduction{
+    padding: 0rem 0.8rem;
+  width: 18rem;
+
+    
+}
+.introduction h1{
+    color: white;
+    font-size: 1.25rem;
+}
+.introduction p{
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 0.875rem;
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.links a{
+    border-radius: 0.5rem;
+border: 0.5px solid rgba(255, 255, 255, 0.15);
+
+background: radial-gradient(146.13% 118.42% at 50% -15.5%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.00) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0.00) 0%, rgba(27, 51, 41, 0.05) 100%);
+
+box-shadow: 0 0 100px 0 rgba(204, 255, 233, 0.05) inset, 0 5px 10px 0 rgba(0, 0, 0, 0.05), 0 15px 30px 0 rgba(0, 0, 0, 0.05), 0 30px 60px 0 rgba(0, 0, 0, 0.10);
+backdrop-filter: blur(10px);
+padding: 0.5rem ;
+
+}
+.links img{
+    width: 1rem;
+    height: 1rem;
+}
+.potrait{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+@media only screen and (min-width:768px){
+    .potrait{
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* justify-content: center; */
+    }
+    .aboutContainer{
+        margin: 8rem 4rem 5rem 4rem;
+    }
+   
+}
+@media only screen and (min-width:1024px){
+
+    .potrait{
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .aboutContainer{
+        margin: 8rem 6rem 0rem 6rem;
+        width: 835px;
+        gap: 2rem;
+    }
+    .head {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       left: 0;
+
+    }
+    .head2{
+        margin: 5rem 0rem;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .head2 h2{
+         white-space: nowrap;
+         width: 390px;
+         font-size: 1.5rem;
+         
+    }
+    .head2 h3{
+        font-size: 2rem;
+    margin-left: 1.5rem;
+
+    }
+    .introduction{
+        width: 100%;
+
+    }
+    .links img{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.introduction h1{
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width:1440px){
+    .aboutContainer{
+        margin: 8rem 7.5rem 0rem 7.5rem;
+        width: 1200px;
+        gap: 2.5rem;
+
+        
+    }
+    .outer{
+        width: 24rem;
+        height: 21rem;
+    }
+    .Card img{
+        height: 19rem;
+    }
+    .head h1{
+        font-size: 3rem;
+    }
+    .head p{
+        font-size: 1rem;
+    }
+    
+    .introduction h1{
+        font-size: 2rem;
+    }
+    .introduction p{
+        font-size: 1.25rem;
+    }
+    .container{
+        align-items: flex-start;
+    }
+    .links img{
+    width: 2rem;
+    height: 2rem;
+}
+.head2{
+    margin: 8rem 0rem;
+}
+.head2 h2{
+    font-size: 2rem;
+    width: 15rem;
+}
+.head2 h3{
+    font-size: 3rem;
+    margin-left: 2rem;
+}
+
+}
+@media only screen and (min-width:1920px){
+    .outer{
+        width: 28.625rem;
+        height: 25rem;
+    }
+    .aboutContainer{
+        width: 1440px;
+        margin: 10rem 15rem 0rem 15rem;
+        gap: 3rem;
+    }
+    .Card img{
+        height: 21.25rem;
+    }
+     .head h1{
+        font-size: 4rem;
+    }
+    .head p{
+        font-size: 1.25rem;
+    }
+    .head2{
+    margin: 10rem 0rem;
+}
+}
