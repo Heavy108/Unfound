@@ -111,8 +111,8 @@ useEffect(() => {
               <div className={style.container}>
                 <ul className={`${style.list} font-satoshi`}>
                   {/* changed to the reasons anchor */}
-                  <Link href={"/#reasons"}>
-                    <li>Why Us</li>
+                  <Link href={"/about"}>
+                    <li>About</li>
                   </Link>
                   <Link href={"/CaseStudies"}>
                     <li>Case Studies</li>
@@ -155,9 +155,9 @@ useEffect(() => {
             style={{ overflow: "hidden" }}
           >
             {/* mobile menu: close menu on click and navigate to anchor */}
-            <Link href={"/#reasons"} onClick={() => setActive(false)}>
+            <Link href={"/about"} onClick={() => setActive(false)}>
               <motion.li variants={itemVariants}>
-                Why Us
+                About
                 <motion.span
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}

@@ -73,7 +73,7 @@ function CaseStudies(){
             alt="footer gradient"
             width={2560}
             height={300}
-            className="2xl:h-[700px]"
+            className="2xl:h-[600px] bottom-0"
             
           />
 

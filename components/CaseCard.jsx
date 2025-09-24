@@ -238,7 +238,7 @@ const OPTIONS = { slidesToScroll: 2, };
           alt="footer gradient"
           width={2560}
           height={400}
-          className="2xl:h-[700px]"
+          className="2xl:h-[600px] bottom-0"
         />
 
         <Footer />
