@@ -21,7 +21,27 @@ const satoshi_medium = localFont({
 export const metadata = {
   title: "Unfound Studio",
   description: "Where Ideas Become Digital Experiences",
+  icons: {
+    icon: "/favicon.ico", // replace with your logo path
+  },
+  openGraph: {
+    title: "Unfound Studio",
+    description: "Where Ideas Become Digital Experiences",
+    url: "https://www.unfoundstudio.com",
+    siteName: "Unfound Studio",
+    images: [
+      {
+        url: "/logo.png", // your logo stored in /public
+        width: 800,
+        height: 600,
+        alt: "Unfound Studio Logo",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
 };
+
 
 export default function RootLayout({ children }) {
   return (
