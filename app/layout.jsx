@@ -19,6 +19,7 @@ const satoshi_medium = localFont({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://www.unfoundstudio.com"),
   title: "Unfound Studio",
   description: "Where Ideas Become Digital Experiences",
   icons: {

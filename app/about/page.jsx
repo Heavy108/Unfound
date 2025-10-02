@@ -21,8 +21,8 @@ const AnimatedText = ({ text, scrollYProgress }) => {
   return (
     <span>
       {words.map((word, i) => {
-        const start = i * 0.03;
-        const end = start + 0.9;
+        const start = i * 0.05;
+        const end = start + 0.3;
 
         const color = useTransform(
           scrollYProgress,
@@ -35,7 +35,7 @@ const AnimatedText = ({ text, scrollYProgress }) => {
             key={i}
             style={{
               color,
-              marginRight: "0.25rem",
+              marginLeft: "0.25rem",
               display: "inline-block", // keeps spacing clean
               whiteSpace: "normal", // ✅ allow wrapping
             }}
@@ -113,14 +113,14 @@ function About() {
               img={tarun}
             />
           </div>
-          <div className={style.head2} ref={textRef}>
+          <div className={style.head2}>
             <h2 className="font-cabinet ">
               {" "}
               <span>●</span>Our Mission
             </h2>
-            <h3 className="font-satoshi text-wrap">
+            <h3 className="font-satoshi  break-words" ref={textRef}>
               <AnimatedText
-                text="As a tight-knit team of experts, we create memorable and emotional websites, digital experiences, and native apps."
+                text="To partner with forward-thinking companies and startups to design and build digital products that are meaningful, modern, and future-ready"
                 scrollYProgress={scrollYProgress}
               />
             </h3>

@@ -231,7 +231,7 @@ const OPTIONS = { slidesToScroll: 2, };
         </div>
       </div>
       {/* <div className={style.section}></div> */}
-      <section className="flex-col items-center justify-center relative w-full h-[400px]">
+      <section className="flex-col mt-[5rem] items-center justify-center relative w-full h-[400px]">
         <Talk />
         <Image
           src={footergradient}
