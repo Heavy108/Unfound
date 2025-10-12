@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import ClientLayout from "@/components/ClientLayout"; // client wrapper
-
+import { Analytics } from "@vercel/analytics/next";
 const cabinet = localFont({
   src: "../fonts/CabinetGrotesk-Medium.woff2",
   variable: "--font-cabinet",
@@ -50,9 +50,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${cabinet.variable} ${satoshi.variable} ${satoshi_medium.variable} antialiased`}
       >
-        <ClientLayout>
-          {children}
-          </ClientLayout>
+        <ClientLayout>{children}</ClientLayout>
+        <Analytics />
       </body>
     </html>
   );
