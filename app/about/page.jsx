@@ -106,12 +106,12 @@ function About() {
               link="https://www.linkedin.com/in/satyam-sajal-15a90325b/"
               img={satyam}
             />
-            <Card
+            {/* <Card
               name="Tarun Raj"
               desc="Crafts brand strategies and product concepts that resonate globally."
               link="https://www.linkedin.com/in/tarun-raj-b73164202/"
               img={tarun}
-            />
+            /> */}
           </div>
           <div className={style.head2}>
             <h2 className="font-cabinet ">
