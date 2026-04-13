@@ -114,7 +114,7 @@ function About() {
             /> */}
           </div>
           <div className={style.head2}>
-            <h2 className="font-cabinet ">
+            <h2 className="font-cabinet">
               {" "}
               <span>●</span>Our Mission
             </h2>
